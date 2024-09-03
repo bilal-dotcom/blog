@@ -1,5 +1,6 @@
 ---
 title: "Create A Project With Node, Express And Ejs"
+seoTitle: "Node, Express, and EJS Project Guide"
 seoDescription: "Learn how to create a project using Node.js, Express, and EJS template engine with this step-by-step guide"
 datePublished: Thu Jan 14 2021 01:21:46 GMT+0000 (Coordinated Universal Time)
 cuid: ckjw63jlp0aneces19enxcc9m
@@ -163,9 +164,9 @@ Yes, you should move back into `index.js` and use the `render()` method instead 
 
 Now you will see your new code as:
 
-> # My First NodeProject
+> ### My First NodeProject
 > 
-> Hello!!!
+> Hello !!!!
 
 ## USE THE STATIC FILES
 
