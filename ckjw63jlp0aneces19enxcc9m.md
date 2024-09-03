@@ -1,5 +1,6 @@
 ---
 title: "Create A Project With Node, Express And Ejs"
+seoDescription: "Learn how to create a project using Node.js, Express, and EJS template engine with this step-by-step guide"
 datePublished: Thu Jan 14 2021 01:21:46 GMT+0000 (Coordinated Universal Time)
 cuid: ckjw63jlp0aneces19enxcc9m
 slug: create-a-project-with-node-express-and-ejs
@@ -23,12 +24,16 @@ For my first blog here, i will show you how to create a project with node, expre
 
 First of all, you have to create a folder `myNodeProject` that will content all the files you need. Using your code editing, do the following:
 
-> mkdir myNodeProject  
-> cd myNodeProject
+```plaintext
+mkdir myNodeProject
+cd myNodeProject
+```
 
 Now you have created your folder and you are inside. Then you need to initialize your node project with:
 
-> npm init
+```plaintext
+npm init
+```
 
 Once done, you will answer a series of questions about the project (e.g. name, description, version, author, etc.). A file named `package.json` will automatically be created with all the information. Look like this :
 
@@ -50,11 +55,15 @@ Once done, you will answer a series of questions about the project (e.g. name, d
 
 Now we have to install `Express`, a framework for application development, Node.js:
 
-> npm install express --g
+```plaintext
+npm install express --g
+```
 
-With this commande, the module is installed, but is not yet in the project dependencies inside the `package.json file`. You can go and tchek it. But close the `package.json` before continuing.
+With this commande, the module is installed but is not yet in the project dependencies inside the `package.json file`. You can go and check it. But close the `package.json` before continuing.
 
-> npm install express --save
+```plaintext
+npm install express --save
+```
 
 The module will now be visible in the package.json file,that means we are ready to build the server and test it in the browser.
 
@@ -62,7 +71,9 @@ The module will now be visible in the package.json file,that means we are ready 
 
 Now you have to create your `index file` by running:
 
-> touch index.js
+```plaintext
+touch index.js
+```
 
 Your `index.js` is now created and you should get the express module we installed with the command: `npm install express`.  
 Add the following to use this module to create our server referenced in the named variable, `app` :
@@ -87,7 +98,9 @@ app.get('/', (req, res) => {
 
 Start the server as follows, with the command:
 
-> node index.js
+```plaintext
+node index.js
+```
 
 If you did everything correctly, you should see a page that says `"Hello world".` To stop the server, you just have to use: `CTRL + C`
 
@@ -95,11 +108,15 @@ If you did everything correctly, you should see a page that says `"Hello world".
 
 We will install now EJS, a template engine for Node which will allow our server to select a view and send the information to be presented in an html document. To install `EJS`, run the following:
 
-> npm install ejs --g
+```plaintext
+npm install ejs --g
+```
 
 Ejs is now installed, but not already in your `package.json`. Once again be sure to close `package.json` and run:
 
-> npm install ejs --save
+```plaintext
+npm install ejs --save
+```
 
 Now you will be able to tchek EJS in the `package.json`.
 
@@ -112,8 +129,10 @@ Now you will be able to tchek EJS in the `package.json`.
 
 Once `EJS` is installed, we need to create a new directory to store the `ejs` files. You can create a new directory, and a`ejs` file, as follows:
 
-> mkdir views  
-> touch views/index.ejs
+```plaintext
+mkdir views
+touch views/index.ejs
+```
 
 Now use your HTML knowledge to create a simple page. You can add the following content to your `index.ejs` file:
 
@@ -146,13 +165,12 @@ Now you will see your new code as:
 
 > # My First NodeProject
 > 
-> # Hello!!!
+> Hello!!!
 
 ## USE THE STATIC FILES
 
 If you want your web page to look professional, you need to be able to use static files like style sheets or scripts. For this, you can use the statics files with the `use` method.
 
-  
 Create a new directory named `public` to the project with a CSS file inside.
 
 mkdir public  
@@ -197,6 +215,6 @@ Now reload the page to make sure it works 👍:
 
 node index.js
 
-### CONCLUSION
+## CONCLUSION
 
 Now you can create your own NodeProject and build any page you want by using `ejs template`.
