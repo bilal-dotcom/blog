@@ -28,6 +28,4 @@ Pour régler cela, il faudrait alors trouver un moyen de personnaliser son mot d
 
 Le meilleur moyen d'avoir des mots de passe robustes et complexes est d'utiliser un gestionnaire de mots de passe. C'est un outil qui vous permettra de centraliser tous vos mots de passe, et vous permettre de générer des mots de passe pour chacun de vos comptes. Il existe plusieurs options possibles comme LastPass, PasswordManager, 1Password et bien d'autres. Cette option est vivement conseillée par les experts en cybersécurité, car elle simplifie la gestion des mots de passe tout en augmentant leur sécurité.
 
-### Conclusion
-
 En conclusion, la sécurité des mots de passe est essentielle pour protéger ses informations en ligne. En adoptant des conventions de mots de passe, en évitant la réutilisation des mêmes mots de passe et en utilisant des gestionnaires de mots de passe, vous réduisez les risques que vos données soient compromises ou rendues disponibles à des fins malveillantes.
