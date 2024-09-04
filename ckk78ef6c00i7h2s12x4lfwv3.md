@@ -115,6 +115,6 @@ import './assets/style.css'
 
 Now run `npm start` and enjoy. You have now install TailwindCSS in your project and it is ready to be used. Read the documentation of [TailwindCSS](https://tailwindcss.com/docs/container) to know more about customizing . You can also try your code [here](https://play.tailwindcss.com/6F2VruLary) to play with TailwindCSS.
 
-### THANKS FOR READING 😃
+THANKS FOR READING 😃
 
 If you have found this helpful, don't hesitate to let a comment or like 👍. You can also read my posts [here](https://blog.fikara.io) .
