@@ -117,4 +117,4 @@ Now run `npm start` and enjoy. You have now install TailwindCSS in your project 
 
 ### THANKS FOR READING 😃
 
-If you have found this helpful, don't hesitate to let a comment or like 👍. You can also read my posts [here](https://bilaldotcom.hashnode.dev/) .
+If you have found this helpful, don't hesitate to let a comment or like 👍. You can also read my posts [here](https://blog.fikara.io) .
