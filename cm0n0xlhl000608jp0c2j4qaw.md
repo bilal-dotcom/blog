@@ -30,7 +30,7 @@ Cette commande lance la console Metasploit qui affiche l'invite de commande meta
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725376437221/ac1eec5f-711b-444e-a34e-16f98c721939.png align="center")
 
 La racine de Metasploit se trouve dans le répertoire `/usr/share/metasploit-framework/` accessible depuis le système de fichiers.  
-L'architecture de la console Metasploit est directement liée au répertoire `/usr/share/metasploit-framework/modules/`. Par défaut, en lancant la console (msfconsole), Metasploit se réfère directement au dossier modules, a l'intérieur duquel il y a tous les modules, tels que les exploits, les payloads, les auxiliaires et bien d'autres.
+L'architecture de la console Metasploit est directement liée au répertoire `/usr/share/metasploit-framework/modules/`. Par défaut, en lancant la console (msfconsole), Metasploit se réfère directement au dossier `modules`, à l'intérieur duquel il y a tous les modules, tels que les exploits, les payloads, les auxiliaires et bien d'autres.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725373144878/371fadae-7b06-4da9-9a13-8a2818c31000.png align="center")
 
