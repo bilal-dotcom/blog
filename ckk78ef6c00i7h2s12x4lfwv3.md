@@ -1,5 +1,7 @@
 ---
 title: "CREATE A PROJECT WITH REACT AND TAILWIND CSS v2.0"
+seoTitle: "React & Tailwind CSS v2.0 Project Guide"
+seoDescription: "Create a React project with Tailwind CSS: a step-by-step guide on setup and configuration"
 datePublished: Thu Jan 21 2021 19:11:41 GMT+0000 (Coordinated Universal Time)
 cuid: ckk78ef6c00i7h2s12x4lfwv3
 slug: create-a-project-with-react-and-tailwind-css-v20
