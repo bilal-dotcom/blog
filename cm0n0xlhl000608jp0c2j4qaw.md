@@ -64,7 +64,7 @@ Cela permet de trouver les répertoires où se trouve l'exploit ou le terme rech
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725374027355/59fea05e-37bd-4b77-a655-afc83e3302d9.png align="center")
 
-La commande info `<PATH_EXPLOIT>` affiche des informations détaillées sur un exploit ou un payload spécifique, telles que le nom, la description, l'auteur et surtout les options de configuration. Cette commande permet de comprendre les paramètres d'un exploit ou d'un payload avant de l'utiliser.
+La commande `info <PATH_EXPLOIT>` affiche des informations détaillées sur un exploit ou un payload spécifique, telles que le nom, la description, l'auteur et surtout les options de configuration. Cette commande permet de comprendre les paramètres d'un exploit ou d'un payload avant de l'utiliser.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725377236948/315e4840-8a79-49e2-8f63-22ef0d8495d3.png align="center")
 
