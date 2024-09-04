@@ -70,7 +70,7 @@ Nikto can be downloaded from the official GitHub repository [Nikto GitHub](https
 
 Wireshark is a network protocol analyzer that allows you to capture and analyze the data traveling back and forth on a network. It's useful for understanding network traffic and identifying potential security issues
 
-## Zenmap (Nmap GUI):
+## Zenmap (Nmap GUI)
 
 Zenmap is the official graphical user interface for Nmap. It provides a visual representation of the data collected during a network scan and allows for easier analysis.
 
