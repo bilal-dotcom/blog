@@ -32,7 +32,7 @@ Cette commande lance la console Metasploit qui affiche l'invite de commande meta
 La racine de Metasploit se trouve dans le répertoire `/usr/share/metasploit-framework/` accessible depuis le système de fichiers.  
 L'architecture de la console Metasploit est directement liée au répertoire `/usr/share/metasploit-framework/modules/`. Par défaut, en lancant la console (msfconsole), Metasploit se réfère directement au dossier `modules`, à l'intérieur duquel il y a tous les modules, tels que les exploits, les payloads, les auxiliaires et bien d'autres.
 
-* le dossier `auxiliary` contient des modules auxiliaires pouvant fournir des informations supplémentaires lors d'une phase de renseignement ou d'une attaque. Il peut être utilisé pour extraire des informations sur les systèmes cibles, comme les versions, les configurations réseau, ou les infos de sécurité.
+* le dossier `auxiliary` contient des modules auxiliaires pouvant fournir des informations supplémentaires lors d'une phase de renseignement ou d'une attaque. Il peut être utilisé pour extraire des informations sur les systèmes cibles, comme les versions, les configurations réseau, ou les infos de sécurité. Il contient des sous-dossiers,chacun avec un module pour différentes tâches: `admin` pour des cas d'administration, `dos` pour des cas d'attaque Dos, `scanner` pour des scans de réseaux pour trouver des version, ports et bien d'autres.
     
 * le dossier `encoder` contient des modules pour encoder les payloads afin que ceux-ci ne soient pas détectés par les antivirus ou tout autre système de sécurité.
     
