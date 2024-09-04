@@ -57,7 +57,7 @@ back
 Il est possible de rechercher directement un exploit ou un payload, ou un terme dans le chemin d'un exploit ou d'un payload, depuis msfconsole avec la commande suivante:
 
 ```bash
-search <EXPLOIT>
+search <EXPLOIT/PAYLOAD>
 ```
 
 Cela permet de trouver les répertoires où se trouve l'exploit ou le terme recherché
