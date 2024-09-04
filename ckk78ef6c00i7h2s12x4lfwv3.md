@@ -20,7 +20,7 @@ To have the React framework available, you firstly need to run:
 npm install -g create-react-app
 ```
 
-Then,you can create your React app using:
+Then, you can create your React app using:
 
 ```plaintext
 npx create-react-app project_name
@@ -28,11 +28,13 @@ npx create-react-app project_name
 
 Now you have created your React app and you can start it by running:
 
+```plaintext
 npm start
+```
 
 ## Setting Up Tailwind CSS
 
-What we will do right now, is to set up Tailwind CSS in our react project. You can watch the video tutorial [here](https://www.youtube.com/channel/UCBQUjxlk8Jotox3eQ_BJcDg) .
+What we will do right now, is to set up Tailwind CSS in our react project. You can watch the video tutorial here.
 
 First of all, we need to install the differents packages of tailwindcss and his dependencies.
 
@@ -113,6 +115,6 @@ import './assets/style.css'
 
 Now run `npm start` and enjoy. You have now install TailwindCSS in your project and it is ready to be used. Read the documentation of [TailwindCSS](https://tailwindcss.com/docs/container) to know more about customizing . You can also try your code [here](https://play.tailwindcss.com/6F2VruLary) to play with TailwindCSS.
 
-## THANKS FOR READING 😃
+### THANKS FOR READING 😃
 
 If you have found this helpful, don't hesitate to let a comment or like 👍. You can also read my posts [here](https://bilaldotcom.hashnode.dev/) .
