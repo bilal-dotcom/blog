@@ -1,5 +1,5 @@
 ---
-title: "The scanning phase."
+title: "The scanning phase"
 seoTitle: "Scanning Phase Unveiled: Navigating Cybersecurity with Powerful Tools"
 seoDescription: "Delve into the Scanning Phase of cybersecurity using cutting-edge tools like Nmap,Nikto ... Uncover open ports, vulnerabilities, and network intricacies."
 datePublished: Sat Dec 16 2023 21:59:13 GMT+0000 (Coordinated Universal Time)
