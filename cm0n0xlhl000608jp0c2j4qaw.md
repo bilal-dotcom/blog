@@ -5,7 +5,7 @@ seoDescription: "Apprenez à utiliser Metasploit sur Kali Linux pour tester et e
 datePublished: Tue Sep 03 2024 22:51:39 GMT+0000 (Coordinated Universal Time)
 cuid: cm0n0xlhl000608jp0c2j4qaw
 slug: metasploit-sur-kali-linux
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1725400001905/600fa8cb-abee-44d1-ab30-6656bdb9715d.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1725457803153/1e9828ef-5dba-4481-80ca-34d319165e02.png
 tags: kali-linux, kali, pentesting, cybersecurity-1, metasploit, pentesting-tools, metasploit-framework
 
 ---
