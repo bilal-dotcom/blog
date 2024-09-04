@@ -54,7 +54,7 @@ back
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725373666474/fa845090-7b69-496e-87cf-1bb46637a306.png align="center")
 
-Il est possible de rechercher directement un exploit ou un terme dans le chemin d'un exploit, depuis msfconsole avec la commande suivante:
+Il est possible de rechercher directement un exploit ou un payload, ou un terme dans le chemin d'un exploit ou d'un payload, depuis msfconsole avec la commande suivante:
 
 ```bash
 search <EXPLOIT>
