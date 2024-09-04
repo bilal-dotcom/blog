@@ -66,7 +66,7 @@ Penetration testing, also known as ethical hacking, is a proactive approach to i
     
     * **Objective:** Exploit vulnerabilities to gain unauthorized access to the target system.
         
-    * **Activities:** Attempt to exploit known vulnerabilities, misconfigurations, or weaknesses in the system's defenses. This phase may involve the use of malware, exploits, or social engineering.
+    * **Activities:** Attempt to exploit known vulnerabilities, misconfigurations, or weaknesses in the system's defenses. This phase may involve the use of malware, exploits, or social engineering. It can be use with tools like [Metasploit](https://blog.fikara.io/metasploit-sur-kali-linux), nmap, Burp Suite and others.
         
 4. **Maintaining Acces**
     
