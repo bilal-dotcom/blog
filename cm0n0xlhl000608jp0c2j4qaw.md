@@ -48,7 +48,7 @@ L'architecture de la console Metasploit est directement liée au répertoire `/u
 Il est possible d'accéder à ces tous ces différents modules. Vous pouvez sélectionner et utiliser un exploit avec la commande suivante:
 
 ```bash
-use exploit/linux/telnet/netgear_telnetenable
+use exploits/linux/telnet/netgear_telnetenable
 ```
 
 Vous pouvez remplacer ce module par celui que vous souhaitez en modifiant le chemin après `use`.
