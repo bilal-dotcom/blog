@@ -20,7 +20,7 @@ Il existe plusieurs outils couramment utilisés pour le pentesting:
     
 * Nikto, pour détecter des failles sur des serveurs. Il les analyse afin de détecter des fichiers et bien d'autres. On peut trouver avec Nikto des pages accessibles comme `/index` ou des pages de logs `/phpMyadmin`.
     
-* Searchploit, pour rechercher localement des exploits en utilisant des bases de données de vulnérabilités présent sur lesystème. Il est en quelque sorte l'équivalent de [exploit-db](https://www.exploit-db.com/) qui est un outil open-source de recherche des exploits.
+* Searchploit, pour rechercher localement des exploits en utilisant des bases de données de vulnérabilités présentes sur le système. Il est en quelque sorte l'équivalent de [exploit-db](https://www.exploit-db.com/) qui est un outil open-source de recherche des exploits.
     
 * Burp, pour analyser les requêtes http et les réponses entre un navigateur et un serveur. Il peut manipuler le traffic pour trouver des failles.
     
