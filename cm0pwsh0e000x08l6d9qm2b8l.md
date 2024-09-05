@@ -39,7 +39,7 @@ Chacun de ces ports ouverts peut être l'objet d'une potentielle exploitation.
 
 ## Vsftpd 2.34
 
-On veut trouver ici, une vulnérabilité liée à vstfp, pour réussir notre attaque. En utilisant la commande `search vsftpd 2.3.4` dans msfconole, on trouve un exploit pour la version 2.3.4 avec un rang excellent, ce qui indique qu'il peut être fiable.
+On veut trouver ici, une vulnérabilité liée à vstfpd, pour réussir notre attaque. En utilisant la commande `search vsftpd 2.3.4` dans msfconole, on trouve un exploit pour la version 2.3.4 avec un rang excellent, ce qui indique qu'il peut être fiable.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725489388211/dfae501e-b585-417b-b9aa-2d9766dea633.png align="center")
 
