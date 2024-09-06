@@ -37,8 +37,6 @@ La documentation détaillée est disponible sur le site officiel de [Wazuh](http
 
 Dans notre article, l'installation se fera sur Debian du système d'exploitation Linux.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724851154491/9a14fc08-7648-4bcd-8f9f-022f0bc004e7.png align="center")
-
 À partir de là, il suffit de suivre les étapes décrites dans la documentation.
 
 \*\*\*Si les pacakges curl ne sont pas encore installés, faire la commande `sudo apt install curl gpg` si la commande curl est introuvable.
@@ -77,11 +75,11 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724854197204/60a70527-debd-49b1-b3e7-4780078ecde4.png align="center")
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724879271683/c4ef3b21-19d4-4311-bc54-25dbc24efd54.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725623576986/9b1bc0d8-8677-4511-bb2c-d2671f9da9f6.png align="center")
     
-    Notez qu'il est important à ce niveau de conserver les noms des indexer , server et dashboard
+7. Notez qu'il est important à ce niveau de conserver les noms des indexer , server et dashboard
     
-7. Exécuter le script suivant pour générer les certificats et compresser les fichiers
+8. Exécuter le script suivant pour générer les certificats et compresser les fichiers
     
     ```bash
     bash ./wazuh-certs-tool.sh -A
@@ -89,7 +87,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     rm -rf ./wazuh-certificates
     ```
     
-8. Installer le paquet wazuh-indexer , wazuh-manager et wazuh-dashboard
+9. Installer le paquet wazuh-indexer , wazuh-manager et wazuh-dashboard
     
     "Wazuh-indexer" installe <mark>Elasticsearch</mark>, qui est utilisé pour l'indexation et la recherche des logs collectés par Wazuh.
     
@@ -103,7 +101,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     À noter que cette installation peut durer quelques minutes 😉
     
-9. Configurer le "wazuh-indexer"
+10. Configurer le "wazuh-indexer"
     
     ```bash
     nano /etc/wazuh-indexer/opensearch.yml
@@ -113,7 +111,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     À ce niveau il faut mettre l'adresse IP du serveur au "network.host".
     
-10. Déployer les certificats de l'indexer
+11. Déployer les certificats de l'indexer
     
     Exécuter les commandes suivantes en remplacant le nom du nœud d’indexeur Wazuh si il a été modifé à l'étape 6 et 9. Si vous ne l'avez pas modifié, il devrait être "<mark>node-1</mark>".
     
@@ -133,7 +131,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs
     ```
     
-11. Activer et démarrer le service wazuh-indexer
+12. Activer et démarrer le service wazuh-indexer
     
     ```bash
     sudo systemctl daemon-reload
@@ -141,13 +139,13 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     sudo systemctl start wazuh-indexer
     ```
     
-12. Initialisation du cluster
+13. Initialisation du cluster
     
     ```bash
     /usr/share/wazuh-indexer/bin/indexer-security-init.sh
     ```
     
-13. Tester l'installation du cluster
+14. Tester l'installation du cluster
     
     Remplacer &lt;WAZUH\_INDEXER\_IP\_ADDRESS&gt; par l'adresse IP de l'indexer
     
@@ -163,7 +161,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     curl -k -u admin:admin https://<WAZUH_INDEXER_IP_ADRESS>:9200/_cat/nodes?v
     ```
     
-14. Installation du Wazuh manager
+15. Installation du Wazuh manager
     
     ```bash
     sudo systemctl daemon-reload
@@ -176,13 +174,13 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724860269336/dbacacba-6070-47b9-b399-873d521b4138.png align="center")
     
-15. Démarrer le service filebeat
+16. Démarrer le service filebeat
     
     ```bash
     apt install filebeat
     ```
     
-16. Télécharger et configurer le fichier de confuguration filebeat
+17. Télécharger et configurer le fichier de confuguration filebeat
     
     ```bash
     curl -so /etc/filebeat/filebeat.yml https://packages.wazuh.com/4.8/tpl/wazuh/filebeat/filebeat.yml
@@ -196,13 +194,13 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     Modifier l'adresse IP localhost par celui de l'indexer (la même adresse IP depuis l'étape 6)
     
-17. Créer le fichier filebeat keystore pour stocker en toute sécurité les informations d’authentification.
+18. Créer le fichier filebeat keystore pour stocker en toute sécurité les informations d’authentification.
     
     ```bash
     filebeat keystore create
     ```
     
-18. Ajouter le nom d'utilisateur et le mot de passe par défaut au keystore
+19. Ajouter le nom d'utilisateur et le mot de passe par défaut au keystore
     
     ```bash
     echo admin | filebeat keystore add username --stdin --force
@@ -211,20 +209,20 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     Le nom d'utilisateur et le mot de passe sont tous deux spécifiés à "admin".
     
-19. Télécharhger le template d'alertes pour le wazuh indexer
+20. Télécharhger le template d'alertes pour le wazuh indexer
     
     ```bash
     curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v4.8.2/extensions/elasticsearch/7.x/wazuh-template.json
     chmod go+r /etc/filebeat/wazuh-template.json
     ```
     
-20. Installer le module wazuh pour filebeat
+21. Installer le module wazuh pour filebeat
     
     ```bash
     curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.4.tar.gz | tar -xvz -C /usr/share/filebeat/module
     ```
     
-21. Déployer les certificats
+22. Déployer les certificats
     
     Ici encore une fois, remplacer le nom du certificat &lt;SERVER\_NODE\_NAME&gt; par le nom utilisé lors de la création des certificats. Si vous n'avez rien modifié, il restera "<mark>wazuh-1</mark>"
     
@@ -242,7 +240,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     chown -R root:root /etc/filebeat/certs
     ```
     
-22. Redémarrer le service filebeat
+23. Redémarrer le service filebeat
     
     ```bash
     sudo systemctl daemon-reload
@@ -250,7 +248,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     sudo systemctl start filebeat
     ```
     
-23. Vérifier que filebeat est installé avec succès
+24. Vérifier que filebeat est installé avec succès
     
     ```bash
     filebeat test output
@@ -258,9 +256,9 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     Vous devriez obtenir la sortie suivante, avec l'adresse IP de votre serveur.
     
-24. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724862155207/6c856672-9372-414c-bfb2-09dcb69ef9ab.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725623670197/36e73a7f-b4cf-4562-aa43-0d059f2b5a21.png align="center")
     
-    Configurer le wazuh dashboard
+25. Configurer le wazuh dashboard
     
     ```bash
     nano /etc/wazuh-dashboard/opensearch_dashboards.yml
@@ -270,7 +268,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1724862451853/27880fa2-5a16-44db-b1a4-084f064e4dbb.png align="center")
     
-25. Déployer les certificats pour le wazuh-dashboard
+26. Déployer les certificats pour le wazuh-dashboard
     
     Remplacez le &lt;DASHBOARD\_NODE\_NAME&gt; par le nom utilisé lors de la configuration du fichier config.yml à l'étape 6 au niveau du tableau de bord. Si vous n'avez rien modifié, il restera "<mark>dashboard</mark>".
     
@@ -290,7 +288,7 @@ Dans notre article, l'installation se fera sur Debian du système d'exploitation
     
     Pour vérifier le nom du nœud de votre tableau de bord Wazuh, faire la commande `cat config.yml` ou `nano config.yml`
     
-26. Démarrer le service wazuh-dashboard
+27. Démarrer le service wazuh-dashboard
     
     ```bash
     sudo systemctl daemon-reload
