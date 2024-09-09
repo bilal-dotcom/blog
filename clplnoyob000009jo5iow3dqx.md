@@ -10,7 +10,7 @@ tags: security, phishing, malware, cybersecurity, network-security, penetration-
 
 ---
 
-Cybersecurity is the practice of protecting networks, devices, and data from unauthorized access or criminal use. It involves the art of ensuring the confidentiality, integrity, and availability of information and systems. This field aims to safeguard systems, networks, and programs from digital attacks, which are typically targeted at gaining unauthorized access or making unauthorized changes to sensitive information
+Cybersecurity is the practice of protecting networks, devices, and data from unauthorized access or criminal use. It involves the art of ensuring the confidentiality, integrity, and availability of information and systems. This field aims to protect systems, networks, and programs from digital attacks, which are typically targeted at gaining unauthorized access or making unauthorized changes to sensitive information
 
 ### **The Three Pillars of Cybersecurity**
 
