@@ -10,7 +10,7 @@ tags: security, phishing, malware, cybersecurity, network-security, penetration-
 
 ---
 
-Cybersecurity is the practice of protecting networks, devices, and data from unauthorized access or criminal use. It involves the art of ensuring the confidentiality, integrity, and availability of information and systems. This field aims to protect systems, networks, and programs from digital attacks, which are typically targeted at gaining unauthorized access or making unauthorized changes to sensitive information
+Cybersecurity is the practice of protecting networks, devices, and data from unauthorized access or criminal use. It involves the art of ensuring the confidentiality, integrity, and availability of information and systems. This field aims to protect systems, networks, and programs from digital attacks, which are typically targeted at gaining unauthorized access or making unauthorized changes to sensitive information.
 
 ### **The Three Pillars of Cybersecurity**
 
@@ -27,13 +27,13 @@ Cybersecurity aims to ensure the:
 
 Some common cyber threats include:
 
-* **Phishing** -Fraudulent emails or messages designed to steal information. Phishing attacks aim to get sensitive information like usernames, passwords, and credit card details by pretending to be someone you trust. Phishing emails often contain malicious attachments or links that install malware once opened.
+* **Phishing** - Fraudulent emails or messages designed to steal information. Phishing attacks aim to get sensitive information like usernames, passwords, and credit card details by pretending to be someone you trust. Phishing emails often contain malicious attachments or links that install malware once opened.
     
 * **Malware** - Malicious software like viruses, ransomware or spyware. Malware refers to any malicious software designed to damage or disrupt a system. Malware is one of the most common cyber threats organizations face. It attacks can infect systems through phishing emails, malicious websites, and USB drives.
     
 * **Social engineering** - Manipulating people into revealing sensitive information.
     
-* **Code Injection and SQL Injection Attacks -** Code injection attack is a way to inject some code in a web form, in order to interact with the database, by executing some arbitrary commands. It usual in order to steal or modify data.
+* **Code Injection and SQL Injection Attacks -** Code injection attack is a way to inject some code in a web form, in order to interact with the database, by executing some arbitrary commands. It usually in order to steal or modify data.
     
     This enables attackers to read sensitive data from the database.
     
