@@ -42,7 +42,7 @@ Some common cyber threats include:
 
 ### Penetration Testing Stages
 
-Penetration testing, also known as ethical hacking, is a proactive approach to identifying and addressing security vulnerabilities in a system or network. The process typically involves several phases to ensure a thorough assessment. Here are the common phases of a penetration test:
+Penetration testing, also known as ethical hacking, is an approach to identifying and addressing security vulnerabilities in a system or network. Here are the common phases of a penetration test:
 
 1. [**Reconnaissance**](https://hashnode.com/post/clpnl4j70000909l82j88gawk)
     
