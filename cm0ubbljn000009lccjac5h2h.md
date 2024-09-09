@@ -79,3 +79,5 @@ L'intégration de Wazuh avec VirusTotal améliore la détection des menaces et r
 Vous pouvez aussi ajouter des configurations d'alertes FIM ou la détection des attaques par force brute. Un article est disponible sur ce sujet [ici](https://blog.fikara.io/configuration-des-alertes-fim-sur-wazuh).
 
 ## Références
+
+La photo de couverture provient de [Aravind Raja](https://www.linkedin.com/in/aravindsraja/) sur LinkedIn
