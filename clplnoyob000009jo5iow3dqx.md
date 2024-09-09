@@ -27,7 +27,7 @@ Cybersecurity aims to ensure the:
 
 Some common cyber threats include:
 
-* **Phishing** - Fraudulent emails or messages are designed to steal information. Phishing attacks try to acquire sensitive information such as usernames, passwords, and credit card details by masquerading as a trustworthy entity. Phishing emails often contain malicious attachments or links that install malware once opened. Spear phishing targets specific individuals within an organization, while whaling targets senior executives.
+* **Phishing** -Fraudulent emails or messages designed to steal information. Phishing attacks aim to get sensitive information like usernames, passwords, and credit card details by pretending to be someone you trust. Phishing emails often contain malicious attachments or links that install malware once opened.
     
 * **Malware** - Malicious software like viruses, ransomware or spyware. Malware refers to any malicious software designed to damage or disrupt a system. Malware is one of the most common cyber threats organizations face. It attacks can infect systems through phishing emails, malicious websites, and USB drives.
     
