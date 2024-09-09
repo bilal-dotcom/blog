@@ -42,6 +42,6 @@ Voici un apercu du tableau de bord avec des agents installés.
 
 Avec quelques agents installés, vous pouvez désormais surveiller les événements de sécurité sur vos terminaux.
 
-Wazuh étant un XDR, il peut réagir face à des situations comme le blocage d’un acteur malveillant connu, la surveillance de l’intégrité des fichiers, la détection de répétées de connexion échouées, l’analyse des comportements anormaux sur le réseau, et la réponse automatisée aux incidents de sécurité.
+Wazuh peut réagir face à des situations comme le blocage d’un acteur malveillant connu, la surveillance de l’intégrité des fichiers, la détection de répétées de connexion échouées, l’analyse des comportements anormaux sur le réseau, et la réponse automatisée aux incidents de sécurité.
 
-La prochaine étape est la mise en place des règles et des scripts pour détecter les alertes et incidents avec Wazuh.
+La prochaine étape est la mise en place des règles et des scripts pour détecter les alertes et incidents avec Wazuh. Un article concernant la configurations des alertes est disponible [ici](https://blog.fikara.io/configuration-des-alertes-fim-sur-wazuh).
