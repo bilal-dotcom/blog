@@ -33,7 +33,7 @@ Some common cyber threats include:
     
 * **Social engineering** - Manipulating people into revealing sensitive information.
     
-* **Code Injection and SQL Injection Attacks -** Code injection attack is a way to inject some code in a web form, in order to interact with the database, by executing some arbitrary commands. It usually in order to steal or modify data.
+* **Code Injection and SQL Injection Attacks -** Code injection attacks involve inserting code into a web form to interact with the database by executing arbitrary commands. This is usually done to steal or modify data.
     
     This enables attackers to read sensitive data from the database.
     
