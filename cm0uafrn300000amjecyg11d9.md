@@ -10,6 +10,13 @@ tags: wazuh, bruteforceattack, wazuh-dashboard, wazuh-fim, whodata
 
 ---
 
+## Pré-requis
+
+* [Installation de Wazuh](https://blog.fikara.io/wazuh-installation)
+    
+* [Déploiements des agents Wazuh](https://blog.fikara.io/deploiement-des-agents-wazuh)
+    
+
 Après avoir installé l'agent Wazuh sur les terminaux, la prochaine étape est de configurer des règles de détection. Il en existe plusieurs expliqueés sur le site de officiel de [Wazuh](https://documentation.wazuh.com/current/proof-of-concept-guide/index.html).
 
 Dans cet article, on expliquera comment mettre en place les alertes FIM et celles sur les attaques par force brute.
