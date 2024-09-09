@@ -10,7 +10,12 @@ tags: kali-linux, nmap, pentesting, pentest, metasploit, pentesting-tools, metas
 
 ---
 
-Le pentesting, ou test d'intrusion est une méthode utilisée pour évaluer la sécurité d'un système ou réseau informatique. Le but est d'identifer des vulnérabilités et surtout de les corriger pour éviter qu'elles soient exploitées par des acteurs malveillants.
+## Pré-requis
+
+* [Metasploit Installation et Configuration sur Kali Linux](https://blog.fikara.io/metasploit-sur-kali-linux)
+    
+
+[Le pentesting, ou test d'intrusion est une méthode utilisée pour](https://blog.fikara.io/metasploit-sur-kali-linux) évaluer la sécurité d'un système ou réseau informatique. Le but est d'identifer des vulnérabilités et surtout de les corriger pour éviter qu'elles soient exploitées par des acteurs malveillants.
 
 Il existe plusieurs outils couramment utilisés pour le pentesting:
 
