@@ -16,6 +16,8 @@ tags: wazuh, bruteforceattack, wazuh-dashboard, wazuh-fim, whodata
     
 * [Déploiements des agents Wazuh](https://blog.fikara.io/deploiement-des-agents-wazuh)
     
+* [Intégration Virus Total](https://blog.fikara.io/wazuh-integration-virustotal) (facultatif)
+    
 
 Après avoir installé l'agent Wazuh sur les terminaux, la prochaine étape est de configurer des règles de détection. Il en existe plusieurs expliqueés sur le site de officiel de [Wazuh](https://documentation.wazuh.com/current/proof-of-concept-guide/index.html).
 
