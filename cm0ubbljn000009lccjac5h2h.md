@@ -16,7 +16,7 @@ tags: virus, cybersecurity-1, wazuh, cybersec, virustotal
     
 * [Déploiement d'un agent wazuh sur une machine](https://blog.fikara.io/deploiement-des-agents-wazuh)
     
-* [Configuration des alertes](https://blog.fikara.io/configuration-des-alertes-fim-sur-wazuh) (FIM et Brute Force Attack)
+* [Configuration des alertes](https://blog.fikara.io/configuration-des-alertes-fim-sur-wazuh) -FIM et Brute Force Attack - (facultatif)
     
 
 Wazuh est en mesure de renforcer les détections, avec une intégration VirusTotal, qui génère des alertes sur les fichiers et URL suspects. Il est possible de faire l'intégration soit avec une API public ou privée. Même si l'API publique a quelques limitations, elle est largement suffisante ici. Pour cela, il faut d'abord créer un compte [VirusTotal](https://www.virustotal.com/gui/home/upload) afin d'obtenir la clé de l'API. La clé API privée requiert un compte premium pour des configurations plus avancées.
