@@ -10,7 +10,7 @@ tags: virus, cybersecurity-1, wazuh, cybersec, virustotal
 
 ---
 
-## Pré-requis:
+## Pré-requis
 
 * [Installation de Wazuh](https://blog.fikara.io/wazuh-installation)
     
