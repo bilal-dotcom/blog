@@ -186,4 +186,4 @@ Vous pouvez maintenant visualiser l'incident dans le dashboard Wazuh, dans la se
 
 Mettre en place des règles de détection est cruciale pour renforcer la sécurité des systèmes. En surveillant les potentielles menaces, votre infrastructure devient donc plus résiliente aux attaques.
 
-Vous pouvez aussi intégrer VirusTotal dans Wazuh. Un article est disponible sur ce sujet ici.
+Vous pouvez aussi intégrer VirusTotal dans Wazuh. Un article est disponible sur ce sujet [ici](https://blog.fikara.io/wazuh-integration-virustotal).
