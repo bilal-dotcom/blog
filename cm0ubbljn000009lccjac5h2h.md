@@ -77,3 +77,5 @@ Il est aussi possible d'automatiser la suppression de ces fichiers.
 L'intégration de Wazuh avec VirusTotal améliore la détection des menaces et renforce la sécurité des sytèmes en fournissant des alertes détaillées et en facilitant une réponse rapide aux fichiers malveillants.
 
 Vous pouvez aussi ajouter des configurations d'alertes FIM ou la détection des attaques par force brute. Un article est disponible sur ce sujet [ici](https://blog.fikara.io/configuration-des-alertes-fim-sur-wazuh).
+
+## Références
