@@ -120,3 +120,5 @@ exploit
 Le payload s'exécute par la suite si l'exploit est réussi.
 
 En configurant correctement les exploits et les payloads, et en utilisant les commandes appropriées, vous pouvez tester la sécurité de vos systèmes de manière efficace. Il est important de rappeler que l'utilisation de Metasploit doit toujours se faire dans un cadre légal.
+
+Un article disponible [ici](https://blog.fikara.io/penetration-testing-metasploit), montre un pentest de Metasploit avec une machine Kali Linux.
