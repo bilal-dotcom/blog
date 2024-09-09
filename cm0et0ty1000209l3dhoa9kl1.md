@@ -12,7 +12,7 @@ tags: security, cybersecurity-1, wazuh, edr, open-xdr
 
 ## Pré-requis
 
-* Installation de Wazuh
+* [Installation de Wazuh](https://blog.fikara.io/wazuh-installation)
     
 
 Il existe plusieurs moyens de déployer l'agent Wazuh sur les terminaux. Après avoir installé correctement le wazuh-dashboard, le wazuh-manager et le wazuh-indexer, les agents peuvent maintenant être installés depuis le dashboard. Suivez le lien [ici](https://bilaldotcom.hashnode.dev/wazuh-installation) pour l'installation de Wazuh.
