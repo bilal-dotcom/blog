@@ -99,7 +99,7 @@ L’option `jq` ci-dessus, permet de formater et manipuler les données au forma
 
 Pour les scans, l’outil le plus connu est peut être Nmap. Mais il en existe d’autres qui sont beaucoup plus rapides et efficaces.
 
-### Naabu
+## Naabu
 
 Naabu est un scanner de ports devéloppé par [Project Discorvery](https://projectdiscovery.io/) et écrit en lagange Go, pour identifier les services ouverts sur une machine ou un réseau. Il est connu pour être plus rapides avec beaucoup d’options, comme le fait de pouvoir exclure des ports, scanner toute une liste de ports ou encore le combiner avec Nmap pour avoir des résultats plus détaillés. Vous pouvez l’installer directement via [Github](https://github.com/projectdiscovery/naabu).
 
@@ -158,7 +158,7 @@ go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
     <mark>Il est important de rappeler que l'utilisation de ces outils doit toujours se faire dans un cadre légal.</mark>
     
 
-### Rustscan
+## Rustscan
 
 RustScan est aussi un scanner de ports, écrit en langage Rust, beaucoup plus rapide et capable d’intégrer des outils comme Nmap pour des analyses plus détaillées.
 
