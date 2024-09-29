@@ -13,7 +13,7 @@ tags: pentesting, penetration-testing, reconnaissance, recon, rustscan, asnmap, 
 La reconnaissance (Recon) est une étape du test de pénétration qui consiste à collecter le plus d’informations sur un système, afin d’exploiter de potentielles vulnérabilités.  
 Dans cet article, nous montrerons quelques outils et moyens utilisés pour la reconnaissance. Ces outils m’ont été présentés lors d’un Workshop de Bsides Montreal 2024 tenu par [Jason Haddix](https://www.linkedin.com/in/jhaddix/).
 
-# Check\_mdi
+## Check\_mdi
 
 Check\_mdi un script pyhton qui interroge l’API Microsoft pour énumérer les domaines Microsoft 365 valides à un domaine donné. Il trouve le locataire du domaine et vérifie la présence d'une instance de Microsoft Defender for Identity (MDI). MDI est une solution de sécurité dévéloppée par Micosoft pour les environnements en Active Directory. Vous pouvez trouver le code source sur [Github](https://github.com/expl0itabl3/check_mdi).  
 Pour utiliser Check\_mdi, il faut exécuter la commande suivante:
