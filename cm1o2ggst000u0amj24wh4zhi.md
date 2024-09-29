@@ -97,8 +97,6 @@ En faisant une recherche sur le domaine facebook.com avec l’option `-j` (affic
 
 L’option `jq` ci-dessus, permet de formater et manipuler les données au format JSON
 
-## SCAN
-
 Pour les scans, l’outil le plus connu est peut être Nmap. Mais il en existe d’autres qui sont beaucoup plus rapides et efficaces.
 
 ### Naabu
