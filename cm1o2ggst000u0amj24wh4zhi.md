@@ -1,5 +1,5 @@
 ---
-title: "Recon"
+title: "La reconnaissance lors d'un pentest"
 seoTitle: "Démonstration de quelques techniques de reconnaissance"
 seoDescription: "Apprenez sur la reconnaissance lors d’un pentest avec les outils Check_mdi, ASN, DNSCHEKER, ASRank, BGP.HE.NET, ASNmap, Naabu, et Rustscan"
 datePublished: Sun Sep 29 2024 21:01:48 GMT+0000 (Coordinated Universal Time)
@@ -153,9 +153,7 @@ go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
     asnmap -a ASXXXX -silent | naabu -p 22,80 -silent
     ```
     
-    Cette commande va d’abord récupérer les plages d’adresses IP associées à l’ASN en mode silent et ensuite scanner les ports 22 et 80 avec Naabu
-    
-    <mark>Il est important de rappeler que l'utilisation de ces outils doit toujours se faire dans un cadre légal.</mark>
+    Cette commande va d’abord récupérer les plages d’adresses IP associées à l’ASN en mode silent et ensuite scanner les ports 22 et 80 avec Naabu.
     
 
 ## Rustscan
@@ -179,8 +177,8 @@ Vous pouvez le télécharger depuis la biliothèque officiel sur [Github](https:
 * L’option `-b` limite la bande passante et éviter de surcharger le réseau pendant le scan.
     
 
-Ici on scanne les ports 22,80 et 445 de l’adresse 192.168.2.96. Le double-tiret indique les options sont passées à Nmap, avec l’option -sV, pour détecter la version des services
+Ici on scanne les ports 22,80 et 445 de l’adresse 192.168.2.96. Le double-tiret indique les options sont passées à Nmap, avec l’option -sV, pour détecter la version des services.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1727278498585/6361b167-60f4-4f3d-a954-9a44ed375139.png align="center")
 
-Pour finir, ces différents outils offrent des fonctionnalitées utiles lors de la reconnaissance dans un test de pénétration. Cependant, il est important de toujours les utiliser dans un cadre légal avec les autorisations appropriées.
+Pour finir, ces différents outils offrent des fonctionnalitées utiles lors de la reconnaissance dans un test de pénétration. Cependant, <mark>il est important de rappeler que l'utilisation de ces outils doit toujours se faire dans un cadre légal.</mark>
