@@ -1,10 +1,10 @@
 ---
-title: "The Recon phase in pentest"
+title: "La phase de reconnaissance pendant un pentest"
 seoTitle: "Quick Overview of Recon Techniques"
 seoDescription: "Learn about reconnaissance in penetration testing and tools like Check_mdi, ASN, DNSCHEKER, ASRank, BGP.HE.NET, ASNmap, Naabu, and Rustscan"
 datePublished: Sun Sep 29 2024 21:01:48 GMT+0000 (Coordinated Universal Time)
 cuid: cm1o2ggst000u0amj24wh4zhi
-slug: the-recon-phase-in-pentest
+slug: la-phase-de-reconnaissance-pendant-un-pentest
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/CpPF4W5PB1c/upload/aef83ceccacd78fe1c53289278204b00.jpeg
 tags: pentesting, penetration-testing, reconnaissance, recon, rustscan, asnmap, naabu, naabu-scan
 
