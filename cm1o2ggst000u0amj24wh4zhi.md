@@ -1,7 +1,7 @@
 ---
 title: "Recon"
-seoTitle: "Quick Overview of Recon Techniques"
-seoDescription: "Learn about reconnaissance in penetration testing and tools like Check_mdi, ASN, DNSCHEKER, ASRank, BGP.HE.NET, ASNmap, Naabu, and Rustscan"
+seoTitle: "Démonstration de quelques techniques de reconnaissance"
+seoDescription: "Apprenez sur la reconnaissance lors d’un pentest avec les outils Check_mdi, ASN, DNSCHEKER, ASRank, BGP.HE.NET, ASNmap, Naabu, et Rustscan"
 datePublished: Sun Sep 29 2024 21:01:48 GMT+0000 (Coordinated Universal Time)
 cuid: cm1o2ggst000u0amj24wh4zhi
 slug: recon
