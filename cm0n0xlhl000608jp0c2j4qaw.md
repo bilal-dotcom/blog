@@ -108,7 +108,7 @@ unset RHOST
 Vous pouvez lister les payloads compatibles avec l’exploit choisi, avec la commande `show payload` et ensuite choisir un payload en utilisant la commande:
 
 ```bash
-set PAYLOAD PATH/TO/PAYLOAD
+set payload PATH/TO/PAYLOAD
 ```
 
 Vous pouvez aussi entrez `set payload [PAYLAOD#]` en entrant le numéro du payload après la commande set pour le choisir directement.
