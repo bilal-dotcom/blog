@@ -65,7 +65,7 @@ Nikto can be downloaded from the official GitHub repository [Nikto GitHub](https
     
     Nikto allows you to customize the scan based on your requirements. Here you can specify a custom port for the scan (e.g., port 8080)
     
-4. `nikto -Help`
+4. `nikto -h`
     
     For a full list of options and command
     
