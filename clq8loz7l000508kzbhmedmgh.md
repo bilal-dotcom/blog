@@ -40,7 +40,7 @@ The Nmap command is hi\`ghly versatile, allowing users to customize scans based 
     
 6. `nmap — script vuln <ip adress>`
     
-    This command will look for potentials vulnerabilities on the machine with more informations including the CVE associated.
+    This command will look for potentials vulnerabilities on the machine with more informations including the CVE associated. Noted that — before the script in the command is two dashes.
     
     These are just a few examples, and Nmap provides a multitude of options and configurations. <mark>Ensure proper authorization before scanning any network, as unauthorized scanning may be considered malicious and could lead to legal consequences</mark>. Always follow ethical guidelines and respect the privacy and security of the systems you're scanning.
     
