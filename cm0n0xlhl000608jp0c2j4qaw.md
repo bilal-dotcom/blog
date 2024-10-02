@@ -83,7 +83,7 @@ show payloads
 
 ### **Exploitation des Vulnérabilités avec Metasploit**
 
-Une fois à l'intérieur de la configuration de l'exploit avec la commande `use`, il est possible de lister toutes les options avec la commande suivante:
+Une fois à l'intérieur de la configuration d’un exploit avec la commande `use`, il est possible de lister toutes les options avec la commande suivante:
 
 ```bash
 show options
@@ -105,11 +105,15 @@ Pour annuler un paramètre spécifique après l'avoir configuré avec la command
 unset RHOST
 ```
 
-Vous pouvez également choisir un payload compatible avec l'exploit en utilisant la commande:
+Vous pouvez lister les payloads compatibles avec l’exploit choisi, avec la commande `show payload` et ensuite choisir un payload en utilisant la commande:
 
 ```bash
-set PAYLOAD cmd/windows/tftp/x64/shell_bind_tcp
+set PAYLOAD PATH/TO/PAYLOAD
 ```
+
+Vous pouvez aussi entrez `set payload [PAYLAOD#]` en entrant le numéro du payload après la commande set pour le choisir directement.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1727885024015/f5c969b2-6bb3-4d6f-8855-3822a1eeab3b.png align="center")
 
 Une fois toutes les options configurées, vous lancez lancez l'exploit avec la commande suivante:
 
