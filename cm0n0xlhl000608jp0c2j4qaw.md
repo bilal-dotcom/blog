@@ -75,7 +75,7 @@ La commande `info <PATH_EXPLOIT>` affiche des informations détaillées sur un e
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725377236948/315e4840-8a79-49e2-8f63-22ef0d8495d3.png align="center")
 
-Vous pouvez accéder à la liste des payloads deuis msfconsole, avec la commande
+Vous pouvez accéder à la liste des payloads depuis msfconsole, avec la commande
 
 ```bash
 show payloads
