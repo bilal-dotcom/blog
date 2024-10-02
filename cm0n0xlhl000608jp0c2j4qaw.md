@@ -89,7 +89,7 @@ Une fois à l'intérieur de la configuration d’un exploit avec la commande `us
 show options
 ```
 
-Elle affiche les options configurables de l'exploit avec leur description. Elle peut inclure l'adresse IP de la machine cible, les ports, et d'autres configurations spécifiques à l'exploit.
+Elle affiche les options configurables de l'exploit avec leur description. Elle peut inclure l'adresse IP de la machine cible, les ports, et d'autres configurations spécifiques à l'exploit. Vous pouvez aussi exécuter la commande `show infos` ou `infos` une fois à l'intérieur de la configuration d’un exploit pour des informations détaillées sur l’exploit.
 
 Pour la suite, il est préférable d'avoir une machine à votre disposition sur laquelle vous souhaitez accéder. <mark>Notez qu'il est interdit d'effectuer ces opérations sur des machines qui ne vous appartiennent pas afin d'éviter tout problème juridique.</mark>
 
