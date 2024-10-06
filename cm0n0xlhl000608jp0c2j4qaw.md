@@ -45,7 +45,7 @@ L'architecture de la console Metasploit est directement liée au répertoire `/u
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725374678609/061847b6-97ff-4fa2-9eb6-1b7afdc3295c.png align="center")
 
-Il est possible d'accéder à ces tous ces différents modules. Vous pouvez sélectionner et utiliser un exploit avec la commande suivante:
+Il est possible d'accéder à ces différents modules. Vous pouvez sélectionner et utiliser un exploit avec la commande suivante:
 
 ```bash
 use exploits/linux/telnet/netgear_telnetenable
