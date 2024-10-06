@@ -77,7 +77,7 @@ On définit ensuite la machine cible avec `set RHOSTS 192.168.2.20` et ensuite o
 
 Une session a été établie entre notre machine 192.168.2.98 et la machine cible 192.168.2.20 via les ports 33599 et 6200. On est maintenant directement connecté sur la machine cible.
 
-Il est aussi possible de définir le payload après avoir sélectionné l'exploit et configuré les options. On rappelle que payload est le code qui sera exécuté sur la machine cible une fois l'exploit réussi. Après avoir sélectionné un exploit avec la commande `use`, vous pouvez utiliser `show payloads` pour afficher une liste de tous les payloads <mark>compatibles </mark> avec cet exploit. Il faut maintenant configurer le payload et ses options, LHOST pour l’adresse IP et LPORT pour le port, et ensuite vous exécutez l’exploit.
+Il est aussi possible de définir le payload après avoir sélectionné l'exploit et configuré les options. On rappelle qu’un payload est le code qui sera exécuté sur la machine cible une fois l'exploit réussi. Après avoir sélectionné un exploit avec la commande `use`, vous pouvez utiliser `show payloads` pour afficher une liste de tous les payloads <mark>compatibles </mark> avec cet exploit. Il faut maintenant configurer le payload et ses options, LHOST pour l’adresse IP et LPORT pour le port, et ensuite vous exécutez l’exploit.
 
 ## Openssh
 
