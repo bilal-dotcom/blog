@@ -155,7 +155,7 @@ On peut voir qu'une session a été ouverte. On est maintenant connecté sur la 
 
 Une fois connecté à la machine cibe, on peut accéder à des fichiers importants :
 
-* `cat etc/passwd` : Ce fichier contient des informations sur les utilisateurs, telles que le nom d'utilisateur, l'UID (User ID), le GID (Group ID), le répertoire personnel et le shell par défaut. Chaque ligne représente un utilisateur.
+* `cat etc/passwd`: Ce fichier contient des informations sur les utilisateurs, telles que le nom d'utilisateur, l'UID (User ID), le GID (Group ID), le répertoire personnel et le shell par défaut. Chaque ligne représente un utilisateur.
     
     * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728234675553/738feab8-3033-43ed-9aa0-afb42d5ae727.png align="center")
         
