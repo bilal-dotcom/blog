@@ -42,15 +42,30 @@ On voit par exemple que le service FTP est ouvert sur le port 21 utilisant vsftp
 
 Chacun de ces ports ouverts peut être l'objet d'une potentielle exploitation.
 
+## Searchsploit
+
+Searchsploit est un outil pour rechercher localement des exploits et des vulnérabilités sur un système. Cet outil utilise la base de données [Exploit Database](https://www.exploit-db.com/), qui est une archive publique de failles de sécurité et d'exploits.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728228596434/9604243f-6596-4eca-be0f-2c3357e593dc.png align="center")
+
+La commande `searchsploit vsftpd 2.3.4` retourne deux exploits disponibles pour vsftpd 2.3.4. Plus d’informations sur ces exploits sont répertoriées sur Exploit Database.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725493797060/6fbc6a57-ea69-45d4-9b0b-e51cdfe3a28f.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728228922462/812d922f-2092-46ac-81e1-75146735b1d9.png align="center")
+
+* **vsftpd 2.3.4 - Backdoor Command Execution** : Cet exploit est disponible sous la forme d'un script Python. Il permet d’exécuter des commandes à distance sur un serveur vulnérable.
+    
+* **vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)** : Celui-ci est intégré directement dans Metasploit et est disponible sous la forme d'un script Ruby. Vous pouvez le visualiser directement dans le répertoire `/usr/share/metasploit-framework/modules/exploits/unix/ftp/` écrit en langage Ruby
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728229479115/67555c14-8d09-4171-97d9-3bfd27c84ebf.png align="center")
+    
+
 ## Vsftpd 2.34
 
 On veut trouver ici, une vulnérabilité liée à vstfpd, pour réussir notre attaque. En utilisant la commande `search vsftpd 2.3.4` dans msfconole, on trouve un exploit pour la version 2.3.4 avec un rang excellent, ce qui indique qu'il peut être fiable.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725489388211/dfae501e-b585-417b-b9aa-2d9766dea633.png align="center")
-
-Ici la base de données de [exploit-db](https://exploit-db.com) nous donne aussi des informations supplémentaires sur l'exploit.
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725493797060/6fbc6a57-ea69-45d4-9b0b-e51cdfe3a28f.png align="center")
 
 On commence par sélectionner l'exploit trouvé en faisant la commande `use 0` ou `use exploit/unix/ftp/vsftpd_234_backdoor`. Les commandes `info` ou `options` pour avoir plus d'iformations sur l'exploit.
 
