@@ -129,11 +129,11 @@ Avec la commande `searchsploit`, on peut ainsi trouver des exploits potentiels p
 
 On a donc touvé quatre vulnérabilités différentes. L'étape suivante serait de savoir à quels exploits de `msfconsole`, correspond le résultat du searchsploit. Pour cela, il est possible de voir le chemin indiqué, faire une recherche avec le nom ou encore une recherche simple sur google.
 
-En faisant un search avec un des termes retournés par le searchsploit, on peut donc trouver un exploit lié à samba.
+En faisant un search avec un des termes retourné par le searchsploit, on peut donc trouver un exploit lié à samba.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725459769627/47c1eee6-06fc-4bdc-bb56-e0a911c5e42c.png align="center")
 
-Pour avoir plus d'info sur l'exploit, il est aussi possible d'aller dans le répertoire, ici , `/usr/share/metasploit-framework/modules/exploits/multi/samba/` et voir le code de l'exploit, qui est en language Ruby.
+Pour avoir plus d'info sur l'exploit, il est aussi possible d'aller dans le répertoire, ici , `/usr/share/metasploit-framework/modules/exploits/multi/samba/` et voir le code de l'exploit, qui est en langage Ruby.
 
 Une fois, dans l'exploit, avec la commande `use 3` ou `use exploit/multi/samba/usermap_script`, on peut donc voir sa description et ensuite faire la commande `info` pour des informations sur l'exploi.
 
