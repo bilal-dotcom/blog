@@ -81,6 +81,8 @@ Vous pouvez accéder à la liste des payloads depuis msfconsole, avec la command
 show payloads
 ```
 
+Après avoir sélectionné un exploit, vous pouvez utiliser `show payloads` pour afficher une liste de tous les payloads <mark>compatibles </mark> avec cet exploit. Si vous n’avez pas sélectionner un exploit avant, il affichera juste la liste de tous les payloads.
+
 ### **Exploitation des Vulnérabilités avec Metasploit**
 
 Une fois à l'intérieur de la configuration d’un exploit avec la commande `use`, il est possible de lister toutes les options avec la commande suivante:
