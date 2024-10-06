@@ -16,7 +16,7 @@ Following reconnaissance, the scanning phase is a pivotal step in penetration te
 
 NMap, short for "Network Mapper" is a popular network scanning tool used in penetration testing. It performs host discovery, port scanning, and service enumeration to gather information about the target system's network infrastructure.
 
-The Nmap command is hi\`ghly versatile, allowing users to customize scans based on specific needs and objectives.
+The Nmap command is highly versatile, allowing users to customize scans based on specific needs and objectives.
 
 1. `nmap <ip adress>`
     
