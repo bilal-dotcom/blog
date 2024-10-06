@@ -89,7 +89,7 @@ Il se peut, comme dans ce cas, que la recherche ne nous retourne pas directement
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725492404939/ed892143-71b4-46b6-9fc1-df136ab559ec.png align="center")
 
-Aussi, sur le site de base de données des exploit on a pas plus d'informations.
+Aussi, sur le site de base de données des exploit, on a pas plus d'informations.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725493978208/5250697d-af36-470b-91bd-fa20dce9ce36.png align="center")
 
