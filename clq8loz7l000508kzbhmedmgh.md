@@ -57,7 +57,7 @@ Nikto is an open-source web server scanner that performs comprehensive tests aga
 
 Nikto can be downloaded from the official GitHub repository [Nikto GitHub](https://github.com/sullo/nikto).
 
-1. `nikto <ip adress>`
+1. `nikto -h <ip adress>`
     
     By default, Nikto performs a basic scan against the specified target. This includes checks for common vulnerabilities, outdated server software, and misconfigurations.
     
