@@ -169,7 +169,7 @@ Une fois connecté, on peut accéder à des fichiers importants :
     
     * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728235087383/d4143c4a-55d5-43db-87ac-55ef0e1aecdf.png align="center")
         
-        Le premier champ après le nom d’utilisateur est le mot de passe chiffré. Le préfixe `$1` indique que le mdp est chiffré avec MD5. Le signe `*` au niveau du mot de passe indique que l’utilisateur ne peut pas se connecter avec un mot de passe et le signe `!` indique que le compte est verrouillé.
+        Le premier champ après le nom d’utilisateur est le mot de passe chiffré. Le préfixe `$1` indique que le mdp est chiffré avec MD5. Il existe d’autres types algorithmes de hachage comme SHA-256, SHA-512, scrypt et bien d’autres. Le signe `*` au niveau du mot de passe indique que l’utilisateur ne peut pas se connecter avec un mot de passe et le signe `!` indique que le compte est verrouillé.
         
     * Le deuxième champ indique la dernière modification du mot de passe, exprimée en jours depuis le 1er janvier 1970.
         
