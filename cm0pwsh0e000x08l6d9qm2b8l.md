@@ -135,7 +135,7 @@ En faisant un search avec un des termes retourné par le searchsploit, on peut d
 
 Pour avoir plus d'info sur l'exploit, il est aussi possible d'aller dans le répertoire, ici , `/usr/share/metasploit-framework/modules/exploits/multi/samba/` et voir le code de l'exploit, qui est en langage Ruby.
 
-Une fois, dans l'exploit, avec la commande `use 3` ou `use exploit/multi/samba/usermap_script`, on peut donc voir sa description et ensuite faire la commande `info` pour des informations sur l'exploi.
+Une fois, dans l'exploit, avec la commande `use 3` ou `use exploit/multi/samba/usermap_script`, on peut donc voir sa description et ensuite faire la commande `info` pour des informations sur l'exploit.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725460352499/d2348c75-6db6-4c2d-92f2-6b56b88fc1fb.png align="center")
 
