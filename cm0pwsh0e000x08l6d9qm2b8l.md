@@ -151,4 +151,28 @@ On spécifie donc ici l'hôte avec `SET RHOST 192.168.2.20` et ensuite exécuter
 
 On peut voir qu'une session a été ouverte. On est maintenant connecté sur la machine cible en tant que root.
 
+Une fois connecté, on peut accéder à des fichiers importants :
+
+* `cat etc/passwd` : Ce fichier contient des informations sur les utilisateurs, telles que le nom d'utilisateur, l'UID (User ID), le GID (Group ID), le répertoire personnel et le shell par défaut. Chaque ligne représente un utilisateur.
+    
+    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728234675553/738feab8-3033-43ed-9aa0-afb42d5ae727.png align="center")
+        
+        Le premier champ est le nom d'utilisateur. Ici on a root, daemon, bin, msfadmin etc.
+        
+    * Le deuxième champ, généralement x, indique un mot de passe stocké dans le fichier `/etc/shadow`
+        
+    * Le troisième et le quatrième champ indiquent respectivement le user id et le group id. Ici, 0 pour root et 1 pour daemon.
+        
+* `cat /etc/shadow`: Ce fichier contient les mots de passe chiffrés des utilisateurs et accessible uniquement avec un utilisateur ayant des privilèges comme root.
+    
+    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728235087383/d4143c4a-55d5-43db-87ac-55ef0e1aecdf.png align="center")
+        
+        Le premier champ après le nom d’utilisateur est le mot de passe chiffré. Le préfixe `$1` indique que le mdp est chiffré avec MD5. Le signe `*` au niveau du mot de passe indique que l’utilisateur ne peut pas se connecter avec un mot de passe et le signe `!` indique que le compte est verrouillé.
+        
+    * Le deuxième champ indique la dernière modification du mot de passe, exprimée en jours depuis le 1er janvier 1970.
+        
+    
+    Voici quelques d’informations que vous pouvez trouver une fois que vous avez accès à votre machine cible
+    
+
 <mark>Il est important de rappeler que l'utilisation de ces outils doit toujours se faire dans un cadre légal.</mark>
