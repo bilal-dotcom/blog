@@ -165,6 +165,8 @@ Une fois connecté à la machine cibe, on peut accéder à des fichiers importan
         
     * Le troisième et le quatrième champ indiquent respectivement le user id et le group id. Ici, 0 pour root et 1 pour daemon.
         
+    * Le cinquième champ indique le répertoire personnel de l’utilisateur.
+        
 * `cat /etc/shadow`: Ce fichier contient les mots de passe chiffrés des utilisateurs et accessible uniquement avec un utilisateur ayant des privilèges comme root.
     
     * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728235087383/d4143c4a-55d5-43db-87ac-55ef0e1aecdf.png align="center")
