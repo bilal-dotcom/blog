@@ -24,7 +24,7 @@ The Nmap command is highly versatile, allowing users to customize scans based on
     
 2. `nmap -sn [192.168.1.0/24]`
     
-    This is a no port scan or ping scan. Nmap will only look for active hosts within the network, without scanning any ports.
+    This is a no port scan or ping scan. Nmap will only look for active hosts in the subnet 192.168.1.0/24, without scanning any ports.
     
 3. `nmap -sS <ip adress>`
     
