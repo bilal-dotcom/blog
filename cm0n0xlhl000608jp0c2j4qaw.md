@@ -113,7 +113,7 @@ Vous pouvez lister les payloads compatibles avec l’exploit choisi, avec la com
 set payload PATH/TO/PAYLOAD
 ```
 
-Vous pouvez aussi entrez `set payload [PAYLAOD#]` en entrant le numéro du payload après la commande set pour le choisir directement.
+Vous pouvez aussi entrez `set payload [PAYLAOD PAYLOAD_NUMBER]` en entrant le numéro du payload après la commande set pour le choisir directement.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1727885024015/f5c969b2-6bb3-4d6f-8855-3822a1eeab3b.png align="center")
 
