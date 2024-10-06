@@ -67,7 +67,7 @@ On veut trouver ici, une vulnérabilité liée à vstfpd, pour réussir notre at
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725489388211/dfae501e-b585-417b-b9aa-2d9766dea633.png align="center")
 
-On commence par sélectionner l'exploit trouvé en faisant la commande `use 0` ou `use exploit/unix/ftp/vsftpd_234_backdoor`. Dans Metasploit la commandes `info` fournit des informations détaillées sur l'exploit sélectionné et la commande `options` , les paramètres configurables pour l'exploit sélectionné comme l’adresse IP, le port et d’autres paramètres nécessaires pour exécuter l’exploit.
+On commence par sélectionner l'exploit trouvé en faisant la commande `use 0` ou `use exploit/unix/ftp/vsftpd_234_backdoor`. Dans Metasploit la commande `info` fournit des informations détaillées sur l'exploit sélectionné et la commande `options` , les paramètres configurables pour l'exploit sélectionné comme l’adresse IP, le port et d’autres paramètres nécessaires pour exécuter l’exploit.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725489928150/88ac51a9-623e-47f9-b8e8-351b766dafd8.png align="center")
 
