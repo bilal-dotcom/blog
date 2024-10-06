@@ -22,23 +22,27 @@ The Nmap command is hi\`ghly versatile, allowing users to customize scans based 
     
     This will perform a default scan of the system at the given IP address. It will detect open ports and the services running on those ports.
     
-2. `nmap -sS <ip adress>`
+2. `nmap -sn [192.168.1.0/24]`
+    
+    This is a no port scan or ping scan. Nmap will only look for active hosts within the network, without scanning any ports.
+    
+3. `nmap -sS <ip adress>`
     
     This performs a stealthier SYN scan. It is slower but can evade some firewalls and IDS systems.
     
-3. `nmap -sV <ip adress>`
+4. `nmap -sV <ip adress>`
     
     This performs service and version detection to identify the exact services and versions running on open ports.
     
-4. `nmap -A <ip adress>`
+5. `nmap -A <ip adress>`
     
     This performs an aggressive scan that enables OS detection (-O), version detection (-sV), script scanning (-sC) and traceroute (--traceroute).
     
-5. `nmap -p80,443 <ip adress>`
+6. `nmap -p80,443 <ip adress>`
     
     This will scan only port 80 and 443 to check if a web server is running.
     
-6. `nmap — script vuln <ip adress>`
+7. `nmap — script vuln <ip adress>`
     
     This command will look for potentials vulnerabilities on the machine with more informations including the CVE associated. Noted that — before the script in the command is two dashes.
     
