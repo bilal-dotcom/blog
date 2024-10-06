@@ -75,7 +75,7 @@ On définit ensuite la machine cible avec `set RHOSTS 192.168.2.20` et ensuite o
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725490346145/04e6a334-d5ca-4fa7-8360-b93680dcee87.png align="center")
 
-Une session a été établie entre notre machine 192.168.2.98 et la machine cible 192.168.2.20 via les ports 33599 et 6200. On est maintenant direcement connecté sur la machine cible.
+Une session a été établie entre notre machine 192.168.2.98 et la machine cible 192.168.2.20 via les ports 33599 et 6200. On est maintenant directement connecté sur la machine cible.
 
 Il est aussi possible de définir le payload après avoir sélectionné l'exploit et configuré les options. On rappelle que payload est le code qui sera exécuté sur la machine cible une fois l'exploit réussi.Après avoir sélectionné un exploit avec la commande `use`, vous pouvez utiliser `show payloads` pour afficher une liste de tous les payloads <mark>compatibles </mark> avec cet exploit. Il faut maintenant configurer le payload et ses options, LHOST pour l’adresse IP et LPORT pour le port, et ensuite vous exécutez l’exploit.
 
