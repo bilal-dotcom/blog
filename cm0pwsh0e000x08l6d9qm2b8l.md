@@ -83,7 +83,7 @@ Il est aussi possible d'exploiter la vulnérabilité en utilisant le service SSH
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725490675503/877802e1-a842-42bb-9b85-daf8ac845a03.png align="center")
 
-Avec la commande `search openssh 4.7`, on recherche des éléments liés à open ssh et s`earchsploit openssh 4.7` pour des exploits sur openssh.
+Avec la commande `search openssh 4.7`, on recherche des exploits liés à openssh et `searchsploit openssh 4.7` pour des exploits avec des CVE disponibles sur openssh.
 
 Il se peut, comme dans ce cas, que la recherche ne nous retourne pas directement des informations plus ou moins utiles.
 
