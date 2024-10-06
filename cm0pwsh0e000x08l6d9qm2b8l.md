@@ -143,7 +143,7 @@ Il nous donne des détails supplémentaires sur les options à configurer et la 
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725460458656/91f754c5-ad87-499f-8ba9-3e8b35a25f40.png align="center")
 
-L'exploit ici est lié à une vulnérabilité par injection de commandes sur la version de Samba 3.0.20 à 3.0.25rc3. Elle permet donc d'exécuter des commandes arbitraires spécifiant un nom d'utilisateur contenant des caractères méta de shell, sans authentification
+L'exploit ici est lié à une vulnérabilité par injection de commandes sur la version de Samba 3.0.20 à 3.0.25rc3. Elle permet donc d'exécuter des commandes arbitraires spécifiant un nom d'utilisateur contenant des caractères méta de shell, sans authentification.
 
 On spécifie donc ici l'hôte avec `SET RHOST 192.168.2.20` et ensuite exécuter l'exploit avec la commande `exploit` ou la commande `use`.
 
@@ -153,7 +153,7 @@ On peut voir qu'une session a été ouverte. On est maintenant connecté sur la 
 
 ## Post-Exploit
 
-Une fois connecté, on peut accéder à des fichiers importants :
+Une fois connecté à la machine cibe, on peut accéder à des fichiers importants :
 
 * `cat etc/passwd` : Ce fichier contient des informations sur les utilisateurs, telles que le nom d'utilisateur, l'UID (User ID), le GID (Group ID), le répertoire personnel et le shell par défaut. Chaque ligne représente un utilisateur.
     
