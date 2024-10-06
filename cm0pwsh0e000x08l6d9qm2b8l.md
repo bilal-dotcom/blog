@@ -167,11 +167,11 @@ Une fois connecté à la machine cibe, on peut accéder à des fichiers importan
         
     * Le cinquième champ indique le répertoire personnel de l’utilisateur.
         
-* `cat /etc/shadow`: Ce fichier contient les mots de passe chiffrés des utilisateurs et accessible uniquement avec un utilisateur ayant des privilèges comme root.
+* `cat /etc/shadow`: Ce fichier contient les mots de passe chiffrés des utilisateurs et accessibles uniquement avec un utilisateur ayant des privilèges comme root.
     
     * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1728235087383/d4143c4a-55d5-43db-87ac-55ef0e1aecdf.png align="center")
         
-        Le premier champ après le nom d’utilisateur est le mot de passe chiffré. Le préfixe `$1` indique que le mdp est chiffré avec MD5. Il existe d’autres types algorithmes de hachage comme SHA-256, SHA-512, scrypt et bien d’autres. Le signe `*` au niveau du mot de passe indique que l’utilisateur ne peut pas se connecter avec un mot de passe et le signe `!` indique ici que le compte proftpd est verrouillé.
+        Le premier champ après le nom d’utilisateur est le mot de passe chiffré. Le préfixe `$1` indique que le mdp est chiffré avec MD5. Il existe d’autres types algorithmes de hachage comme SHA-256, SHA-512, scrypt et bien d’autres. Le signe `*` au niveau du mot de passe indique que l’utilisateur ne peut pas se connecter avec un mot de passe et le signe `!` indique que le compte est verrouillé.
         
     * Le deuxième champ indique la dernière modification du mot de passe, exprimée en jours depuis le 1er janvier 1970.
         
