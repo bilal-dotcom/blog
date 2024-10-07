@@ -60,7 +60,7 @@ BGP.HE.NET est un service internet de [Hurricane Eletric](https://bgp.he.net/) q
 
 ## ASNmap
 
-ASNmap est un outil de reconnaissance qui permet de retrouver les adresses IP associées à un domaine. Il est surtout utilisé pour avoir des infos sur les réseaux ou les serveurs. Le guide d’installation est disponible sur [Github](https://github.com/projectdiscovery/asnmap).|
+ASNmap est un outil de reconnaissance qui permet de retrouver les adresses IP associées à un domaine. Il est surtout utilisé pour avoir des infos sur les réseaux ou les serveurs. Le guide d’installation est disponible sur [Github](https://github.com/projectdiscovery/asnmap).
 
 Installez d’abord Go sur votre machine avec la commande suivante:
 
