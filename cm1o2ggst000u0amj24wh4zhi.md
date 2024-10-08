@@ -1,5 +1,5 @@
 ---
-title: "La reconnaissance (Recon) lors d'un pentest"
+title: "La reconnaissance lors d'un pentest"
 seoTitle: "Démonstration de quelques techniques de reconnaissance"
 seoDescription: "Apprenez sur la reconnaissance lors d’un pentest avec les outils Check_mdi, ASN, DNSCHEKER, ASRank, BGP.HE.NET, ASNmap, Naabu, et Rustscan"
 datePublished: Sun Sep 29 2024 21:01:48 GMT+0000 (Coordinated Universal Time)
