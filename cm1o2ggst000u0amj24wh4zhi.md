@@ -164,18 +164,24 @@ Vous pouvez le télécharger depuis la bibliothèque officiel sur [Github](https
 
 ### Options
 
-* L’option `-a` spécifie l’adresse ou le domaine cible et l’option -p, pour un ou plusieurs ports spécifiques
+* `rust -a [DOMAINE/IP] -p [PORT,PORT] -b -p`
     
-    ```python
-    rustscan -a [DOMAINE/IP] -p 22,80,445 -- -sV
-    ```
+    * l’option `-a` spécifie l’adresse ou le domine cible
+        
+    * l’option `-p` permet de spécifier un ou plusieurs ports
+        
+    * l’option `-b` limite la bande passante et éviter de surcharger le réseau pendant le scan.
+        
+    * l’option `-g` simplifie l’analyse qui n'affiche que les ports ouverts détectés, sans les détails de Nmap
+        
+* `rust -a [DOMAINE/IP] -- -sV --script vuln`
     
-* RustScan redirige directement ses résultats vers Nmap pour d’autres anlayses. Il est aussi possible de les modifier à votre guise.
-    
-* L’option `-- -sV` passe les résultats à Nmap pour la détection des versions des services. Pour passer des options à Nmap il faut terminer les arguments de RustScan par `--` suivi des options de Nmap.
-    
-* L’option `-b` limite la bande passante et éviter de surcharger le réseau pendant le scan.
-    
+    * l’option `--` termine les arguments de RustScan. Tous les argument suivants sont directement passés à Nmap
+        
+    * l’option `-sV` de Nmap pour active la détection des services et leurs versions sur les ports ouverts
+        
+    * l’option `--script vuln` détecte les vulnérabilités sur les services
+        
 
 Ici on scanne les ports 22,80 et 445 de l’adresse 192.168.2.96. Le double-tiret indique les options sont passées à Nmap, avec l’option -sV, pour détecter la version des services.
 
