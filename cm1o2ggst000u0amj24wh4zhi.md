@@ -160,7 +160,7 @@ go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 
 RustScan est aussi un scanner de ports, écrit en langage Rust, beaucoup plus rapide et capable d’intégrer des outils comme Nmap pour des analyses plus détaillées.
 
-Vous pouvez le télécharger depuis la bibliothèque officiel sur [Github](https://github.com/RustScan/RustScan).
+Vous pouvez accéder au dépôt depuis la biliothèque officiel sur [Github](https://github.com/RustScan/RustScan).
 
 ### Téléchargement sur Kali Linux
 
