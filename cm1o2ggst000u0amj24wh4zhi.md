@@ -200,7 +200,7 @@ RustScan devrait être maintenant installé .
 
 ### Options
 
-* `rustscan -a [DOMAINE/IP] -p [PORT,PORT] -b -p`
+* `rustscan -a [DOMAINE/IP] -p [PORT,PORT] -b -g`
     
     * l’option `-a` spécifie l’adresse ou le domine cible
         
