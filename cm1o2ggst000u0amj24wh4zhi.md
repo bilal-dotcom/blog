@@ -164,7 +164,7 @@ Vous pouvez accéder au dépôt depuis la biliothèque officiel sur [Github](htt
 
 ### Téléchargement sur Kali Linux
 
-Téléchargez le fichier d’nstallation depuis le terminal
+Téléchargez le fichier d’installation depuis le terminal
 
 ```python
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
