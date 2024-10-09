@@ -164,7 +164,7 @@ Vous pouvez le télécharger depuis la biliothèque officiel sur [Github](https:
 
 ### Options
 
-* L’option `-a` spécifie l’adresse ou le domine cible et l’option -p, pour un ou plusieurs ports spécifiques
+* L’option `-a` spécifie l’adresse ou le domaine cible et l’option -p, pour un ou plusieurs ports spécifiques
     
     ```python
     rustscan -a [DOMAINE/IP] -p 22,80
