@@ -170,7 +170,7 @@ Téléchargez le fichier d’installation depuis le terminal
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 ```
 
-Se déplacer vers le dossier Downloads et modifiez le fichier.
+Se déplacer vers le dossier Downloads et modifiez les permissions du fichier installé en le rendant exécutable.
 
 ```python
 cd Downloads
