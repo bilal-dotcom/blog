@@ -167,7 +167,7 @@ Vous pouvez le télécharger depuis la biliothèque officiel sur [Github](https:
 * L’option `-a` spécifie l’adresse ou le domine cible et l’option -p, pour un ou plusieurs ports spécifiques
     
     ```python
-    rust -a [DOMAINE/IP] -p 22,80
+    rustscan -a [DOMAINE/IP] -p 22,80
     ```
     
 * RustScan redirige directement ses résultats vers Nmap pour d’autres anlayses. Il est aussi possible de les modifier à votre guise.
