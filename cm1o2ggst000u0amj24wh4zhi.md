@@ -167,12 +167,12 @@ Vous pouvez le télécharger depuis la bibliothèque officiel sur [Github](https
 * L’option `-a` spécifie l’adresse ou le domaine cible et l’option -p, pour un ou plusieurs ports spécifiques
     
     ```python
-    rustscan -a [DOMAINE/IP] -p 22,80
+    rustscan -a [DOMAINE/IP] -p 22,80,445 -- -sV
     ```
     
 * RustScan redirige directement ses résultats vers Nmap pour d’autres anlayses. Il est aussi possible de les modifier à votre guise.
     
-* L’option -- -sV passe les résultats à Nmap pour la détection des versions des services
+* L’option `-- -sV` passe les résultats à Nmap pour la détection des versions des services. Pour passer des options à Nmap il faut terminer les arguments de RustScan par `--` suivi des options de Nmap.
     
 * L’option `-b` limite la bande passante et éviter de surcharger le réseau pendant le scan.
     
