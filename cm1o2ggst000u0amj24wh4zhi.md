@@ -160,7 +160,43 @@ go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 
 RustScan est aussi un scanner de ports, écrit en langage Rust, beaucoup plus rapide et capable d’intégrer des outils comme Nmap pour des analyses plus détaillées.
 
-Vous pouvez le télécharger depuis la bibliothèque officiel sur [Github](https://github.com/RustScan/RustScan). Vous pouvez suivre un article de Gokul sur Medium qui détaile l’installation [ici](https://gokulelango.medium.com/how-install-rustscan-in-kalilinux-5da3663d33b7).
+Vous pouvez le télécharger depuis la bibliothèque officiel sur [Github](https://github.com/RustScan/RustScan).
+
+### Téléchargement sur Kali Linux
+
+Téléchargez le fichier dìnstallation depuis le terminal
+
+```python
+wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
+```
+
+Se déplacer vers le dossier Downloads et modifiez le fichier.
+
+```python
+cd Downloads
+sudo chmod +x rustscan_2.0.1_amd64.deb
+```
+
+Installez le package Debian
+
+```python
+sudo dpkg -i rustscan_2.0.1_amd64.deb
+```
+
+En cas de problèmes, exécutez la commande suivante:
+
+```python
+sudo apt update
+sudo apt upgrade
+```
+
+Si vous rencontrez des problèmes de dépendances, exécutez la commande suivante :
+
+```python
+sudo apt-get install -f
+```
+
+RustScan devrait être maintenant installé .
 
 ### Options
 
