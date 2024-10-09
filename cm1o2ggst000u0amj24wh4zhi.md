@@ -137,7 +137,7 @@ go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
     naabu -host [DOMAIN] -o output.json -json
     ```
     
-* L’option `-nmap-cli` permet d’exécuter la commande nmap directement sur les résultats obtenus. Nmap doit être déjà installé pour que ca fonctionne.|
+* L’option `-nmap-cli` permet d’exécuter la commande nmap directement sur les résultats obtenus. Nmap doit être déjà installé pour que ca fonctionne.
     
     ```python
     naabu -host [DOMAIN] -p [PORTS] -nmap-cli 'nmap -sV -Pn'
