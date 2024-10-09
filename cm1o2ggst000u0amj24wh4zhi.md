@@ -200,7 +200,7 @@ RustScan devrait être maintenant installé .
 
 ### Options
 
-* `rust -a [DOMAINE/IP] -p [PORT,PORT] -b -p`
+* `rustscan -a [DOMAINE/IP] -p [PORT,PORT] -b -p`
     
     * l’option `-a` spécifie l’adresse ou le domine cible
         
@@ -210,7 +210,7 @@ RustScan devrait être maintenant installé .
         
     * l’option `-g` simplifie l’analyse qui n'affiche que les ports ouverts détectés, sans les détails de Nmap
         
-* `rust -a [DOMAINE/IP] -- -sV --script vuln`
+* `rustscan -a [DOMAINE/IP] -- -sV --script vuln`
     
     * l’option `--` termine les arguments de RustScan. Tous les argument suivants sont directement passés à Nmap
         
@@ -219,7 +219,7 @@ RustScan devrait être maintenant installé .
     * l’option `--script vuln` détecte les vulnérabilités sur les services
         
 
-Ici on scanne les ports 22,80 et 445 de l’adresse 192.168.2.96. Le double-tiret indique les options sont passées à Nmap, avec l’option -sV, pour détecter la version des services.
+Ici on scan les ports 22,80 et 445 de l’adresse 192.168.2.96. Le double-tiret indique les options sont passées à Nmap, avec l’option -sV, pour détecter la version des services.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1727278498585/6361b167-60f4-4f3d-a954-9a44ed375139.png align="center")
 
