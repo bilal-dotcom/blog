@@ -206,7 +206,7 @@ RustScan devrait être maintenant installé .
         
     * l’option `-p` permet de spécifier un ou plusieurs ports
         
-    * l’option `-b` limite la bande passante et éviter de surcharger le réseau pendant le scan.
+    * l’option `-b` permet de limiter la bande passante et éviter de surcharger le réseau pendant le scan.
         
     * l’option `-g` simplifie l’analyse qui n'affiche que les ports ouverts détectés, sans les détails de Nmap
         
