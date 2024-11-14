@@ -212,7 +212,7 @@ RustScan devrait être maintenant installé .
         
 * `rustscan -a [DOMAINE/IP] -- -sV --script vuln`
     
-    * l’option `--` termine les arguments de RustScan. Tous les argument suivants sont directement passés à Nmap
+    * l’option `--` termine les arguments de RustScan. Tous les arguments suivants sont directement passés à Nmap
         
     * l’option `-sV` de Nmap pour active la détection des services et leurs versions sur les ports ouverts
         
