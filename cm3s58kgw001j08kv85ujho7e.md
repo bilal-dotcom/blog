@@ -106,6 +106,6 @@ On passe donc de l’affichage de l’image au dessus à ceux en dessous avec la
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1732241262762/c63c29e9-ff72-40e2-bc88-12c698f62fec.png align="center")
 
-OneForAll est un outil essnetiel en matière d’énumération de sous-domaines de part sa capacité à collecter le sous-domaines de manière rapide et précise.
+OneForAll est un outil essentiel en matière d’énumération de sous-domaines de part sa capacité à collecter le sous-domaines de manière rapide et précise.
 
 <mark>À noter, qu’il est important de rappeler que l'utilisation de cet outil doit toujours se faire dans un cadre légal.</mark>
