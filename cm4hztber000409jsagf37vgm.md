@@ -1,12 +1,12 @@
 ---
 title: "BugBounty"
 seoTitle: "Techniques de Bug Bounty : Recherche, Scanning, et Exploitation"
-seoDescription: "Découvrez des outils de Bug Bounty pour l'information gathering, l'énumération de sous-domaines, le scan de vulnérabilités et les attaques par brute force. "
+seoDescription: "Découvrez des outils de Bug Bounty pour l'information gathering, l'énumération de sous-domaines, le scan de vulnérabilités et les attaques par brute force."
 datePublished: Tue Dec 10 2024 05:00:18 GMT+0000 (Coordinated Universal Time)
 cuid: cm4hztber000409jsagf37vgm
 slug: bugbounty
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/3TU34jaW88k/upload/9d299f4cd3a5dab554dd7f2f4fb2f1df.jpeg
-tags: cybersecurity-1, cybersec, bugbounty, bugbountytips, gobuster, fluf, naabu, hakrawler, subzy
+tags: hashnode, 2articles1week, cybersecurity-1, cybersec, bugbounty, bugbountytips, gobuster, fluf, naabu, hakrawler, subzy
 
 ---
 
