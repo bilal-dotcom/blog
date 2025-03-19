@@ -383,7 +383,7 @@ On obtient le résultat suivant:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742410049503/f2badc1d-5c96-49e9-942b-f4619dbfbbcd.png align="center")
 
-* `Accuracy: 0.67` signifie que **67 % des e-mails** ont été correctement classés comme spam ou non-spam. Donc, sur 10 e-mails, 6-7 sont correctement classés.
+* `Accuracy: 0.67` signifie que 67 % des e-mails ont été correctement classés comme spam ou non-spam. Donc, sur 10 e-mails, 6-7 sont correctement classés.
     
 * `Precison: 1.00` signifie que 100 % des e-mails marqués comme spam sont vraiment des spams.
     
