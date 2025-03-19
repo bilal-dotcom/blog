@@ -351,7 +351,7 @@ model = eval_model(X, y)
 
 ### **Explication du** **code**
 
-Ce code permettra d’entraîner le modèle Naive Bayes pour classifier les courriels en spam et non-spam, et ainsi évaluer ses performances. On utilise lesdonnées afin d’entraîner le modèle choisi. Vu qu’on souhaite détecter les courriels qui sont des spam de ceux qui ne le sont pas, il faut donc lui apprendre les caractéristiques des emails classés comme spam ou non.
+Ce code permettra d’entraîner le modèle Naive Bayes pour classifier les courriels en spam et non-spam, et ainsi évaluer ses performances. On utilise les données afin d’entraîner le modèle choisi. Vu qu’on souhaite détecter les courriels qui sont des spam de ceux qui ne le sont pas, il faut donc lui apprendre les caractéristiques des emails classés comme spam ou non.
 
 * `X` contient les vecteurs TF-IDF des courriels, qui est obtenu après la vectorisation. Le texte est transformé en valeurs numériques à l’aide de TF-IDF pour que le modèle puisse l’analyser.
     
