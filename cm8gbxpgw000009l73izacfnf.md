@@ -361,7 +361,7 @@ Ce code permettra d’entraîner le modèle Naive Bayes pour classifier les cour
     
 * `y_train` représente les étiquettes, 1 pour spam et 0 pour non-spam, pour chaque instance de `X_train`
     
-* `test_size=0.`3 signifie que 30% des données seront utilisés pour le test et le 70% restant pour l’entraînement
+* `test_size=0.3` signifie que 30% des données seront utilisés pour le test et le 70% restant pour l’entraînement
     
 * la fonction `model.predict` sert à prédire les étiquettes des courriels dans la variable X\_test
     
