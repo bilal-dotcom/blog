@@ -428,7 +428,7 @@ On obtient le résultat suivant:
 
 # Conclusion
 
-Dans ce projet, nous avons utilisé un modèle **Naive Bayes** pour classifier les e-mails en **spam** et **non-spam**. Après avoir vectorisé les e-mails avec la technique **TF-IDF**, le modèle a été entraîné sur des données annotées pour apprendre à reconnaître les spams. Grâce à l’apprentissage automatique, le modèle peut ensuite prédire automatiquement si de nouveaux e-mails sont des spams. N’hésitez pas à partager vos avis :)
+Dans ce projet, nous avons utilisé un modèle Naive Bayes pour classifier les e-mails en spam et non-spam. Après avoir vectorisé les e-mails avec la technique TF-IDF, le modèle a été entraîné sur des données annotées pour apprendre à reconnaître les spams. Grâce à l’apprentissage automatique, le modèle peut ensuite prédire automatiquement si de nouveaux e-mails sont des spams. N’hésitez pas à partager vos avis :)
 
 # Source
 
