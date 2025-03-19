@@ -32,7 +32,7 @@ Pour commencer, on veut récupérer des emails, qu'on va pouvoir charger dans le
 
 Pour cela, on peut chosir parmi plusieurs sources de données suivantes:
 
-* [SpamAssasin](https://spamassassin.apache.org/) : un projet open source anti-spam qui offre la possibilité d’identifer, flitrer et bloquer des courriels indésirables. Il utilise des analyses heuristiques<sup>1 </sup> sur les en-têtes et les corps des courriels pour l’analyse.
+* [SpamAssasin](https://spamassassin.apache.org/) : un projet open source anti-spam qui offre la possibilité d’identifer, flitrer et bloquer des courriels indésirables. Il utilise des analyses heuristiques sur les en-têtes et les corps des courriels pour l’analyse.
     
 * [Enron Email Dataset](https://www.cs.cmu.edu/~./enron/) : une base de données de milliers de courriels provenant des employés de l’entreprise Enron.
     
@@ -41,7 +41,7 @@ Pour cela, on peut chosir parmi plusieurs sources de données suivantes:
 
 ### Nettoyage
 
-Plusieurs éléments des emails qui ne seront pas utiles lors de la classification seront supprimés. Il s’agit par exemple des en-têtes **(“From: “ , “To: “)** indiquant l’expéditeur et le récepteur, des liens et URLs ou encore des pièces jointes. On se concentre juste sur le contenu du courriel et aussi les éléments de l’en-tête comme **l’adrresse de l’expéditeur** qui peuvent être utiles pour détecter des modèles de spam. Par la suite, le texte entier du courriel sera converti **en minuscules** car pour plusieurs modèles de machine learning, les mots “bonjour“ et “Bonjour“, sont deux mots différents. Les stopwords² sont aussi supprimés vu qu’ils n’influent pas directement sur la classification de l’email en fonction de son contenu.
+Plusieurs éléments des emails qui ne seront pas utiles lors de la classification seront supprimés. Il s’agit par exemple des en-têtes **(“From: “ , “To: “)** indiquant l’expéditeur et le récepteur, des liens et URLs ou encore des pièces jointes. On se concentre juste sur le contenu du courriel et aussi les éléments de l’en-tête comme l’adrresse de l’expéditeur qui peuvent être utiles pour détecter des modèles de spam. Par la suite, le texte entier du courriel sera converti **en minuscules** car pour plusieurs modèles de machine learning, les mots “bonjour“ et “Bonjour“, sont deux mots différents. Les stopwords sont aussi supprimés vu qu’ils n’influent pas directement sur la classification de l’email en fonction de son contenu.
 
 Il existe plusieurs manières permettant de nettoyer le courriel, dépendemment de la facon dont on veut que le modèle fonctionne. On pourrait par exemple supprimer les liens ou les URLs ou les garder. Ces liens peuvent parfois êtres des indicateurs de spam assez flagrants; comme le domaine ou des liens suspects.
 
@@ -212,7 +212,7 @@ La vectorisation est la prochaine étape. Elle consiste à transformer les mots 
 
 Il existe plusieurs méthodes de vectorisation de texte:
 
-* **Bag of Words (BoW)** : elle consiste à compter le nombre d’occurence d’un mot dans le texte au complet. Chaque mot est donc associé à une valeur numérique qui représente le nombre de fois où il apparaît dans le texte. Chaque phrase devient un **vecteur** basé sur la fréquence de ces mots.
+* **Bag of Words (BoW)** : elle consiste à compter le nombre d’occurence d’un mot dans le texte au complet. Chaque mot est donc associé à une valeur numérique qui représente le nombre de fois où il apparaît dans le texte. Chaque phrase devient un vecteur basé sur la fréquence de ces mots.
     
     Prenons l’exemple des deux phrases suivantes: “Je mange du pain“ et “Le pain du boulanger“. Un vocabulaire est d’abord crée pour tous les mots dans les deux phrases.
     
@@ -222,7 +222,7 @@ Il existe plusieurs méthodes de vectorisation de texte:
     
     **Vecteur 2** : \[0, 0, 1, 1, 1, 1\]
     
-* **TF-IDF (Term Frequency - Inverse Document Frequency)**: elle consiste à déterminer l’importance d’un mot dans un document en fonction de sa fréquence dans le texte et de sa rareté dans l’ensemble du corpus³ . Elle combine deux mesures:
+* **TF-IDF (Term Frequency - Inverse Document Frequency)**: elle consiste à déterminer l’importance d’un mot dans un document en fonction de sa fréquence dans le texte et de sa rareté dans l’ensemble du corpus . Elle combine deux mesures:
     
     * **Term Frequency (TF)** est la fréquence d’un mot dans un texte. Donc plus un mot est comptabilisé dans un texte, plus sa valeur **TF** est élevée.
         
@@ -439,10 +439,3 @@ Dans ce projet, nous avons utilisé un modèle **Naive Bayes** pour classifier l
 * [Rec](https://inside-machinelearning.com/recall-precision-f1-score/#Recall)[all, Prec](http://model.fit/)[ision, F1 Score - Explication Simple Métrique en ML](https://inside-machinelearning.com/recall-precision-f1-score/#Recall)
     
 * [NLTK stop words - Python Tutorial](https://pythonspot.com/nltk-stop-words/)
-    
-
-###### 1 Un heuristique est une méthode qui sert a prendre des décisions efficacement en se basant sur une expérience ou une sorte d’approximation.
-
-###### 2 Les stopwords sont des mots qui n’ont pas de réelles significations et sont souvent ignorés lors du traitement de texte. Ce sont généralement des pronoms, des prépositions, des conjonctions comme “le“, “avec“, “et“, “or“ etc..
-
-###### 3 Un corpus est un ensemble de texte utilisé pour analyser ou entraîner un modèle d'intelligence artificielle. Un corpus peut contenir des textes, des articles, des livres, des transcriptions écrites etc.
