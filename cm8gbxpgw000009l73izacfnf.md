@@ -41,7 +41,7 @@ Pour cela, on peut chosir parmi plusieurs sources de données suivantes:
 
 ### Nettoyage
 
-Plusieurs éléments des emails qui ne seront pas utiles lors de la classification seront supprimés. Il s’agit par exemple des en-têtes **(“From: “ , “To: “)** indiquant l’expéditeur et le récepteur, des liens et URLs ou encore des pièces jointes. On se concentre juste sur le contenu du courriel et aussi les éléments de l’en-tête comme l’adrresse de l’expéditeur qui peuvent être utiles pour détecter des modèles de spam. Par la suite, le texte entier du courriel sera converti **en minuscules** car pour plusieurs modèles de machine learning, les mots “bonjour“ et “Bonjour“, sont deux mots différents. Les stopwords sont aussi supprimés vu qu’ils n’influent pas directement sur la classification de l’email en fonction de son contenu.
+Plusieurs éléments des emails qui ne seront pas utiles lors de la classification seront supprimés. Il s’agit par exemple des en-têtes **(“From: “ , “To: “)** indiquant l’expéditeur et le récepteur, des liens et URLs ou encore des pièces jointes. On se concentre juste sur le contenu du courriel et aussi les éléments de l’en-tête comme l’adrresse de l’expéditeur qui peuvent être utiles pour détecter des modèles de spam. Par la suite, le texte entier du courriel sera converti en minuscules car pour plusieurs modèles de machine learning, les mots “bonjour“ et “Bonjour“, sont deux mots différents. Les stopwords sont aussi supprimés vu qu’ils n’influent pas directement sur la classification de l’email en fonction de son contenu.
 
 Il existe plusieurs manières permettant de nettoyer le courriel, dépendemment de la facon dont on veut que le modèle fonctionne. On pourrait par exemple supprimer les liens ou les URLs ou les garder. Ces liens peuvent parfois êtres des indicateurs de spam assez flagrants; comme le domaine ou des liens suspects.
 
@@ -224,9 +224,9 @@ Il existe plusieurs méthodes de vectorisation de texte:
     
 * **TF-IDF (Term Frequency - Inverse Document Frequency)**: elle consiste à déterminer l’importance d’un mot dans un document en fonction de sa fréquence dans le texte et de sa rareté dans l’ensemble du corpus . Elle combine deux mesures:
     
-    * **Term Frequency (TF)** est la fréquence d’un mot dans un texte. Donc plus un mot est comptabilisé dans un texte, plus sa valeur **TF** est élevée.
+    * **Term Frequency (TF)** est la fréquence d’un mot dans un texte. Donc plus un mot est comptabilisé dans un texte, plus sa valeur TF est élevée.
         
-    * **Inverse Document Frequency (IDF)** évalue l’importance d’un mot dans le corpus en tenant compte de sa rareté dans celui ci. Donc, moins un mot apparaît, plus sa valeur **IDF** est élevée.
+    * **Inverse Document Frequency (IDF)** évalue l’importance d’un mot dans le corpus en tenant compte de sa rareté dans celui ci. Donc, moins un mot apparaît, plus sa valeur IDF est élevée.
         
 
 Dans le cas de notre exercice pour le modèle qui détecte les spams, il est donc plus efficace d’utiliser **TF-IDF**.
@@ -353,11 +353,11 @@ model = eval_model(X, y)
 
 Ce code permettra d’entraîner le modèle Naive Bayes pour classifier les courriels en spam et non-spam, et ainsi évaluer ses performances. On utilise lesdonnées afin d’entraîner le modèle choisi. Vu qu’on souhaite détecter les courriels qui sont des spam de ceux qui ne le sont pas, il faut donc lui apprendre les caractéristiques des emails classés comme spam ou non.
 
-* `X` contient les vecteurs **TF-IDF** des courriels, qui est obtenu après la vectorisation. Le texte est transformé en valeurs numériques à l’aide de **TF-IDF** pour que le modèle puisse l’analyser.
+* `X` contient les vecteurs TF-IDF des courriels, qui est obtenu après la vectorisation. Le texte est transformé en valeurs numériques à l’aide de TF-IDF pour que le modèle puisse l’analyser.
     
 * `y` est la liste des étiquettes (labels) associées aux e-mails
     
-* `X_train` représente les emails transformés en vecteurs avec la technique de vectorisation **TF-IDF**
+* `X_train` représente les emails transformés en vecteurs avec la technique de vectorisation TF-IDF
     
 * `y_train` représente les étiquettes, 1 pour spam et 0 pour non-spam, pour chaque instance de `X_train`
     
@@ -376,7 +376,7 @@ Voici un détail des fonctions d’évaluation:
     
 * `recall_score` mesure le pourcentage de positifs prédits par le modèle. Il indique parmi tout les courriels qui sont réellement du spam, combien ont été correctement détectés.
     
-* `f1_score` calcule la moyenne harmonique entre la précision (precision) et le rappel (recall). C’est une métrique qui permet de donner une évaluation sur la performance du modèle. Un **F1 score** de 1 indique une parfaite précision et rappel, alors qu'un score de 0 indique que le modèle a échoué à prédire les résultats attendus.
+* `f1_score` calcule la moyenne harmonique entre la précision (precision) et le rappel (recall). C’est une métrique qui permet de donner une évaluation sur la performance du modèle. Un F1 score de 1 indique une parfaite précision et rappel, alors qu'un score de 0 indique que le modèle a échoué à prédire les résultats attendus.
     
 
 On obtient le résultat suivant:
