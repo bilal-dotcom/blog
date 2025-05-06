@@ -10,7 +10,13 @@ tags: shell, cybersecurity-1, tryhackme, tryhackme-walkthrough, cheesectfv10
 
 ---
 
-Lien de la room: [TryHackMe | Cheese CTF](https://tryhackme.com/room/cheesectfv10)
+Lien de la room: [TryHackMe | Chese CTF](https://tryhackme.com/room/cheesectfv10)
+
+# Énumération
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746549859868/eeba2534-e13f-4180-87dc-15d04525f83a.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746549887341/b953e0e6-86f7-4548-9f25-46e2840b248b.png align="center")
 
 # Obtenir l’accès shell
 
