@@ -143,3 +143,19 @@ On a arrive donc à se connecter au compte `comte` et on obtient le flag.
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642243905/677b07a0-477f-4c2a-9aa1-c37b1556f7d7.png align="center")
 
 # Flag root.txt
+
+On commence par la commande `sudo -l` pour afficher les commandes privilèges que l’utilisateur comte peut exécuter via sudo.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746646645464/8afcbef2-68eb-48f6-83ef-1551207a2fd9.png align="center")
+
+On voit qu’on peut exécuter des commandes `systemctl` sans avoir à fournir de mot de passe. On peut (re)démarrer, activer le service `exploit.timer` ou recharger les fichiers de configuration des services systemd via `daemon-reload`.
+
+Une unité `.timer` est utilisée pour planifier des tâches. Si `exploit.timer` est donc mal configurée, on peut l’exploiter.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746648740051/8ceed75d-45ed-4d97-9b27-2894ec00b4a2.png align="center")
+
+Le fichier de configuration `exploit.timer` est incomplet. Au niveau de la section `Timer`, le champ `OnBootSec` spécifie un délai après le démarrage du système avant que la minuterie ne s'active.
+
+Le fichier `exploit.service` est bien configuré: c’est un service de type `oneshot`, il exécute une commande unique et se termine. Elle exécute un script bash qui copie `/usr/bin/xxd` dans `/opt/xxd` et modifie ses permissions (+sx). Cela signifie que le binaire `/opt/xxd` sera exécuté avec les privilèges de son propriétaire, qui est `root`.
+
+Puisqu’on peut modifier le fichier `exploit.timer`, on y ajoutera une valeur à `OnBootSec=` pour activer la minuterie, ce qui déclenchera l'exécution de `exploit.service`.
