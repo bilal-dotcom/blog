@@ -102,4 +102,44 @@ On veut lire le contenu du fichier user.txt
 
 Il faut donc trouver un moyen de pouvoir lire le contenu du fichier `user.txt`. Seul le propriétaire `comte` a le droit de lire et écrire dans le fichier. Vu qu’on est connecté à `www-data`, on a aucun droit.
 
+On essaiera de vérifier si `www-data` n’a pas accès à d’autres fichiers ou répertoires.
+
+```bash
+find /home/comte -type f -readable -writable
+```
+
+Cette commande permet de lister les fichiers dans le répertoire `/home/comte` et les sous-répertoires, que l’utilisateur `www-data` peut lire (-readable) et écrire (-writable).
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746640001975/81188dc6-acc5-4a33-b148-cd4c365e96e2.png align="center")
+
+On peut donc voir que le fichier `authorized_keys` dans le répertoire `/.ssh` peut être lisible et modifiable par `www-data`.
+
+Ce fichier est composant du mécanisme d’authentification par clé publiques de SSH. Il contient une liste de clés publiques SSH appartenant aux utilisateurs autorisés à se connecter à un compte spécifique. Il fonctionne avec une clé privée, qui est sur la machine de l’utilisateur qui se connecte.
+
+Voici un schéma qui illustre le fonctionnement de la connection SSH par clé publiques.
+
+Sur la machine principale, on génère une paire de clé avec la commande `ssh-keygen -t rsa`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746641847543/328ec365-afe3-45b9-9efd-8ee996d561b7.png align="center")
+
+On obtient une clé privée (key\_rsa) et la clé publique associée (key\_rsa.pub).
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746643650075/beb7c51c-a5b8-4a65-ba70-dbcf34bbc76f.png align="center")
+
+Il faut ensuite copier le contenu de la clé publique dans le fichier `authorised_keys` de la machine cible afin dese connecter au compte `comte` depuis la machine principale via SSH.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642068184/5ad91320-1162-41c2-a33a-731dffbb60a5.png align="center")
+
+Sur la machine principale sur laquelle la paire de clés a été générée, lancer la connexion ssh en utilisant la clé privée.
+
+```bash
+ssh -i key_rsa comte@10.10.46.126
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642211249/e31cf5fa-7c8a-4ce6-b327-087961a17ed0.png align="center")
+
+On a arrive don
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642243905/677b07a0-477f-4c2a-9aa1-c37b1556f7d7.png align="center")
+
 # Flag root.txt
