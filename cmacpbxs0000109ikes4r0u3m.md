@@ -118,6 +118,23 @@ Ce fichier est composant du mécanisme d’authentification par clé publiques d
 
 Voici un schéma qui illustre le fonctionnement de la connection SSH par clé publiques.
 
+```mermaid
+flowchart TB
+    A[www-data trouve authorized_keys modifiable] --> B[Attaquant génère paire de clés SSH]
+    B --> C[Clé privée key_rsa conservée en local]
+    B --> D[Clé publique key_rsa.pub exportée]
+    D --> E[Injection de la clé publique dans /home/comte/.ssh/authorized_keys]
+    E --> F[SSH-server lit authorized_keys]
+    F --> G[Client SSH propose la clé privée]
+    G --> H{Correspondance clé privée ↔ clé publique ?}
+    H -- Oui --> I[Connexion réussie en tant que comte]
+    I --> J[Lecture de user.txt, obtention du flag]
+    H -- Non --> K[Échec d’authentification]
+
+```
+
+À noter que dans le cas d’une authentification par clé SSH, on a pas besoin du mot de passe de l’utilisateur car SSH utilise la correspondance entre la clé privée et la clé publique placée dans le fichier `authorized_keys` de `comte`.
+
 Sur la machine principale, on génère une paire de clé avec la commande `ssh-keygen -t rsa`
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746641847543/328ec365-afe3-45b9-9efd-8ee996d561b7.png align="center")
@@ -138,7 +155,7 @@ ssh -i key_rsa comte@10.10.46.126
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642211249/e31cf5fa-7c8a-4ce6-b327-087961a17ed0.png align="center")
 
-On a arrive don
+On a arrive donc à se connecter au compte `comte` et on obtient le flag.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746642243905/677b07a0-477f-4c2a-9aa1-c37b1556f7d7.png align="center")
 
