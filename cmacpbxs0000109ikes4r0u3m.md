@@ -119,7 +119,6 @@ Ce fichier est composant du mécanisme d’authentification par clé publiques d
 Voici un schéma qui illustre le fonctionnement de la connection SSH par clé publiques.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50}}}%%
 flowchart TB
     A[Fichier authorized_keys modifiable] --> B[Paire de clés SSH générée]
     B --> C[Clé privée conservée en local]
