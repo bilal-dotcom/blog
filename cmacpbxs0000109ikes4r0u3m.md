@@ -116,23 +116,6 @@ On peut donc voir que le fichier `authorized_keys` dans le répertoire `/.ssh` p
 
 Ce fichier est composant du mécanisme d’authentification par clé publiques de SSH. Il contient une liste de clés publiques SSH appartenant aux utilisateurs autorisés à se connecter à un compte spécifique. Il fonctionne avec une clé privée, qui est sur la machine de l’utilisateur qui se connecte.
 
-Voici un schéma qui illustre le fonctionnement de la connection SSH par clé publiques.
-
-```mermaid
-flowchart TB
-    A[Fichier authorized_keys modifiable] --> B[Paire de clés SSH générée]
-    B --> C[Clé privée conservée en local]
-    B --> D[Clé publique exportée]
-    D --> E[Injection de la clé publique dans /home/comte/.ssh/authorized_keys]
-    E --> F[SSH-server lit authorized_keys]
-    F --> G[Client SSH propose la clé privée]
-    G --> H{Correspondance clé privée ↔ clé publique ?}
-    H -- Oui --> I[Connexion réussie en tant que comte]
-    I --> J[Lecture de user.txt, obtention du flag]
-    H -- Non --> K[Échec d’authentification]
-
-```
-
 À noter que dans le cas d’une authentification par clé SSH, on a pas besoin du mot de passe de l’utilisateur car SSH utilise la correspondance entre la clé privée et la clé publique placée dans le fichier `authorized_keys` de `comte`.
 
 Sur la machine principale, on génère une paire de clé avec la commande `ssh-keygen -t rsa`
