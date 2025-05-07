@@ -16,9 +16,17 @@ La room n’a pas été complétée en une fois, donc il y a plusieurs adresses 
 
 # Énumération
 
+Le résultat du scan Nmap sur la machine sort presque tous les ports ouverts. Cne n’est donc pas une piste envisageable.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746657167021/e05065ec-a98b-4c16-9ba7-320fe67c1ef1.png align="center")
+
+En regardant de plus près le port 80, on a une interface, et on y voit une page de login.
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746549859868/eeba2534-e13f-4180-87dc-15d04525f83a.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746549887341/b953e0e6-86f7-4548-9f25-46e2840b248b.png align="center")
+
+On essaie ici de l’injection SQL
 
 # Obtenir l’accès shell
 
