@@ -159,3 +159,45 @@ Le fichier de configuration `exploit.timer` est incomplet. Au niveau de la secti
 Le fichier `exploit.service` est bien configuré: c’est un service de type `oneshot`, il exécute une commande unique et se termine. Elle exécute un script bash qui copie `/usr/bin/xxd` dans `/opt/xxd` et modifie ses permissions (+sx). Cela signifie que le binaire `/opt/xxd` sera exécuté avec les privilèges de son propriétaire, qui est `root`.
 
 Puisqu’on peut modifier le fichier `exploit.timer`, on y ajoutera une valeur à `OnBootSec=` pour activer la minuterie, ce qui déclenchera l'exécution de `exploit.service`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746649755224/060fa591-7d9b-4556-b0c4-49648d798532.png align="center")
+
+On recharge les configurations ensuite.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable exploit.timer
+sudo systemctl start exploit.timer
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746650044328/d7207eeb-7d85-4933-b2cf-0e6538e1ebfe.png align="center")
+
+Le fichier `/opt/xxd` a bien été créé et les bits `setuid` et `setgid` sont définis, signifiant que `/opt/xxd` s’exécutera avec les privilèges de root.
+
+Le bit SUID est une permission spéciale sur un fichier exécutable qui force ce fichier à s’exécuter avec les privilèges de l’utilisateur propriétaire du fichier, plutôt que ceux de l’utilisateur qui l’exécute.
+
+Ici, le fichier `/opt/xxd` appartient à root, et avec le bit setuid, il s’exécute avec `root` même si on est connecté avec `comte`.
+
+```bash
+/opt/xxd /root/root.txt
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746650834846/2a1ed4d2-d9d4-47ce-b231-ff508eb21f54.png align="center")
+
+On peut faire trois copier-coller mais on fera un peu plus 😋
+
+Le contenu s’affiche en hexadécimal. On va rediriger la sortie et utiliser un outil comme `xxd` ou `hexdump` pour le convertir en texte.
+
+On est dans le répertoire racine `/` , et la redirection `>` est gérée par le shell qui s’exécute sous l’utilisateur `comte` et non par `/opt/xxd`, d’où l’erreur Permission denied. Bien que `/opt/xxd` ait les privilèges de root pour lire `/root/root.txt`, le shell n’a pas les permissions d’écrire dans le répertoire courant `/` en tant que `comte`.
+
+On le redirige donc vers le répertoire `/tmp` a des permissions très ouvertes, ce qui permet à tous les utilisateurs (y compris comte) de créer et écrire des fichiers.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746651538621/15d1d644-4519-4ffa-9b39-953d3b6bd2e5.png align="center")
+
+Avec l’option xxd -r, on convertit le contenu de l’hexadécimal et donneés de texte brut.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746651494425/084c188b-1284-4e1f-bc4e-5a9e97dbc509.png align="center")
+
+On obtient donc le flag.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746650868441/c43409ec-a4e2-46f8-9af4-0a563a449c5e.png align="center")
