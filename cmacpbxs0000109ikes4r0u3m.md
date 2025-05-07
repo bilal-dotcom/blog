@@ -12,6 +12,8 @@ tags: shell, cybersecurity-1, tryhackme, tryhackme-walkthrough, cheesectfv10
 
 Lien de la room: [TryHackMe | Chese CTF](https://tryhackme.com/room/cheesectfv10)
 
+La room n’a pas été complétée en une fois, donc il y a plusieurs adresses de la machine cible 😁.
+
 # Énumération
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746549859868/eeba2534-e13f-4180-87dc-15d04525f83a.png align="center")
@@ -194,7 +196,7 @@ On le redirige donc vers le répertoire `/tmp` a des permissions très ouvertes,
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746651538621/15d1d644-4519-4ffa-9b39-953d3b6bd2e5.png align="center")
 
-Avec l’option xxd -r, on convertit le contenu de l’hexadécimal et donneés de texte brut.
+Avec l’option `xxd -r`, on convertit le contenu de l’hexadécimal et donneés de texte brut.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746651494425/084c188b-1284-4e1f-bc4e-5a9e97dbc509.png align="center")
 
