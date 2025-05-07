@@ -119,10 +119,11 @@ Ce fichier est composant du mécanisme d’authentification par clé publiques d
 Voici un schéma qui illustre le fonctionnement de la connection SSH par clé publiques.
 
 ```mermaid
+%%{init: {'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50}}}%%
 flowchart TB
-    A[www-data trouve authorized_keys modifiable] --> B[Attaquant génère paire de clés SSH]
-    B --> C[Clé privée key_rsa conservée en local]
-    B --> D[Clé publique key_rsa.pub exportée]
+    A[Fichier authorized_keys modifiable] --> B[Paire de clés SSH générée]
+    B --> C[Clé privée conservée en local]
+    B --> D[Clé publique exportée]
     D --> E[Injection de la clé publique dans /home/comte/.ssh/authorized_keys]
     E --> F[SSH-server lit authorized_keys]
     F --> G[Client SSH propose la clé privée]
