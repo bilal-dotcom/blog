@@ -154,6 +154,18 @@ Dans le répertoire `/wordpress`, on voit un fichier `wp-config.php`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713013198/f3a5307b-0270-4d1e-a984-1897653a5eaf.png align="center")
 
-Bingo, dans ce fichier, on a des identifiants MySQL.
+Bingo, dans ce fichier, on a des identifiants MySQL. Il peut s’agir d’identifiants pour accéder à une base de données WordPress? SSH? ou autre.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713095613/0e03a28e-a281-4c75-a10e-b5dfbef2c268.png align="center")
+
+La tentative de se connecter à mysql a pas marché.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713881270/2cd2d0a8-a3ef-4f9f-987b-c74ab30b1ce0.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714225046/fffeedf5-13e0-4c56-ad6a-7f7d26b33c0e.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714262641/93ce73ff-6ba7-40d1-a40a-68cf1862b54b.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714493855/a4553fe0-70af-4031-b464-84a03b6f7484.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714722438/2d56c010-c57c-4f76-8c4d-2b7eca78bcb3.png align="center")
