@@ -5,7 +5,7 @@ seoDescription: "Use Nmap, smbclient, and CyberChef in TryHackMe's TechSupp0rt1 
 datePublished: Thu May 08 2025 00:53:08 GMT+0000 (Coordinated Universal Time)
 cuid: cmaenldid00010al2dp4l662b
 slug: tryhackme-room-techsupp0rt1
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746657779659/b9929a9d-52ba-4bfc-8981-1d0a348673b9.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746666074405/6635c279-e915-4a47-a067-46b62a14daa5.png
 tags: tryhackme, thm, thm-presecurity-path, thm-writeup, tryhackme-walkthrough, thm-room
 
 ---
@@ -91,3 +91,5 @@ On voit par contre la version du CMS qui est la 4.2.1.
 En recherchant sur [https://www.exploit-db.com/](https://www.exploit-db.com/), on a quelques vulnérabilités de cette version ainsi que les CVEs.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746665937024/b9626217-9044-49ed-8cf9-1afba700374d.png align="center")
+
+Après avoir fouillé un peu
