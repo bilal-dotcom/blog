@@ -93,3 +93,21 @@ En recherchant sur [https://www.exploit-db.com/](https://www.exploit-db.com/), o
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746665937024/b9626217-9044-49ed-8cf9-1afba700374d.png align="center")
 
 Après avoir fouillé un peu, on peut tirer parti de la vulnérabilité `Arbitrary File Upload` de Subrion 4.2.1 pour déposer un shell et potentiellement obtenir un accès.
+
+On se rend dans `msfconsole` ensuite, pour récupérer et adapter l’exploit avec la commande `searchsploit -m php/webapps/49876.py`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746666647564/fc52efa6-d180-47a8-b9ed-ac8d2b40a3ec.png align="center")
+
+Le fichier est maintenant téléchargé. La prochaine étape est d’y apporter quelques modifications
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746666738937/a2e81b6d-080e-46b7-bfa4-1a012b67984b.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746667846624/8bf99dc3-492d-469d-9fa1-f92a280fec4b.png align="center")
+
+Remplacez l’adresse IP au niveau de Origin, par l’adresse IP de votre machine et l’adresse IP au niveau de Referer par celle de votre machine cible.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746668055416/dd41ce6e-1cdf-40e0-a2b0-49fec925a9b8.png align="center")
+
+Le script utilise `optparse` pour gérer les arguments. On peut donc ajouter les trois options `-u` pour l’URL cible, `-l` pour le nom d’utilisateur et `-p` pour le mot de passe.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746667078187/78cfc61a-03da-44db-9e8d-4399a03bba73.png align="center")
