@@ -92,4 +92,4 @@ En recherchant sur [https://www.exploit-db.com/](https://www.exploit-db.com/), o
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746665937024/b9626217-9044-49ed-8cf9-1afba700374d.png align="center")
 
-Après avoir fouillé un peu
+Après avoir fouillé un peu, on peut tirer parti de la vulnérabilité `Arbitrary File Upload` de Subrion 4.2.1 pour déposer un shell et potentiellement obtenir un accès.
