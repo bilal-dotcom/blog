@@ -162,9 +162,17 @@ La tentative de se connecter à mysql a pas marché.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713881270/2cd2d0a8-a3ef-4f9f-987b-c74ab30b1ce0.png align="center")
 
+En parcourant
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714225046/fffeedf5-13e0-4c56-ad6a-7f7d26b33c0e.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714262641/93ce73ff-6ba7-40d1-a40a-68cf1862b54b.png align="center")
+
+En parcourant le site, je n’ai rien d’intéressant.
+
+Je retourne voir si je peux utiliser les identifiants trouvés.
+
+Je vois que j’arrive à me connecter sur l’utilisateur `scamsite` avec le mot de passe trouvé.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714493855/a4553fe0-70af-4031-b464-84a03b6f7484.png align="center")
 
