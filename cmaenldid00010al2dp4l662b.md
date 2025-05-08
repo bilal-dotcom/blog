@@ -162,7 +162,7 @@ La tentative de se connecter à mysql fonctionne.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713881270/2cd2d0a8-a3ef-4f9f-987b-c74ab30b1ce0.png align="center")
 
-En parcourant
+En parcourant le site de wordpress on arrive à se connecter avec les identifiants.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714225046/fffeedf5-13e0-4c56-ad6a-7f7d26b33c0e.png align="center")
 
