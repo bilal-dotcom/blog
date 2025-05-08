@@ -81,3 +81,13 @@ On voit une indication d’un chiffrement en Base 58. En l’utilisant sur Cyber
 On a accès à l’interface de Subrion.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746663708953/08539d71-e214-426e-8ed6-58f323ae9549.png align="center")
+
+En parcourant un peu le dahsboard, on a juste pas mal d’informations. Aucun mot de passe en clair, ou une indication sur tel ou tel indice.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746665885789/3fa09279-4004-4807-92fd-5276c78f3f78.png align="center")
+
+On voit par contre la version du CMS qui est la 4.2.1.
+
+En recherchant sur [https://www.exploit-db.com/](https://www.exploit-db.com/), on a quelques vulnérabilités de cette version ainsi que les CVEs.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746665937024/b9626217-9044-49ed-8cf9-1afba700374d.png align="center")
