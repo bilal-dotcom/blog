@@ -169,3 +169,11 @@ La tentative de se connecter à mysql a pas marché.
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714493855/a4553fe0-70af-4031-b464-84a03b6f7484.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746714722438/2d56c010-c57c-4f76-8c4d-2b7eca78bcb3.png align="center")
+
+La commande `sudo -l` afficher les commandes privilèges que l’utilisateur `scamsite` peut exécuter via sudo.
+
+On voit qu’il peut exécuter `usr/bin/iconv` en tant que `root`sans mot de passe. Après quelques recherches rapides, `iconv` est un utilitaire pour convertir des encodages de fichiers.
+
+On exécute la commande `sudo iconv -f utf-8 -t utf-8 /root/root.txt` et on a le flag 😉.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746715442612/8dbd64ef-7a80-4531-acdb-4136ad67dd82.png align="center")
