@@ -5,7 +5,7 @@ seoDescription: "Use Nmap, smbclient, and CyberChef in TryHackMe's TechSupp0rt1 
 datePublished: Thu May 08 2025 00:53:08 GMT+0000 (Coordinated Universal Time)
 cuid: cmaenldid00010al2dp4l662b
 slug: tryhackme-room-techsupp0rt1
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746666074405/6635c279-e915-4a47-a067-46b62a14daa5.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746668232163/a3119702-1feb-40d5-b0f6-83bd10e62ede.png
 tags: tryhackme, thm, thm-presecurity-path, thm-writeup, tryhackme-walkthrough, thm-room
 
 ---
