@@ -158,7 +158,7 @@ Bingo, dans ce fichier, on a des identifiants MySQL. Il peut s’agir d’identi
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713095613/0e03a28e-a281-4c75-a10e-b5dfbef2c268.png align="center")
 
-La tentative de se connecter à mysql a pas marché.
+La tentative de se connecter à mysql fonctionne.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713881270/2cd2d0a8-a3ef-4f9f-987b-c74ab30b1ce0.png align="center")
 
