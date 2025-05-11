@@ -4,6 +4,7 @@ seoTitle: "Expose: TryHackMe Room"
 datePublished: Sun May 11 2025 02:05:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmaj0hcwk000r08kwd36vhvcc
 slug: tryhackme-room-expose
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746929181732/7a6510f3-b3d1-4692-92b0-efb91b91f99f.png
 tags: tryhackme, thm, thm-presecurity-path, thm-writeup, tryhackme-walkthrough, tryhackmewalkthrough, thm-room
 
 ---
