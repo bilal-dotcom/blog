@@ -13,7 +13,7 @@ Lien de la room: [https://tryhackme.com/room/expose](https://tryhackme.com/room/
 
 # User Flag
 
-On débute par un scan Nmap. On voir 4 ports ouverts dont la 1337.
+On débute par un scan Nmap. On voit 4 ports ouverts dont la 1337.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746918082078/fb26e2c2-1ba6-4fd7-9f31-4e9c6c87155d.png align="center")
 
