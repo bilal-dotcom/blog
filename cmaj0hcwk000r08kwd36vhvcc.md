@@ -109,7 +109,7 @@ Il faut donc renommé le fichier une fois dans Burp en `rev_shell.php` puis forw
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928376921/96531464-8652-4050-8404-c296e90db17a.png align="center")
 
-Je vois donc que le fichier `rev_shell.png` que j’ai renommé dans la requête en `rev_shell.php` a bien été téléversé comme le montre la photo ci-dessous.
+On retourne dans le répertoire `/upload_thm_1001` *et on voit* que le fichier `rev_shell.png` que j’ai renommé dans la requête en `rev_shell.php` a bien été téléversé comme le montre la photo ci-dessous.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928308535/3204c963-3b04-44bf-815d-65ab642fedb1.png align="center")
 
@@ -121,8 +121,40 @@ On est connecté en tant que www-data. Mais une fois connecté, je ne peux pas l
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928738230/81a19a3e-6b03-4ee4-85a6-5b85da035add.png align="center")
 
-J’ai donc changé d’utilisateur pour passer de www-data à zeamkish, entré son mot de passe, et j’ai accès à flag.txt
+J’ai donc changé d’utilisateur, avec la commande `su zeamkish` pour passer de `www-data` à `zeamkish`, entré son mot de passe, et j’ai accès à `flag.txt`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928971279/046b807a-b87b-417c-b81d-641e9ddd7734.png align="center")
 
 # Root Flag
+
+La commande `sudo -l` ne nous sort rien. Donc zeamkish n’a aucun privilège root.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747012509027/b3a50133-d9d7-4ef1-b51e-5bab110fb9e8.png align="center")
+
+On essaie aussi de voir un fichier potentiel de flag contenant le terme root, mais rien.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747014225385/acacd5e4-f2cf-4885-9527-9e2cc97d49b5.png align="center")
+
+Finalement, on regarde les fichiers SUID, qui sont des fichiers ou programmes qui s’exécutent avec les droits de leur propriétaire, souvent root. Avec la commande `find / -type f -perm -u=s 2>/dev/null`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747014551899/e78aa8b2-63d7-4a7e-948b-39ff91fb4c02.png align="center")
+
+On a une liste de binaires SUID. Il est possible ici d’utiliser plus d’un.
+
+## /usr/bin/nano
+
+Le binaire `/usr/bin/nano` permet de modifier des fichiers avec des privilèges root. On peut donc modifier le fichier `/etc/shadow` qui contient les mots de passes des utilisateurs. Pour cela, on génère d’abord le hash du mot de passe avec `openssl`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747015985184/383a5d86-56a9-44e7-bda9-a4fe74a35bac.png align="center")
+
+On copie ensuite ce hash, au niveau de root, juste après `root:` avec la commande `/usr/bin/nano /etc/shadow`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747016118148/3b237ccb-c853-43a4-a788-00425d22b42b.png align="center")
+
+On passe maintenant à root, et on a le flag.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747016158821/508e2a65-5138-4fe4-8388-54672bd22933.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747016198415/a69b43c4-8bd4-4de9-848a-4029b583f032.png align="center")
+
+## /usr/bin/find
