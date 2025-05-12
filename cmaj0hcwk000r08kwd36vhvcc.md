@@ -79,7 +79,7 @@ On a bel et bien un nom d’utilisateur débutant par z.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746926726627/a46430a2-a29d-468c-afa6-bada92ebc163.png align="center")
 
-On tombe sur une page qui permet d’upload un fichier.
+On tombe sur une page qui permet d’upload un fichie, via le répertoire `/upload-cv00101011`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746926747852/3ede118a-4733-4f55-a5ea-283b651948e8.png align="center")
 
@@ -91,13 +91,15 @@ On y upload une photo.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746927186945/cbdde2b1-fe3d-4313-a432-cf4c4eab6531.png align="center")
 
+On regarde à nouveau le code source, on voit que les fichiers sont téléversés dans le répertoire `/upload_thm_1001`.
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746927238097/38023f3b-b690-4539-b342-244dcf7d9bbd.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746927543316/f90e958a-83c8-42da-ad2e-7e23f6f80c54.png align="center")
 
 Les photos sont sous le répertoire `/upload_thm_1001`.
 
-Ce qu’on va donc faire cest uploader un fichier qui sera notre reverse shell. Vu que le serveur utilise php, on utilisera un reverse shell en php. On peut donc créer un revshell sur [Online - Reverse Shell Generator](https://www.revshells.com/).
+Ce qu’on va donc faire cest téléverser un fichier qui sera notre reverse shell. Vu que le serveur utilise php, on utilisera un reverse shell en php. On peut créer un revshell sur [Online - Reverse Shell Generator](https://www.revshells.com/).
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746927780753/38e2b314-c71f-404c-84e4-4bbefad3c6d9.png align="center")
 
@@ -105,7 +107,7 @@ J’ai créé un fichier `rev_shell.php` mais que jai renommé `rev_shell.png`, 
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928195307/23ef5adf-deb4-421f-a1c5-28c69d12676d.png align="center")
 
-Il faut donc renommé le fichier une fois dans Burp en `rev_shell.php` puis forward la requête
+Il faut donc renommer le fichier une fois dans Burp en `rev_shell.php` puis forward la requête
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746928376921/96531464-8652-4050-8404-c296e90db17a.png align="center")
 
@@ -135,11 +137,13 @@ On essaie aussi de voir un fichier potentiel de flag contenant le terme root, ma
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747014225385/acacd5e4-f2cf-4885-9527-9e2cc97d49b5.png align="center")
 
-Finalement, on regarde les fichiers SUID, qui sont des fichiers ou programmes qui s’exécutent avec les droits de leur propriétaire, souvent root. Avec la commande `find / -type f -perm -u=s 2>/dev/null`.
+Finalement, on regarde les fichiers SUID, qui sont des fichiers ou programmes qui s’exécutent avec les droits de leur propriétaire, souvent root. Avec la commande `find / -type f -perm -u=s 2>/dev/null` ou `find / -type f -perm 4000 2>/dev/null`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747014551899/e78aa8b2-63d7-4a7e-948b-39ff91fb4c02.png align="center")
 
-On a une liste de binaires SUID. Il est possible ici d’utiliser plus d’un.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747075197669/343beb99-de49-46f6-aef7-16954161accf.png align="center")
+
+On a une liste de binaires SUID avec le bit s, et qui appartiennetnt à root. Il est possible ici d’utiliser plus d’un.
 
 ## /usr/bin/nano
 
@@ -158,3 +162,14 @@ On passe maintenant à root, et on a le flag.
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747016198415/a69b43c4-8bd4-4de9-848a-4029b583f032.png align="center")
 
 ## /usr/bin/find
+
+On peut aussi utiliser le binaire find pour directement trouver le flag de root. On peut utiliser la commande `/usr/bin/find . -exec /bin/sh -p \; -quit`. Cette commande utilise le binaire find pour exécuter un shell avec les privilèges SUID.
+
+* `/usr/bin/find` est le chemin du binaire trouvé un peu plus haut.
+    
+* `-exec /bin/sh -p \;` exec est une option de find qui permet d’exécuter des commandes. L’option `-p` permet de conserver les userid effectif (celui de root), ce qui me donne un shell en étant root. On peut le voir dans la capture ci dessous. Sans l’option -p, le shell détecte une différence entre l’UID réel et l’UID effectif et redescend à l’UID réel (celui de l’utilisateur zeamkish).
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747076245158/7f0da240-d495-4420-bebe-6b0a36bf34bd.png align="center")
+
+On peut ensuite lire le flag.txt dans le fichier `flag.txt` de `/root`.
