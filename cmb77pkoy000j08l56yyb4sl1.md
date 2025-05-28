@@ -129,11 +129,11 @@ On y voit une URL qui pointe vers localhost, et un mot de passe. Il s’agit peu
 
 # Death Flag
 
-Ici aussi le fichier death\_flag.txt ne peut-être lu que par son propriétaire. On essaie `sudo -l`
+Ici aussi le fichier `death_flag.txt` ne peut-être lu que par son propriétaire. On essaie `sudo -l`
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748393162102/27908f4b-86f8-44d2-b78d-385bcc265251.png align="center")
 
-La dernière ligne indique que lucien peut exécuter le script getDreams.py, même si celui-ci appartient à l’utilisateur death.
+La dernière ligne indique que lucien peut exécuter le script `getDreams.py`, même si celui-ci appartient à l’utilisateur death.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394131296/6d313193-4928-4264-b52b-96b2b98b1b85.png align="center")
 
@@ -145,6 +145,47 @@ On essaie donc de voir le contenu de `getDreams.py`, mais on ne peut pas le lire
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394692493/1fd1019c-4452-4a5f-8015-e8eed53fc735.png align="center")
 
-En analysant le contenu, il s’agit d’opérations effectuées sur une base de données.
+En analysant le contenu, il s’agit d’opérations effectuées sur une base de données. La fonction `getDreams()` se connecte à la base de données `library` avec le compte `death` et un mot de passe `#redacted` . Elle récupère ensuite des données (dreamer et dream)de la table `dreams` puis les exécute dans une commande shell via `subprocess.check_output()`.
+
+Vu qu’on a des identifiants, je tente une connexion direct à `mysql` avec la commande `mysql -u death -p #redacted -D library`. Je tente aussi avec lucien mais rien.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748444388211/e2780f0a-30c3-43af-bfef-5ee395f016a5.png align="center")
+
+Un peu compliqué ici, on a des mots de passe mais pas de connexion, pourtant il y a bien du sql. En retournant dans le dossier de lucien, il y a deux fichiers, `mysql_history` et `bash_hisotry`. En les consultant, on voit les commandes bash entrés par lucien, et donc la commande utilisée pour se connecter à mysql et aussi les commandes utilisées une fois connecté à mysql.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748444486116/f8426972-7fce-4830-b0fe-1aa032274fc2.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748444563363/82656519-bc35-4c3c-b4e7-f211a9deefc1.png align="center")
+
+On arrive donc à se connecter
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748445138405/fd502100-406f-4eba-bb8a-39a2471223ac.png align="center")
+
+J’ai exécuté la commande trouvée plus haut dans le fichier `getDreams.py.`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748445239060/5c6a747c-59f0-46ae-9299-01d9a9c76eda.png align="center")
+
+Dans le fichier `getDreamer.py`, on avait ce bout de code
+
+```bash
+# Loop through the results and echo the information using subprocess
+            for dream_info in dreams_info:
+                dreamer, dream = dream_info
+                command = f"echo {dreamer} + {dream}"
+                shell = subprocess.check_output(command, text=True, shell=True)
+                print(shell)
+```
+
+Et avec la sortie de `sudo -l` , l’utilisateur lucien peut exécuter `/home/death/getDreams.py` en utilisant `python3` en tant que l’utilisateur `death`, et ce, sans fournir un mot de passe.
+
+On trouve le même indice dans le fichier `.bash_history`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748447198551/b4bd1e31-1693-4833-b448-f0a5b5b9f6b4.png align="center")
+
+On fait donc `sudo -u death /usr/bin/python3 /home/death/getDreams.py` et on a la commande echo qui s’exécute et la fonction `subprocess.check_output()`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748447242250/f9dc8e1f-45b6-408b-920a-83d4bffb5bac.png align="center")
+
+Òn peut donc injecter un payload reverse\_shell dans la table dreams, puis l’exécuter
 
 # Morpheus Flag
