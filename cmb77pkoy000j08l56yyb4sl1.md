@@ -129,4 +129,22 @@ On y voit une URL qui pointe vers localhost, et un mot de passe. Il s’agit peu
 
 # Death Flag
 
+Ici aussi le fichier death\_flag.txt ne peut-être lu que par son propriétaire. On essaie `sudo -l`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748393162102/27908f4b-86f8-44d2-b78d-385bcc265251.png align="center")
+
+La dernière ligne indique que lucien peut exécuter le script getDreams.py, même si celui-ci appartient à l’utilisateur death.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394131296/6d313193-4928-4264-b52b-96b2b98b1b85.png align="center")
+
+On essaie donc de voir le contenu de `getDreams.py`, mais on ne peut pas le lire directement dans le répertoire de `death`. Je fais donc la commande `find / -type f -name “getDreams.py“ -readable 2">/dev/null`. On peut lire le fichier `getDreams.py` depuis le répertoire `/opt`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394446400/4f069151-8285-4a17-85a0-459e84e84412.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394617015/8a9aff4a-fe40-4937-8333-3b7d3bbe54bb.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748394692493/1fd1019c-4452-4a5f-8015-e8eed53fc735.png align="center")
+
+En analysant le contenu, il s’agit d’opérations effectuées sur une base de données.
+
 # Morpheus Flag
