@@ -186,6 +186,20 @@ On fait donc `sudo -u death /usr/bin/python3 /home/death/getDreams.py` et on a l
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748447242250/f9dc8e1f-45b6-408b-920a-83d4bffb5bac.png align="center")
 
-Òn peut donc injecter un payload reverse\_shell dans la table dreams, puis l’exécuter
+La base de données peut être donc vulnérable à une injection de commande shell. J’essaie la commande `mysql> INSERT INTO dreams VALUES('test','$(whoami)');`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748479130953/d4b22e44-eff9-4ba2-8e8d-3d960030dadd.png align="center")
+
+Quand on exécute ensuite `sudo -u death /usr/bin/python3 /home/death/`[`getDreams.py`](http://getDreams.py), on a bien l’identifiant `death` qui s’affiche dû à l’injection de `$(whoami)`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748479589769/6c2c30f8-6533-4b31-b1a2-4cfa05b802ff.png align="center")
+
+On peut essayer de directement lire le flag de death.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748480206603/b3b1e5e3-4cee-4d37-8b27-c5c00e2b741c.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748480230851/68aa716d-8b8d-4c12-bd11-56f2360af401.png align="center")
+
+On a le flag de death 🙂
 
 # Morpheus Flag
