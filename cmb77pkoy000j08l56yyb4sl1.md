@@ -16,7 +16,7 @@ On débute par un scan nmap, mais rien d’intéressant.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748356975449/375bc3ee-080f-48c7-8301-02a5287bbd1e.png align="center")
 
-On cherche ensuite des répertoires ou fichiers sur le serveur avec gobuster, via la commande gobuster dir -u 10.10.56.225 -w /usr/share/wordlists/dirb/big.txt
+On cherche ensuite des répertoires ou fichiers sur le serveur avec gobuster, via la commande `gobuster dir -u 10.10.56.225 -w /usr/share/wordlists/dirb/big.txt`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748357891451/75260661-238b-45b9-8027-5b28de7c3b9f.png align="center")
 
@@ -28,11 +28,11 @@ On tombe ensuite sur une page qui est celle du CMS
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748358276269/52c490c7-d30e-4fe6-8702-91f691cdebc1.png align="center")
 
-En cliquant sur le lien admin, on a une page de ocnnexion juste avec un mot de passe.
+En cliquant sur le lien admin, on a une page de connexion avec juste un mot de passe.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748358366104/97eb5ddd-9114-4b66-9c7a-ec9fbe16b8e6.png align="center")
 
-Après une recherche google et sur metasploit, il existe bien un exploit disponible de la version `4.7.13` de pluck, qui permet un upload de fichiers dans `Pluck CMS` pour permettre un code d’exécution à distance. On peut donc essayer d’y téléverser un fichier qui va permettre une connexion en reverse shell sur notre machine.
+Après une recherche google et sur metasploit, il existe bien un exploit disponible de la version `4.7.13` du `CMS pluck`, qui permet un upload de fichiers dans `Pluck CMS` pour permettre un code d’exécution à distance. On peut donc essayer d’y téléverser un fichier qui va permettre une connexion en reverse shell sur notre machine.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748358870549/bc823105-24a1-46a8-982f-63e7da349188.png align="center")
 
@@ -40,15 +40,13 @@ J’ai d’abord essayé de manipuler le lien en tentant un LFI, mais on a un me
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748358704452/582dc12e-ce9d-4eb7-8e3e-94713a252d9e.png align="center")
 
-On essaie de bypasser la page de login trouvé un peu plus haut.
-
-En examinant le code source de la page de login.php, on a plus d’infos sur les paramètres à utiliser dans la commande avec hydra
+On essaie de bypasser la page de login trouvé un peu plus haut avec du brute force avec hydra. En examinant le code source de la page de `login.php,` on a des infos sur les paramètres à utiliser dans la commande avec hydra
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748360245364/1bcca930-8071-453d-a723-7222be45e748.png align="center")
 
 On essaie la commande `hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.56.225 http-post-form "/app/pluck-4.7.13/login.php:cont1=^PASS^&bogus=’’ : Password incorrect"`
 
-Cette commande envouie une requête POST vers `/app/pluck-4.7.13/login.php`, la page du formulaire. `cont1` et `bogus` sont les noms des champs pour le mot de passe et le nom d’utilisateur. Mais celuis du nom d’utilisateur n’intervient pas dans la connexion donc on le met à vide.
+Cette commande envouie une requête POST vers `/app/pluck-4.7.13/login.php`, la page du formulaire. `cont1` et `bogus` sont les noms des champs pour le mot de passe et le nom d’utilisateur. Mais celui du nom d’utilisateur n’intervient pas dans la connexion donc on le met à vide.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748360372344/26cc211e-2957-4b4f-869a-3690f3120957.png align="center")
 
@@ -123,7 +121,7 @@ On y voit un fichier `/opt/test.py` qu’on peut lire.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748391580847/ed81ab7a-d4d3-456c-ac07-8f28a1b1dcbb.png align="center")
 
-On y voit une URL qui pointe vers localhost, et un mot de passe. Il s’agit peut-etre du mot de passe de lucien. On tente donc `su lucien` pour se connecter avec le mot de passe trouvé et bingo, on se connecte et on a le flag de l’utilisateur lucien 😁
+On y voit une URL qui pointe vers localhost, et un mot de passe. Il s’agit peut-etre du mot de passe de lucien. On tente donc `su lucien` pour se connecter avec le mot de passe trouvé et bingo, on se connecte et on a le flag de l’utilisateur lucien 😁. On peut aussi se connecter avec ssh.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748391807442/bdbb59cc-89b8-4cd0-9dd6-b5fa3f499a05.png align="center")
 
@@ -186,11 +184,11 @@ On fait donc `sudo -u death /usr/bin/python3 /home/death/getDreams.py` et on a l
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748447242250/f9dc8e1f-45b6-408b-920a-83d4bffb5bac.png align="center")
 
-La base de données peut être donc vulnérable à une injection de commande shell. J’essaie la commande `mysql> INSERT INTO dreams VALUES('test','$(whoami)');`.
+La base de données peut être donc vulnérable à une injection de commande shell. J’essaie la commande `INSERT INTO dreams VALUES('test','$(whoami)');`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748479130953/d4b22e44-eff9-4ba2-8e8d-3d960030dadd.png align="center")
 
-Quand on exécute ensuite `sudo -u death /usr/bin/python3 /home/death/`[`getDreams.py`](http://getDreams.py), on a bien l’identifiant `death` qui s’affiche dû à l’injection de `$(whoami)`.
+Quand on exécute ensuite `sudo -u death /usr/bin/python3 /home/death/getDreams.py`, on a bien l’identifiant `death` qui s’affiche dû à l’injection de `$(whoami)`.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748479589769/6c2c30f8-6533-4b31-b1a2-4cfa05b802ff.png align="center")
 
@@ -201,6 +199,14 @@ On peut essayer de directement lire le flag de death.
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748480230851/68aa716d-8b8d-4c12-bd11-56f2360af401.png align="center")
 
 On a le flag de death 🙂
+
+On va aussi essayer de trouver le mot de passe de l’utilisateur `death`. Pour cela on fait une insertion dans la base de données avec `INSERT INTO dreams VALUES('test','$(head -n 20 /home/death/getDreams.py)');`. Cette commande permet de lire les 20 premières lignes du fichier `/home/death/getDreams.py`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748529597524/ee53e3cd-a57f-41ef-9665-5c1e3308a470.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748529619694/fbf76e1d-45b4-48ce-88d1-d52f52c27edc.png align="center")
+
+On a donc le mot de passe de l’utilisateur death et on peut se connecter via ssh.
 
 # Morpheus Flag
 
