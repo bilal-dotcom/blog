@@ -203,3 +203,29 @@ On peut essayer de directement lire le flag de death.
 On a le flag de death 🙂
 
 # Morpheus Flag
+
+Dans le répertoire de morpheus, on retrouve plusieurs fichiers. Celui qui interpelle en premier est le fichier `kingdom`, mais rien d’intéressant. Par contre dans le fichier `restore.py`, la fonction `copy2()` de librairire `shutil` est utilisée pour copier un fichier vers un dossier de backup `/kingdom_backup/kingdom`
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748521433276/54c79f02-7c4c-4baa-996b-e66e360b1b76.png align="center")
+
+Mais on ne peut accéder à ce fichier.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748521605932/4b18d038-8ec4-43ce-a7bc-a06cd4bc31c2.png align="center")
+
+On essaie de voir si il y a une faille autour de la librairire, mais rien.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748522496614/b0ce48b8-0f50-4857-ae96-6ddf5074d48a.png align="center")
+
+En recherchant la libriaire shutil, on voit qu’elle est stockée dans `/usr/lib/python3.8/shutil.py`. Le fichier appartient à `root` mais est aussi modifiable par le groupe `death`.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748522758897/fb70b4c3-87b9-4f58-8929-252bd1a50769.png align="center")
+
+On peut donc soit modifier le fichier `/usr/lib/python3.8/shutil.py` pour du reverse shell ou juste modifier les permissions du fichier `morpheus_flag.txt` avec l’utilisateur death, car c’est lui qui a les droits d’écriture. On ajoute `os.system('chmod 777 /home/morpheus/morpheus_flag.txt')` pour le rendre accessible à tous.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748523415473/d63e55e2-9ce3-4d93-854a-c252dcb54605.png align="center")
+
+On a le flag 😁
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748523608698/03779906-7f83-4895-82a9-206742d3ede9.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748523638908/fc726b9f-2dc9-4d09-8e0b-4c4acd4a0127.png align="center")
