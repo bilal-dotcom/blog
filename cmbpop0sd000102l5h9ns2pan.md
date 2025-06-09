@@ -15,7 +15,7 @@ Lien : [https://www.root-me.org/fr/Challenges/App-Script/ELF32-System-2](https:/
 
 On veut pouvoir lire le mot de passe du fichier `.passwd` mais il n’est lisible que par le propriétaire du fichier `app-script-ch12-cracked`.
 
-Le code source de `ch12.c` utilise la fonction `system()` pour lister le répertoire du fichier `.passwd`. Par contre la commande `ls` est appelée dans la fonction `system()` sans spécifier le chemin absolu, c’est-à-dire `/bin/ls`. On peut donc créer une fausse commande `ls` , mais qui sera en réalité une commande `cat` puis l’injecter dans la variable d’environnement `PATH`. Puisque le fichier `ch12` a le binaire SUID activé, il peut s’exécuter avec les droits du propriétaire. Quand la commande `ls` sera exécutée par la commande `system()`, le shell regardera au niveau des variables d’environnement PATH puis cherche la commande `ls` dans les répertoires. La commande qu’on aura manipulé sera donc exécutée à la place.
+Le code source de `ch12.c` utilise la fonction `system()` pour lister le répertoire du fichier `.passwd`. Par contre la commande `ls` est appelée dans la fonction `system()` sans spécifier le chemin absolu, c’est-à-dire `/bin/ls`. Puisque le fichier `ch12` a le binaire SUID activé, il peut s’exécuter avec les droits du propriétaire. Quand la commande `ls` sera exécutée par la commande `system()`, le shell regardera au niveau des variables d’environnement PATH puis cherche la commande `ls` dans les répertoires. La commande qu’on aura manipulé sera donc exécutée à la place.
 
 Créér le répertoire dans /tmp/script
 
