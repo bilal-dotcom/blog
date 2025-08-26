@@ -1,10 +1,10 @@
 ---
-title: "Kubernetes: déploiement d'application via Docker"
+title: "Kubernetes"
 seoTitle: "Kubernetes: Simplifying Container Orchestration"
 seoDescription: "Découvrez Kubernetes, une plateforme open-source pour gérer le déploiement et l'orchestration d'applications conteneurisées efficacement"
 datePublished: Tue Aug 26 2025 16:58:47 GMT+0000 (Coordinated Universal Time)
 cuid: cmessiwzr000702jv5w7y6j5i
-slug: kubernetes-deploiement-dapplication-via-docker
+slug: kubernetes
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/9cXMJHaViTM/upload/f83a764b75524ecf51f73ce1a7df9231.jpeg
 tags: kubernetes, k8s, kubernetes-container, k8scluster, k8s-commands
 
@@ -14,8 +14,6 @@ Kubernetes ou K8s est une plateforme open-source utilisée pour automatiser le d
 
 # Pré-requis
 
-* **Docker**: pour gérer les conteneurs
-    
 * **Minikube**: pour créer un cluster local de test
     
 * **kubectl**: pour interagir avec Kubernetes
@@ -23,7 +21,7 @@ Kubernetes ou K8s est une plateforme open-source utilisée pour automatiser le d
 
 ## Étape 1: Installer et démarrer Minikube
 
-Minikube permet de créer un cluster Kubernetes local. Allez sur le site [minikube start | minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download) pour télécharger et installer minikube.
+Minikube permet de créer un cluster Kubernetes local. Allez sur le site [minikube start | minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download) pour télécharger et installer minikube. À noter que Minikube ne doit pas être utilisé en prod car il est principalement concu pour des environnements de tests sur une machine. Il faudrait envisager Amazon EKS ou Google Kubernetes Engine en prod.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756216793624/f379471b-fe0d-4bb1-994c-df12534d7711.png align="center")
 
@@ -47,7 +45,7 @@ La commande a été exécutée et affiche la liste des pods en cours d’exécut
 
 Le cluster Kubernetes est maintenant fonctionnel et tous les composants ( etcd, kube-apiserver, kube-controller-manager, kube-scheduler, etc) sont en status Running.
 
-## Étape 2 : Déployer une application conteneurisée
+## Étape 2 : Déployer une application de test conteneurisée
 
 On va déployer ici une application conteneurisée assez simple, un serveur web NGINX.
 
@@ -83,3 +81,5 @@ On va déployer ici une application conteneurisée assez simple, un serveur web 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756226217263/ff36a26f-110e-4204-a8c8-408b19c9ceee.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756226177257/6d410943-6020-431a-bde1-6f60e64a98f3.png align="center")
+
+Le cluster fonctionne donc bien. La prochaine étape serait de déployer une réelle application.
