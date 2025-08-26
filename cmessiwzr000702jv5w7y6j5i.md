@@ -12,7 +12,7 @@ tags: kubernetes, k8s, kubernetes-container, k8scluster, k8s-commands
 
 Kubernetes ou K8s est une plateforme open-source utilisée pour automatiser le déploiement et la gestion des applications conteneurisées. Une application conteneurisée est une application qui fonctionne à l’intérieur d’un conteneur, un environnement léger et isolé contenant tout ce dont l’application a besoin pour être exécuter (le code, les bibliothèques, les dépendances, els configurations et autres). Les conteneurs garantissent que que l’application tourne de la même manière, que ce soit sur un PC, un serveur ou dans le cloud. Kubernetees aide donc à orchestrer le tout: il déploie ces conteneurs, en ajoute on en retire selon la demande, les met à jour, et s’assure qu’ils restent opérationnels.
 
-# Pré-requis
+## Pré-requis
 
 * **Minikube**: pour créer un cluster local de test
     
