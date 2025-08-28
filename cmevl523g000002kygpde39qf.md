@@ -201,7 +201,7 @@ Une fois que l’Image est sur Docker Hub, on peut maintenant déployer l’appl
         
 3. Déployer sur le cluster
     
-    Pour cette étape, il faut s’assurer que le cluster Minikube est en cours d’exécution avec la commande `minkube start`. Déployez ensuite le déploiement et le service avec les commandes suivantes:
+    Pour cette étape, il faut s’assurer que le cluster Minikube est en cours d’exécution avec la commande `minikube start`. Déployez ensuite le déploiement et le service avec les commandes suivantes:
     
     ```bash
     kubectl apply -f deployment.yaml
