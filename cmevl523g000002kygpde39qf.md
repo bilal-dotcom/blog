@@ -119,7 +119,7 @@ La prochaine étape sera de pousser l’image sur Docker Hub afin de la rendre a
     
 2. Tagger l’image Docker
     
-    Avant de pousser l’image, il faut s’assurer qu’elle est correctmeent taggée. Cela ne crée pas une nouvelle image , mais ajoute un tag à l’image existante.
+    Avant de pousser l’image, il faut s’assurer qu’elle est correctement taggée. Cela ne crée pas une nouvelle image , mais ajoute un tag à l’image existante.
     
     ```bash
     docker tag flask-k8s:1.0 bildotcom/flask-k8s:1.0
