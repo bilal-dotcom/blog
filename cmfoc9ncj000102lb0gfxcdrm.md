@@ -349,9 +349,7 @@ sudo systemctl status docker
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757113007394/9ec57bee-e509-4962-8ae4-3f74ba2aa3f0.png align="center")
 
-Pour simplifier le déploiement de ELK, on installe aussi Docker Compose.
-
-Il est utile dans ce cas, car ELK comporte trois services principaux. Sans Docker Compose, il faudrait télécharger, configurer puis gérer manuellement les ports, réseaux pour chaque service. Docker Compose permet d’écrire puis gérer le tout dans un seul fichier de configuration`docker-compose.yml`, Mais Docker Compose est déjà présent sur certaines versions de Ubuntu, donc plus besoin d’installer le paquet. Vous pouvez vérifier avec la commande suivante:
+Pour simplifier le déploiement de ELK, on installe aussi Docker Compose. Il est utile dans ce cas, car ELK comporte trois services principaux. Sans Docker Compose, il faudrait télécharger, configurer puis gérer manuellement les ports, réseaux pour chaque service de ELK. Docker Compose permet d’écrire puis gérer le tout dans un seul fichier de configuration`docker-compose.yml`, Mais Docker Compose est déjà présent sur certaines versions de Ubuntu, donc plus besoin d’installer le paquet. Vous pouvez vérifier avec la commande suivante:
 
 ```bash
 docker compose version
@@ -399,6 +397,8 @@ services:
       - "9200:9200"
     networks:
       - elk
+    restart: unless-stopped
+
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.17.0
@@ -411,6 +411,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
+    restart: unless-stopped
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.17.0
@@ -423,6 +424,8 @@ services:
       - elk
     depends_on:
       - elasticsearch
+    restart: unless-stopped
+
 
 volumes:
   elasticsearch-data:
@@ -448,7 +451,9 @@ Voici une petite explication des paramètres utilisés dans le fichier
     
 * ports: permet d’exposer le service sur un port précis
     
-* networks: créé un réseau interne dédié aux conteneurs, pour faciliter la communication avec d’autres services comme `Logstash` et `Kibana` dans le meme réseau elk.
+* `networks`: créé un réseau interne dédié aux conteneurs, pour faciliter la communication avec d’autres services comme `Logstash` et `Kibana` dans le meme rés
+    
+* eau elk.
     
 
 Pour la suite, lancer ELK
