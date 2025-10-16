@@ -493,13 +493,38 @@ curl -X GET http://IP_VM2:9200
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760643907262/c6d6d8d0-e0ce-4d2a-b0c7-a399f6ce76f9.png align="center")
 
-Kibana étant une interface graphique, on la vérifie sur un navigateur via:
+Kibana étant une interface graphique, on peut aussi y accéder depuis le navigateur. Si vous êtes sur une machine en local, ou dans le même réseau que la VM, vous pouvez y accéder directement via l’adresse suivante:
 
 ```bash
 http://IP_VM2:5601
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119772142/205228a9-4ef1-4123-a30a-7a1095302708.png align="center")
+Dans notre cas ici, la VM est hébergée sur Google Cloud Platform (GCP). Avant d’y accéder depuis l’extérieur, il faut que le pare-feu du réseau VPC autorise le traffic entrant sur le port 5601 de Kibana. On va donc créer une règle de pare feu dans GCP. Vous pouvez y accéder via le lien suivant: [https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/list?hl=fr](https://console.cloud.google.com/)
+
+Lors de la création de la règle, il est important de spécifier les paramètres suivants:
+
+* le nom: allow-kibana
+    
+* la source: une adresse IP qui sera autorisée. Par exemple 0.0.0.0/0 pour tout le monde, ou l’adresse IP publique de votre machine.
+    
+* la cible: la VM sur laquelle ELK est installée ou toutes les instances du réseau
+    
+* le port et le protocole: `tcp:5601`
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760655243177/41e89369-c748-4b3a-b01e-9ec6e74a7c56.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760655605708/9aa474ef-c1b4-4de6-b62d-22b71192de85.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760656569049/9a1cafad-5427-4b68-a1e2-e3dc3fa8203b.png align="center")
+
+Une fois la règle est créée, Kibana devient accessible à l’adresse suivante:
+
+```bash
+http://IP_EXTERNE_VM2:5601
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760655979663/fd1b83fd-4a88-45cc-b769-de6bdac135b9.png align="center")
 
 # Étape 2: Collecte et traitement des logs
 
@@ -745,3 +770,5 @@ Voici la première partie de l’article qui montre l’installation de Zeek, Su
 * [Logstash Configuration Files | Logstash](https://www.elastic.co/docs/reference/logstash/config-setting-files)
     
 * [Creating a Logstash Pipeline | Logstash](https://www.elastic.co/docs/reference/logstash/creating-logstash-pipeline)
+    
+* [Utiliser des règles de pare-feu VPC  |  Cloud NGFW  |  Google Cloud](https://cloud.google.com/firewall/docs/using-firewalls?hl=fr)
