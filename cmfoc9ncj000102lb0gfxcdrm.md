@@ -466,9 +466,9 @@ Vous pouvez ensuite vérifier que les services roulent bien et que les ports son
 sudo docker ps
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757513162655/446740b5-08a8-451a-82bb-2eb9660ca7b3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760643040794/233c1b98-031b-45b3-9268-38f2dcdf307d.png align="center")
 
-Redémarrer ensuite la machine (reboot) puis relancez ELK avec la commande suivante
+Redémarrer ensuite la machine puis relancez ELK avec la commande suivante
 
 ```bash
 cd ELK/
