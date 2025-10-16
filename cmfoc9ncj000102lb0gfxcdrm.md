@@ -97,15 +97,15 @@ On a d’abord la librairie ZeroMQ manquante, puis le cache à nettoyer. Pour r�
 sudo apt-get install libzmq3-dev
 ```
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760628748534/f615b022-23c9-43a5-a00c-bf170de500f3.png align="center")
+
 Puis vider le cache avec la commande
 
 ```bash
  make distclean
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756940845822/2f432ae8-b4c6-47d3-a672-dedf39c5e154.png align="center")
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756940827505/e6575298-6dd1-4eea-830b-c28b46a3fc2b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760628548288/dc0e6c4f-c83e-4244-ae91-050c6d9395bc.png align="center")
 
 Sans ces deux réglages il ne serait pas possible de continuer. Une fois le problème résolu, il faut reconfigurer zeek avec la commande :
 
@@ -341,15 +341,15 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 Vous pouvez ensuite vérifier l’installation
 
 ```bash
-sudo docker version
+ sudo docker version
 sudo systemctl status docker
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760629614484/97ec3171-3262-4a1b-98b5-eb7fecf78d90.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756991653824/51c8ab06-96e6-4e21-81a1-c99a0475b00a.png align="center")
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760629641618/067cf954-e666-4dd3-91ab-b2df8d09429d.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757113007394/9ec57bee-e509-4962-8ae4-3f74ba2aa3f0.png align="center")
 
-Pour simplifier le déploiement de ELK, on installe aussi Docker Compose. Il est utile dans ce cas, car ELK comporte trois services principaux. Sans Docker Compose, il faudrait télécharger, configurer puis gérer manuellement les ports, réseaux pour chaque service de ELK. Docker Compose permet d’écrire puis gérer le tout dans un seul fichier de configuration`docker-compose.yml`, Mais Docker Compose est déjà présent sur certaines versions de Ubuntu, donc plus besoin d’installer le paquet. Vous pouvez vérifier avec la commande suivante:
+Pour simplifier le déploiement de ELK, on installe aussi Docker Compose. Il est utile dans ce cas car ELK comporte trois services principaux. Sans Docker Compose, il faudrait télécharger, configurer puis gérer manuellement les ports, réseaux pour chaque service. Docker Compose permet d’écrire puis gérer le tout dans un seul fichier `docker-compose.yml`, Mais Docker Compose est déjà présent sur certaines versions de Ubuntu, donc plus besoin d’installer le paquet. Vous pouvez vérifier avec la commande suivante:
 
 ```bash
 docker compose version
@@ -361,7 +361,7 @@ Sinon installez Docker Compose
 sudo apt install docker compose -y
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760629659534/ae1f5255-e6bd-4426-92ac-741d7cae0810.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757259739087/17f78a71-afa7-45c9-afa2-e5994eeee9af.png align="center")
 
 ## Déployer ELK via Docker Compose sur la vm2
 
@@ -397,8 +397,6 @@ services:
       - "9200:9200"
     networks:
       - elk
-    restart: unless-stopped
-
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.17.0
@@ -411,7 +409,6 @@ services:
       - elk
     depends_on:
       - elasticsearch
-    restart: unless-stopped
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.17.0
@@ -424,8 +421,6 @@ services:
       - elk
     depends_on:
       - elasticsearch
-    restart: unless-stopped
-
 
 volumes:
   elasticsearch-data:
@@ -451,16 +446,19 @@ Voici une petite explication des paramètres utilisés dans le fichier
     
 * ports: permet d’exposer le service sur un port précis
     
-* `networks`: créé un réseau interne dédié aux conteneurs, pour faciliter la communication avec d’autres services comme `Logstash` et `Kibana` dans le meme réseau elk.
+* networks: créé un réseau interne dédié aux conteneurs, pour faciliter la communication avec d’autres services comme `Logstash` et `Kibana` dans le meme réseau elk.
     
 
 Pour la suite, lancer ELK
 
 ```yaml
 sudo docker compose up -d
+sudo docker compose up -d elasticsearch kibana logstash
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760630163907/9affcc2f-2448-4ae2-a72f-d2b7d8516a07.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119147532/a3a80cb2-569b-4dfd-872d-b83d18eca26f.png align="center")
+
+Les deux commandes doivent être exécutées après chaque redémarrage de votre poste, afin de redémarrer ELK.
 
 Vous pouvez ensuite vérifier que les services roulent bien et que les ports sont bien ouverts avec la commande suivante:
 
@@ -468,7 +466,7 @@ Vous pouvez ensuite vérifier que les services roulent bien et que les ports son
 sudo docker ps
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760630249240/223cd5a2-0651-4b39-89d3-99547463a45b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757513162655/446740b5-08a8-451a-82bb-2eb9660ca7b3.png align="center")
 
 Redémarrer ensuite la machine (reboot) puis relancez ELK avec la commande suivante
 
@@ -483,7 +481,7 @@ Pour vérifier Elasticsearch:
 curl -X GET http://localhost:9200
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760635896671/b70f1a9d-4f20-4b7e-a7f4-49b0b9b1f72e.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119539060/488898e5-7b0e-444a-a857-e92b005ae365.png align="center")
 
 On a bien Elasticsearch sur le port 9200, en version 8.17.0.
 
