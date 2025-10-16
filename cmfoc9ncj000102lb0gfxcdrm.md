@@ -87,7 +87,7 @@ cd zeek-8.0.1/
 ./configure
 ```
 
-Il est possible que la commande montre des configurations incomplètes ou ne localisent pas toutes les librairies. Voici l’erreur que j’aie eue personnellement à cette commande.
+Il est possible que la commande montre des configurations incomplètes ou ne localisent pas toutes les librairies. Voici l’erreur que j’ai eue personnellement à cette commande.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756940669519/9d4248b9-e386-4db5-9781-b92dff6216a6.png align="center")
 
