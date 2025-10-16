@@ -483,7 +483,7 @@ Pour vérifier Elasticsearch:
 curl -X GET http://localhost:9200
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119539060/488898e5-7b0e-444a-a857-e92b005ae365.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760635896671/b70f1a9d-4f20-4b7e-a7f4-49b0b9b1f72e.png align="center")
 
 On a bien Elasticsearch sur le port 9200, en version 8.17.0.
 
