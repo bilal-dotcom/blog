@@ -481,7 +481,7 @@ Pour vérifier Elasticsearch:
 curl -X GET http://localhost:9200
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119539060/488898e5-7b0e-444a-a857-e92b005ae365.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760643115792/1708715d-2cec-4cef-a0cf-5613924e899b.png align="center")
 
 On a bien Elasticsearch sur le port 9200, en version 8.17.0.
 
@@ -491,7 +491,7 @@ On peut aussi vérifier depuis la vm1, avec la commande suivante
 curl -X GET http://IP_VM2:9200
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757120180797/23574f95-e5a8-456b-9da9-10f452ab22e0.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760643907262/c6d6d8d0-e0ce-4d2a-b0c7-a399f6ce76f9.png align="center")
 
 Kibana étant une interface graphique, on la vérifie sur un navigateur via:
 
