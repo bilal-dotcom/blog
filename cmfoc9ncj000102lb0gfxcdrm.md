@@ -649,16 +649,16 @@ Ajouter le bloc de code suivant dans la section Filebeat input
   fields_under_root: true
 ```
 
-Il faut ensuite configurer la sortie soit vers Elasticsearch directement, soit vers Logstash sur la vm2, toujours dans le même fichier, dans la section `Elasticsearch Output` ou dans la section `Logstash Output`. Le choix dépend de ce qu’on veut faire des logs.
+Il faut ensuite configurer la sortie soit vers Elasticsearch directement, soit vers Logstash sur la vm2, toujours dans le même fichier `etc/filebeat/filebeat.yml`, dans la section `Elasticsearch Output` ou dans la section `Logstash Output`. Le choix dépend de ce qu’on veut faire des logs.
 
 * Envoyer à `Elasticsearch` est simple et demande moins de configurations. Les logs arrivent directement dans `Elasticsearch` et peuvent être visualisés dans `Kibana`. Par contre, il n’y a pas moyen de filtrer ou transformer les logs.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757120771312/48a31315-fcd3-4c82-9c3d-2a8f0c8692a8.png align="center")
+* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760662847006/6bf99bc9-2aa8-4490-bc97-628dcb25127e.png align="center")
     
-* Envoyer à `Logstash` est un peu plus lourd à configurer. Il faut créér le fichier de pipeline et les fichiers de paramètre (ils sont inclus dans l’installation). Mais on peut filtrer, transformer les logs avant de les envoyer à `Elasticsearch`. C’est plus pratique lorsqu’on veut prétraiter les logs, extraire des champs spécifiques
+    Envoyer à `Logstash` est un peu plus lourd à configurer. Il faut créér le fichier de pipeline et les fichiers de paramètre (ils sont inclus dans l’installation). Mais on peut filtrer, transformer les logs avant de les envoyer à `Elasticsearch`. C’est plus pratique lorsqu’on veut prétraiter les logs, extraire des champs spécifiques
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757194518773/d974ce78-79c9-4a16-ba3d-1eccaa1e9a45.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760663265657/022a019e-b41b-4990-9b3f-569b50e87485.png align="center")
 
 On opte ici pour l’envoi vers `Logstash`. Il suffira juste de commenter toute la section `Elasticsearch Output`.
 
@@ -667,8 +667,6 @@ Dans la section `Logstash Output`, modifier les paramètres comme `hosts`, `prot
 ```yaml
 output.logstach:
   hosts: ["IP_VM2:5044"]
-  username: "USERNAME"
-  password: "PASSWORD"
 ```
 
 Redémarrer ensuite Filebeat
@@ -681,11 +679,7 @@ sudo filebeat test output
 
 La commande `filebeat test output` permet de confirmer si Filebeat, depuis la vm1, arrive bien à joindre Logstash installée sur la vm2.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757195298720/56bbc02b-f371-4827-bf66-832ea1c6570c.png align="center")
-
-On a d’abord une erreur de connexion, indiquant que Filebeat n’arrive pas à joindre Logstach sur le port 5044, depuis la vm1. Bien que Logstash roule, il n’a pas encore été configuré pour accepter les connexions entrantes sur le port 5044 pour recevoir les logs de Filebeat. Il faut s’assurer ici d’avoir démarré le conteneur Logstash avec la commande `sudo docker restart logstash`. Sans cette commande, le conteneur Logstash n’est pas à l’écoute sur le port 5044.
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757199785283/dd49e799-2688-4c90-9958-dee0bffa7df3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760663400921/8a554d9b-1dee-4f6f-9d8d-973bf727d6d6.png align="center")
 
 Une fois que Filebeat depuis la vm1 arrive à bien se connecter à Logstash sur la vm2, on est sûr que ca fonctionne.
 
