@@ -1,5 +1,5 @@
 ---
-title: "Détection des attaques en temps réel avec IA + ELK + Zeek + Suricata"
+title: "Détection des attaques en temps réel avec ELK + Zeek + Suricata sur Google Cloud Platform"
 seoTitle: "Détection d’attaques réseau avec Zeek, Suricata, ELK et IA"
 seoDescription: "Utilisez IA, ELK, Zeek et Suricata pour détecter des attaques en temps réel et gérer les logs réseau efficacement"
 datePublished: Wed Sep 17 2025 18:52:18 GMT+0000 (Coordinated Universal Time)
@@ -124,8 +124,6 @@ sudo make install
 
 Une fois que Zeek est configuré, il faut l’ajouter au PATH du système, afin de pouvoir lancer les commandes zeek depuis n’importe quel répertoire. Il faut donc ajouter le répertoire de zeek au fichier `.bashrc` ou `.zshrc`.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756993447854/bf1e493b-96c2-4bab-a402-219d4d6850d5.png align="center")
-
 ```bash
 nano ~/.bashrc
 ```
@@ -149,7 +147,7 @@ zeek --version
 which zeek
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756999974758/77720a60-f264-4eee-acda-ac6ca0cc8c97.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760657776239/1adbefd4-27f4-4563-84be-4f6f90f71425.png align="center")
 
 Lancer Zeek avec la commande suivante:
 
@@ -157,7 +155,7 @@ Lancer Zeek avec la commande suivante:
 zeekctl deploy
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757019457497/fb3e5e0b-d9f2-4c03-8ad4-216a33a96ffb.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760657804639/a18668bf-c3ea-49c6-8e02-6b2c4a451ec4.png align="center")
 
 Zeek est bien installé, mais l’utilisateur n’a pas les droits d’écrire dans le fichier `/usr/local/zeek/spool/`. Remplacer USER par le nom d’utilisateur
 
@@ -168,7 +166,7 @@ sudo chown -R [USER]:[USER] /usr/local/zeek
 
 En exécutant maintenat `zeekctl deploy`, on peut lancer zeek.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757020686651/fdc3439f-44f8-4719-9036-da7a40de3f41.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760657916079/34b853d3-ab2b-402f-91d4-d008dbf8e6d3.png align="center")
 
 Zeek démarre mais on voit qu’il s’arrête automatiquement après.
 
@@ -178,13 +176,13 @@ On essaie de vérifier les logs générés dans le fichier `/usr/local/zeek/logs
 ls  /usr/local/zeek/logs
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757020742873/83194a79-4a93-427b-b933-08994e64359a.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760658502487/7a8586b6-c40f-4fdb-97b2-c2bd71a7e2d5.png align="center")
 
 On peut donc voir les premiers logs de sorties et d’erreurs de Zeek. Le fichier `stderr.log` capture les messages d’erreur générés puis le fichier `stdout.log` capture les messages de sortie de Zeek.
 
 En essayant de lire le fichier de log `stderr.log`, il y a une petite erreur au niveau de l’interface `eth0`.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757021378143/6564005c-ca65-4b5b-9748-13bbecb24b56.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760658535582/13fb31b5-532a-4aa7-8e0a-732ad923913a.png align="center")
 
 On voit que Zeek n’a pas les permissions pour analyser le trafic sur l’interface `eth0`. Il faut donc donner les droits de capture avec la commande suivante:
 
@@ -192,9 +190,9 @@ On voit que Zeek n’a pas les permissions pour analyser le trafic sur l’inter
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/local/zeek/bin/zeek
 ```
 
-En vérifiant aussi avec `ip a`, on voit que zeek essaie de démarrer sur l’interface `eth0`, alors que l’interface active sur la machine est l’interface `enp0s3`. Il faut donc modifier la configuration de zeek afin qu’elle démarre sur la bonne interface.
+En vérifiant aussi avec `ip a`, on voit que zeek essaie de démarrer sur l’interface `eth0`, alors que l’interface active sur la machine est l’interface `ens4`. Il faut donc modifier la configuration de zeek afin qu’elle démarre sur la bonne interface
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757024273786/11d6c08d-4bed-405d-a444-02aa300d2eff.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760659429936/11608524-c08c-43de-ba05-e1fc159b36fd.png align="center")
 
 Pour cela, exécutez les commandes suivantes
 
@@ -202,15 +200,15 @@ Pour cela, exécutez les commandes suivantes
 sudo nano /usr/local/zeek/etc/node.cfg
 ```
 
-Remplacez ensuite `eth0` par `enp0s3`, ou l’interface de la machine.
+Remplacez ensuite `eth0` par `ens4`, ou l’interface de la machine.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757024250943/9813bd35-27e3-42be-9b92-6b7568295be2.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760658650486/bd9c28eb-a0b3-4322-9932-4b24ad813406.png align="center")
 
-Cela permet donc à Zeek de démarrer sur l’interface en0ps3 qui est celle active. On a donc réglé les deux problèmes au niveau de la permission pour l’analyse du trafic, puis de l’interface. Il faut donc relancer avec la commande `zeekctl deploy`.
+Cela permet donc à Zeek de démarrer sur l’interface `ens4`qui est celle active. On a donc réglé les deux problèmes au niveau de la permission pour l’analyse du trafic, puis de l’interface. Il faut donc relancer avec la commande `zeekctl deploy`.
 
 Cette fois, Zeek démarre bien sans erreur.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757025849434/50a08431-b46e-4664-b3d0-31385b5b6716.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760659530485/dfbb5c22-520b-4b9b-9454-1d90ebe361ca.png align="center")
 
 On peut donc vérifier les fichiers de logs dans `/usr/local/zeek/logs` avec la commande:
 
@@ -254,7 +252,7 @@ Installer la dernière version de Suricata avec les commandes suivantes:
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt-get update
-sudo apt-get install suricataethe
+sudo apt-get install suricata
 ```
 
 Vérifier ensuite avec la commande suivante
@@ -264,11 +262,11 @@ suricata -V
 suricata --build-info
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757031305503/978c6c6c-c381-4915-8b44-4a3b0f10eeb3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760659801722/eb6d2a0b-0af4-4ec4-844e-b29fc7beb461.png align="center")
 
 Au niveau de Suricata, les logs sont générés dans le répertoire `/var/log/suricata/`.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757033289851/c1c740e7-f0dd-4526-b05b-16fce1b775a3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760659859161/d73378f4-f541-46f0-9aac-350acfc742de.png align="center")
 
 On y retrouve les fichiers suivants:
 
