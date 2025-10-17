@@ -343,9 +343,9 @@ Vous pouvez ensuite vérifier l’installation
 sudo systemctl status docker
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1756991653824/51c8ab06-96e6-4e21-81a1-c99a0475b00a.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760715913832/8da3ced1-5dba-4ffd-9e84-2d0772215df7.png align="center")
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757113007394/9ec57bee-e509-4962-8ae4-3f74ba2aa3f0.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760715938286/e969a32f-3bb2-4a95-b1b5-9d6113e2a9b3.png align="center")
 
 Pour simplifier le déploiement de ELK, on installe aussi Docker Compose. Il est utile dans ce cas car ELK comporte trois services principaux. Sans Docker Compose, il faudrait télécharger, configurer puis gérer manuellement les ports, réseaux pour chaque service. Docker Compose permet d’écrire puis gérer le tout dans un seul fichier `docker-compose.yml`, Mais Docker Compose est déjà présent sur certaines versions de Ubuntu, donc plus besoin d’installer le paquet. Vous pouvez vérifier avec la commande suivante:
 
@@ -359,7 +359,7 @@ Sinon installez Docker Compose
 sudo apt install docker compose -y
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757259739087/17f78a71-afa7-45c9-afa2-e5994eeee9af.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760715962387/8558458b-574b-4620-9d7e-0f05070471bf.png align="center")
 
 ## Déployer ELK via Docker Compose sur la vm2
 
