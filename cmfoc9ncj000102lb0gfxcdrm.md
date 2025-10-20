@@ -216,7 +216,7 @@ On peut donc vérifier les fichiers de logs dans `/usr/local/zeek/logs` avec la 
 ls /usr/local/zeek/logs
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757027738265/afe570b3-a001-452f-bdcc-1b9e54200cf3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760917676873/02d591cb-c908-4b9e-8ce3-4cbfaece4201.png align="center")
 
 Zeek génère bien les fichiers de logs maintenant en format gzip. On a ici deux répertoires: `/usr/local/zeek/logs/current` et `usr/local/zeek/logs/2025-09-04`.
 
@@ -377,7 +377,6 @@ nano docker-compose.yml
 ```
 
 ```yaml
-version: '3.8'
 
 services:
   elasticsearch:
@@ -451,10 +450,9 @@ Pour la suite, lancer ELK
 
 ```yaml
 sudo docker compose up -d
-sudo docker compose up -d elasticsearch kibana logstash
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757119147532/a3a80cb2-569b-4dfd-872d-b83d18eca26f.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760716265833/bd656c50-a9c7-4876-ad28-dcbd768e0dce.png align="center")
 
 Les deux commandes doivent être exécutées après chaque redémarrage de votre poste, afin de redémarrer ELK.
 
@@ -691,9 +689,9 @@ On vérifie ici que Logstash sur la vm2, recoit bien les logs de Filebeat depuis
 sudo docker logs -f logstash
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757201625033/9fdce8be-9633-42d1-b81f-c3ca4d05ee11.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760917789152/3c4b7925-29a6-42d2-ad3f-eb0c8a3f9413.png align="center")
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757201509121/4363ea34-660e-453e-baa7-d03a37cb9783.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760917851797/d06196d5-6704-4386-a77f-84a1a5a695c2.png align="center")
 
 On a bien le type de données (type suricata) qu’on avait défini dans Filebeat pour différencier Zeek et Suricata. Filebeat transmet aussi le chemin exact du fichier source, soit `/var/log/suricata/eve.json`. On a aussi des infos sur l’hôte duquel provient les logs.
 
@@ -703,9 +701,9 @@ On peut ensuite vérifier les index créés dans Elasticsearch car une fois que 
 curl -X GET "http://localhost:9200/_cat/indices?v"
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1757202353798/f220bf52-d84d-4e8e-be52-4efa714b2df9.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760918084080/535a54db-969e-46fc-af62-3ea8aef844ff.png align="center")
 
-On a bien l’index défini au niveau du fichier de configuration `logstash.conf`, avec le tag suivi de la date. L’index contient pour le moment 57134 documents.
+On a bien l’index défini au niveau du fichier de configuration `logstash.conf`, avec le tag suivi de la date. L’index contient pour le moment 6470 documents pour zeek et 4905 pour Suricata.
 
 On peut ensuite vérifier au niveau de l’Interface dans Kibana à l’adresse suivante:
 
