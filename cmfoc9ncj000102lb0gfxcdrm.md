@@ -1,5 +1,5 @@
 ---
-title: "Détection des attaques en temps réel avec ELK + Zeek + Suricata sur Google Cloud Platform"
+title: "Détection des attaques en temps réel avec ELK + Zeek + Suricata sur Google Cloud Platform (GCP)"
 seoTitle: "Détection d’attaques réseau avec Zeek, Suricata, ELK et IA"
 seoDescription: "Utilisez IA, ELK, Zeek et Suricata pour détecter des attaques en temps réel et gérer les logs réseau efficacement"
 datePublished: Wed Sep 17 2025 18:52:18 GMT+0000 (Coordinated Universal Time)
@@ -46,7 +46,7 @@ graph TD
 
 # Étape 1: Préparation de l’environnement
 
-La première étape consiste à configurer l’environnement de lab afin de simuler le réseau, capturer le trafic. On opte pour trois machines virtuelles:
+La première étape consiste à configurer l’environnement de lab afin de simuler le réseau, capturer le trafic. On opte pour trois machines sur Google Cloud Platform (GCP):
 
 * une machine Kali Linux qui sert d’attaquante.
     
@@ -55,7 +55,7 @@ La première étape consiste à configurer l’environnement de lab afin de simu
 * une machine vm2-ubuntu de 23G de disque, pour ELK qui sera installé via Docker.
     
 
-Les machines sont installées avec les configurations de bases. Pour le réseau, on choisit une configuration en mode `Bridge` afin d’avoir une réelle intégration réseau. Avant de poursuivre, il faut bien s’assurer que les machines sont bien connectées et arrivent à se pinger entre elles. Dépendemment du type de réseau que vous aurez choisi, des ajustements devront être faits.
+Les machines sont installées avec les configurations de bases. Pour le réseau, on choisit une configuration standard de GCP qui utilise VPC en mode `Bridge` afin d’avoir une réelle intégration réseau. Chaque VM dispose d’une IP interne pour la communciation interne au VPC et aussi une IP externe lorsqu’on veut y accéder depuis l’externe. L’IP interne est utilisée pour la communication entre les machines et l’IP externe pour l’accès à Kibana par exemple, après avoir ajouter des règles de pare-feu pour autoriser les ports.
 
 La machine Kali ne nécessite pas d’installation supplémentaire. La plupart des outils comme nmap, hydra, metasploit sont déjà présents par défaut sur Kali.
 
