@@ -524,7 +524,7 @@ http://IP_EXTERNE_VM2:5601
 
 # Étape 2: Collecte et traitement des logs
 
-## Configuration de Logstach pour collecter les donneés - création du pipeline conf sur la vm2
+## Configuration de Logstash pour collecter les donneés - création du pipeline conf sur la vm2
 
 Par la suite, il faut créér le fichier de pipeline de configuration `logstash.conf` dans le répertoire `logstash/pipeline/`. C’est un fichier de principal de Logstash qui définit comment les données sont traitées puis transformées. Les paramètes inclus dans le fichier sont disponibles sur [le site officiel](https://www.elastic.co/docs/reference/logstash/creating-logstash-pipeline).
 
