@@ -1,7 +1,7 @@
 ---
 title: "Subdomain Enumeration"
 seoTitle: "Subdomains : Effective Research Methods"
-seoDescription: "Discover how to identify subdomains using tools like Amass, OneForAll, Chaos (ProjectDiscovery), Subfinder, Assetfinder,Sublist3r. "
+seoDescription: "Discover how to identify subdomains using tools like Amass, OneForAll, Chaos (ProjectDiscovery), Subfinder, Assetfinder,Sublist3r."
 datePublished: Tue Dec 17 2024 15:00:35 GMT+0000 (Coordinated Universal Time)
 cuid: cm4slc8ix000108mdctjx3pa4
 slug: subdomain-enumeration
