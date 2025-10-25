@@ -735,30 +735,33 @@ Voici la première partie de l’article qui montre l’installation de Zeek, Su
 * création d’un dashboard interactif dans Kibana pour mieux visualiser le trafic
     
 
-# Sources
+# Documentation
 
-* [Installing Zeek — Book of Zeek (v8.0.1)](https://docs.zeek.org/en/lts/install.html)
+* *2\. Quickstart guide—Suricata 9.0.0-dev documentation*. (n.d.). Retrieved October 25, 2025, from [https://docs.suricata.io/en/latest/quickstart.html#basic-setup](https://docs.suricata.io/en/latest/quickstart.html#basic-setup)
     
-* [Zeek Installation in Ubuntu. What is](https://docs.zeek.org/en/lts/install.html) [Zeek? | by Cyber Tool Guardian | Medium](https://medium.com/@cybertoolguardian/zeek-installation-in-ubuntu-60835ee3e42c)
+* *3.2.1. Ubuntu Package Installation—Suricata 9.0.0-dev documentation*. (n.d.). Retrieved October 25, 2025, from [https://docs.suricata.io/en/latest/install/ubuntu.html](https://docs.suricata.io/en/latest/install/ubuntu.html)
     
-* [Binary Packages · zeek/zeek Wiki · GitHub](https://github.com/zeek/zeek/wiki/Binary-Packages)
+* *Binary packages*. (n.d.). GitHub. Retrieved October 25, 2025, from [https://github.com/zeek/zeek/wiki/Binary-Packages](https://github.com/zeek/zeek/wiki/Binary-Packages)
     
-* [Log Files — Book of Zeek (git/master)](https://docs.zeek.org/en/master/script-reference/log-files.html)
+* *Configure inputs | Beats*. (n.d.). Retrieved October 25, 2025, from [https://www.elastic.co/docs/reference/beats/filebeat/configuration-filebeat-options](https://www.elastic.co/docs/reference/beats/filebeat/configuration-filebeat-options)
     
-* [Ubuntu | Docker Docs](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
+* *Filebeat quick start: Installation and configuration | Beats*. (n.d.). Retrieved October 25, 2025, from [https://www.elastic.co/docs/reference/beats/filebeat/filebeat-installation-configuration](https://www.elastic.co/docs/reference/beats/filebeat/filebeat-installation-configuration)
     
-* [3.2.1. Ubuntu Package Installation — Suricata 8.0.1-dev documentation](https://docs.suricata.io/en/latest/install/ubuntu.html)
+* Guardian, C. T. (2024, November 11). Zeek installation in ubuntu. *Medium*. [https://medium.com/@cybertoolguardian/zeek-installation-in-ubuntu-60835ee3e42c](https://medium.com/@cybertoolguardian/zeek-installation-in-ubuntu-60835ee3e42c)
     
-* [2\. Quickstart guide — Suricata 8.0.1-dev documentation](https://docs.suricata.io/en/latest/quickstart.html#basic-setup)
+* *Installing zeek—Book of zeek(V8. 0. 2)*. (n.d.). Retrieved October 25, 2025, from [https://docs.zeek.org/en/lts/install.html](https://docs.zeek.org/en/lts/install.html)
     
-* [Filebeat quick start: installation and configuration | Beats](https://www.elastic.co/docs/reference/beats/filebeat/filebeat-installation-configuration)
+
+* *Log files—Book of zeek(8.1.0-dev.682)*. (n.d.). Retrieved October 25, 2025, from [https://docs.zeek.org/en/master/script-reference/log-files.html](https://docs.zeek.org/en/master/script-reference/log-files.html)
     
-* [Configure inputs | Beats](https://www.elastic.co/docs/reference/beats/filebeat/configuration-filebeat-options)
+
+* *Logstash configuration files | logstash*. (n.d.). Retrieved October 25, 2025, from [https://www.elastic.co/docs/reference/logstash/config-setting-files](https://www.elastic.co/docs/reference/logstash/config-setting-files)
     
-* [Prise en main de la Suite Elastic et de Docker-Compose | Elastic Blog](https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose)
+
+* *Prise en main de la suite elastic et de docker-compose*. (n.d.). Elastic Blog. Retrieved October 25, 2025, from [https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose](https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose)
     
-* [Logstash Configuration Files | Logstash](https://www.elastic.co/docs/reference/logstash/config-setting-files)
+
+* *Ubuntu*. (2025, October 10). Docker Documentation. [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
     
-* [Creating a Logstash Pipeline | Logstash](https://www.elastic.co/docs/reference/logstash/creating-logstash-pipeline)
-    
-* [Utiliser des règles de pare-feu VPC  |  Cloud NGFW  |  Google Cloud](https://cloud.google.com/firewall/docs/using-firewalls?hl=fr)
+
+* *Utiliser des règles de pare-feu VPC | Cloud Next Generation Firewall*. (n.d.). Google Cloud. Retrieved October 25, 2025, from [https://docs.cloud.google.com/firewall/docs/using-firewalls?hl=fr](https://docs.cloud.google.com/firewall/docs/using-firewalls?hl=fr)
