@@ -1,7 +1,7 @@
 ---
-title: "Détection des attaques en temps réel avec ELK + Zeek + Suricata sur Google Cloud Platform (GCP)"
-seoTitle: "Détection d’attaques réseau avec Zeek, Suricata, ELK et IA"
-seoDescription: "Utilisez IA, ELK, Zeek et Suricata pour détecter des attaques en temps réel et gérer les logs réseau efficacement"
+title: "Mise en place d’un pipeline de détection d’intrusions avec Zeek, Suricata et ELK sur Google Cloud"
+seoTitle: "Pipeline de détection d’intrusions avec Zeek, Suricata et ELK sur GCP"
+seoDescription: "Construisez un pipeline d'intrusion avec Zeek, Suricata, ELK sur Google Cloud, pour une gestion optimale des logs et sécurité"
 datePublished: Wed Sep 17 2025 18:52:18 GMT+0000 (Coordinated Universal Time)
 cuid: cmfoc9ncj000102lb0gfxcdrm
 slug: detection-des-attaques-en-temps-reel-avec-ia-elk-zeek-suricata
@@ -10,7 +10,16 @@ tags: kibana, logstash, elasticsearch, elk, suricata, zeek, elastic-search-and-k
 
 ---
 
-Ce présent article est sur la détection d’attaques en temps réel et combine du réseau, de la détection et de l’IA. Il permet de mettre en avant la gestion des logs avec ELK, l’analyse réseau avec Zeek et Suricata, le prétraitement avec l’IA puis la visualisation avec Kibana et Elasticsearch. L’article sera en deux parties: une première pour l’installation et la configuration de Zeek, Suricata puis ELK, puis une deuxième partie pour l’intégration de l’IA et la visualisation.
+Cet article présente la mise en place d’un environnement de détection, combinant Zeek, Suricata avec la stack ELK (Elasticsearch, Logstash, Kibana). Il permet de mettre en avant la gestion des logs avec ELK, l’analyse réseau avec Zeek et Suricata, puis la visualisation avec Kibana et Elasticsearch. L’implémentation a été faite sur Google Cloud Platform, avec deux VM Ubuntu configurées pour séparer la capture du trafic et la gestion des données.
+
+L’objectif principal est de construire un pipeline de logs, afin de :
+
+* collecter les événements réseau depuis plusieurs capteurs
+    
+* les normaliser et les transférer vers Logstash via Filebeat
+    
+* puis les visualiser dans Kibana pour faciliter la détection
+    
 
 # Composants
 
@@ -24,40 +33,32 @@ Ce présent article est sur la détection d’attaques en temps réel et combine
         
     * **Logstash**: collecte des logs de Zeek et Suricata via Filebeat, transformation de ces logs en format JSON ou CSV puis envoi à Elasticsearch pour stockage.
         
-    * **Kibana**: pour la visualtisation des données et création de dashboard
+    * **Kibana**: pour la visualisation des données et création de dashboard
         
 * **Filebeat**: pour la collecte des logs des deux IDS et l’envoi à Logstash
-    
-* **IA:** analyse des logs pour classer les évènements.
     
 
 Voici un diagramme montrant l’architecture du projet et les différentes étapes.
 
 ```mermaid
 graph TD
-    A[Attaques Simulées<br>Kali, Nmap, Hydra] --> B[Capture du trafic<br>Zeek & Suricata]
+    A[Attaques simulées<br>Kali, Nmap, Hydra] --> B[Capture du trafic<br>Zeek & Suricata]
     B --> C[Filebeat<br>Collecte des logs]
-    C --> |Envoi des logs| D[Logstash<br> Transformation des logs]
+    C --> |Envoi des logs| D[Logstash<br>Transformation des logs]
     D --> E[Elasticsearch<br>Stockage & Indexation]
-    E --> F[Analyse IA<br>Random Forest/SVM]
-    F --> G[Kibana<br>Dashboards & Alertes]
-    G -->|Alerting| H[Email/Slack/Webhook]
+    E --> F[Kibana<br>Dashboards & visualisation]
 ```
 
-# Étape 1: Préparation de l’environnement
+# Étape 1: Préparation de l’environnement dans GCP
 
 La première étape consiste à configurer l’environnement de lab afin de simuler le réseau, capturer le trafic. On opte pour trois machines sur Google Cloud Platform (GCP):
 
-* une machine Kali Linux qui sert d’attaquante.
-    
 * une machine vm1-ubuntu de 23G de disque, pour Zeek et Suricata
     
 * une machine vm2-ubuntu de 23G de disque, pour ELK qui sera installé via Docker.
     
 
-Les machines sont installées avec les configurations de bases. Pour le réseau, on choisit une configuration standard de GCP qui utilise VPC en mode `Bridge` afin d’avoir une réelle intégration réseau. Chaque VM dispose d’une IP interne pour la communciation interne au VPC et aussi une IP externe lorsqu’on veut y accéder depuis l’externe. L’IP interne est utilisée pour la communication entre les machines et l’IP externe pour l’accès à Kibana par exemple, après avoir ajouter des règles de pare-feu pour autoriser les ports.
-
-La machine Kali ne nécessite pas d’installation supplémentaire. La plupart des outils comme nmap, hydra, metasploit sont déjà présents par défaut sur Kali.
+Les machines sont installées avec les configurations de bases. Pour le réseau, on choisit une configuration standard de GCP qui utilise VPC en mode `Bridge` afin d’avoir une réelle intégration réseau. Chaque VM dispose d’une IP interne pour la communication interne au VPC et aussi une IP externe lorsqu’on veut y accéder depuis l’externe. L’IP interne est utilisée pour la communication entre les machines et l’IP externe pour l’accès à Kibana par exemple, après avoir ajouter des règles de pare-feu pour autoriser les ports.
 
 ## Installation de Zeek sur la vm1
 
@@ -204,7 +205,7 @@ Remplacez ensuite `eth0` par `ens4`, ou l’interface de la machine.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1760658650486/bd9c28eb-a0b3-4322-9932-4b24ad813406.png align="center")
 
-Cela permet donc à Zeek de démarrer sur l’interface `ens4`qui est celle active. On a donc réglé les deux problèmes au niveau de la permission pour l’analyse du trafic, puis de l’interface. Il faut donc relancer avec la commande `zeekctl deploy`.
+Cela permet donc à Zeek de démarrer sur l’interface `ens4` qui est celle active. On a donc réglé les deux problèmes au niveau de la permission pour l’analyse du trafic, puis de l’interface. Il faut donc relancer avec la commande `zeekctl deploy`.
 
 Cette fois, Zeek démarre bien sans erreur.
 
@@ -220,7 +221,7 @@ ls /usr/local/zeek/logs
 
 Zeek génère bien les fichiers de logs maintenant en format gzip. On a ici deux répertoires: `/usr/local/zeek/logs/current` et `usr/local/zeek/logs/2025-09-04`.
 
-Le répertoire `/current` représente le répertoire actif en cours d’exécution. Il contient les logs du Zeek qui tourne au m oment où il tourne. Au redémarrage de Zeek une autre fois, les fichiers sont déplacés de `/current` vers un dossier daté comme `/2025-09-04`, un peu comme un archivage selon la date. Le répertoire `/current` contient plusieurs fichiers courants:
+Le répertoire `/current` représente le répertoire actif en cours d’exécution. Il contient les logs du Zeek qui tourne au moment où il tourne. Au redémarrage de Zeek une autre fois, les fichiers sont déplacés de `/current` vers un dossier daté comme `/2025-09-04`, un peu comme un archivage selon la date. Le répertoire `/current` contient plusieurs fichiers courants:
 
 * `conn.log` enregistre les connexions réseaux
     
@@ -728,13 +729,6 @@ Vous pouvez ensuite créer plusieurs Data Views :
 * filesbeat-\* pour les logs génériques Filebeat
     
 
-Voici la première partie de l’article qui montre l’installation de Zeek, Suricata, ELK et Docker .Dans la deuxième partie, on ira un peu plus loin en exploitant ces données:
-
-* intégration d’un couche IA pour prétraiter en enrichir les données issues de Zeek et Suricata
-    
-* création d’un dashboard interactif dans Kibana pour mieux visualiser le trafic
-    
-
 # Documentation
 
 * *2\. Quickstart guide—Suricata 9.0.0-dev documentation*. (n.d.). Retrieved October 25, 2025, from [https://docs.suricata.io/en/latest/quickstart.html#basic-setup](https://docs.suricata.io/en/latest/quickstart.html#basic-setup)
@@ -751,17 +745,12 @@ Voici la première partie de l’article qui montre l’installation de Zeek, Su
     
 * *Installing zeek—Book of zeek(V8. 0. 2)*. (n.d.). Retrieved October 25, 2025, from [https://docs.zeek.org/en/lts/install.html](https://docs.zeek.org/en/lts/install.html)
     
-
 * *Log files—Book of zeek(8.1.0-dev.682)*. (n.d.). Retrieved October 25, 2025, from [https://docs.zeek.org/en/master/script-reference/log-files.html](https://docs.zeek.org/en/master/script-reference/log-files.html)
     
-
 * *Logstash configuration files | logstash*. (n.d.). Retrieved October 25, 2025, from [https://www.elastic.co/docs/reference/logstash/config-setting-files](https://www.elastic.co/docs/reference/logstash/config-setting-files)
     
-
 * *Prise en main de la suite elastic et de docker-compose*. (n.d.). Elastic Blog. Retrieved October 25, 2025, from [https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose](https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose)
     
-
 * *Ubuntu*. (2025, October 10). Docker Documentation. [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
     
-
 * *Utiliser des règles de pare-feu VPC | Cloud Next Generation Firewall*. (n.d.). Google Cloud. Retrieved October 25, 2025, from [https://docs.cloud.google.com/firewall/docs/using-firewalls?hl=fr](https://docs.cloud.google.com/firewall/docs/using-firewalls?hl=fr)
