@@ -4,7 +4,7 @@ seoTitle: "Pipeline de détection d’intrusions avec Zeek, Suricata et ELK sur 
 seoDescription: "Construisez un pipeline d'intrusion avec Zeek, Suricata, ELK sur Google Cloud, pour une gestion optimale des logs et sécurité"
 datePublished: Mon Oct 27 2025 04:00:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmfoc9ncj000102lb0gfxcdrm
-slug: detection-des-attaques-en-temps-reel-avec-ia-elk-zeek-suricata
+slug: detection-intrusions-zeek-suricata-elk-gcp
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/nGoCBxiaRO0/upload/867973bb1728e4064d0d156ec8667119.jpeg
 tags: kibana, logstash, elasticsearch, elk, suricata, zeek, elastic-search-and-kibana
 
